@@ -10,7 +10,6 @@
     "url":"https://github.com/zhenxzheng/DancingTailsDogTraining"
   },
   "dependencies": {
-    "error-handler": "^0.1.4",
     "express": "3.x",
     "jade": "*",
     "method-override": "*",
@@ -19,6 +18,7 @@
     "mongoose": "*"
   },
   "engines":{
-    "node":"0.10.x"
+    "node":"0.10.x",
+    "npm":"2.1.x"
   }
 }
