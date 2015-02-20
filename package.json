@@ -10,7 +10,6 @@
     "url":"https://github.com/zhenxzheng/DancingTailsDogTraining"
   },
   "dependencies": {
-    "body-parser": "^1.0.2",
     "error-handler": "^0.1.4",
     "express": "3.x",
     "jade": "*",
