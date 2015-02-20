@@ -17,7 +17,7 @@ var app = module.exports = express();
 
 //mongoDB setup
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/sfmuseum');
+mongoose.connect(process.env.MONGOHQ_URL || 'mongodb://localhost/DancingTails');
 
 /**
  * Configuration
