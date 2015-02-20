@@ -2,7 +2,7 @@
   "name": "Dancing-Tails",
   "version": "0.0.1",
   "author":"Zhen Zheng",
-  "script":{
+  "scripts":{
     "start":"node app.js"
   },
   "repository":{
