@@ -213,6 +213,19 @@ footer .credit{
 /*#students .grid-third{
   float:none;
 }*/
+#video .panelContainer{
+  padding:0;
+  position:relative;
+}
+#video button{
+  position:absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
 .container{
   width:840px;
   margin:auto;
@@ -277,6 +290,7 @@ button{
   font-weight:bolder;
   padding:20px 25px;
   border:solid #3FC380 3px;
+  cursor:pointer;
 }
 button:hover{
   color:white;

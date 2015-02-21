@@ -1,62 +1,22 @@
 section.container#playerLayer.hideTop.ease
 	div#player
 	div(ng-click="closeVideo()")#playerBackground
-section.container
+section#video.container
 	header
-		h1.title Meet Our Students
-		p.small Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-section#students.container
-	div.grid-third
-		div.panelContainer
-			div.panel
-				button(ng-click="playVideo('WaZPgBrbfn8')") Play
-				img(src="sharpei.jpg")
-			div.panel					
-				div.customerInfo
-					p.bold.dark Penelope 1
-					p.italic Shar Pei mix
-	div.grid-third
-		div.panelContainer
-			div.panel
+		h1.title Watch Our Students in Action!
+		p.small Watch our students in training action.
+	div.panelContainer
+			button(ng-click="playVideo('WaZPgBrbfn8')") Play
+			img(src="sharpei.jpg")
+	div
+		div.grid-half
+			div.panelContainer
 				button(ng-click="playVideo('R4v_Iu5o_ew')") Play
-				img(src="dog.jpg")
-			div.panel
-				div.customerInfo
-					p.bold.dark Pookie 2
-					p.italic Maltese mix
-	div.grid-third
-		div.panelContainer
-			div.panel
+				img(src="sharpei.jpg")
+		div.grid-half
+			div.panelContainer
 				button(ng-click="playVideo('5_sjCwPU3tI')") Play
 				img(src="sharpei.jpg")
-			div.panel
-				div.customerInfo
-					p.bold.dark Soda 3
-					p.italic Shar Pei mix
-	div.grid-third
-		div.panelContainer
-			div.panel
-				img(src="dog.jpg")
-			div.panel				
-				div.customerInfo
-					p.bold.dark Hachi 4
-					p.italic Husky mix
-	div.grid-third
-		div.panelContainer
-			div.panel
-				img(src="sharpei.jpg")
-			div.panel
-				div.customerInfo
-					p.bold.dark Stanlee 5
-					p.italic lil Pug
-	div.grid-third
-		div.panelContainer
-			div.panel
-				img(src="dog.jpg")
-			div.panel
-				div.customerInfo
-					p.bold.dark Mace 6
-					p.italic Maltese mix
 section#programs
 	div
 		h1 Finding the Right Program
