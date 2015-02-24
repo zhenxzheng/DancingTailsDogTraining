@@ -284,18 +284,32 @@ nav{
   -ms-transform: translate(-50%, 0%);
   -o-transform: translate(-50%, 0%);
 }
-#brand,#menu,#menu li,#menu li a{
+#brand,#menu,#menu li,#menu li a,#navContact{
   display:inline-block;
 }
 #brand{
   float:left;
+  width:172px;
   border-right:solid 1px;
 }
 #brand h1 {
   padding:0 10px;
 }
 #brand h1, #menu li, #menu li a{
-  line-height:77px;
+  line-height:75px;
+  font-weight:700;
+}
+#navContact{
+  float:right;
+  height:77px;
+  padding:10px 20px 0 20px;
+  border-left:solid 1px
+}
+#navContact h2{
+  color:#333;
+}
+#navContact .smallest{
+  margin:0;
 }
 #main{
   background:#f5f5f5;
@@ -377,13 +391,38 @@ footer .credit{
   background-size:cover;
   background-position:bottom left;
   background-attachment:fixed;
-  display:table;
 }
-#companyName{
-  display:table-cell;
-  vertical-align:middle;
+#homeLogo{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:42%;
+  text-align:center;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#homeLogo:after{
+  position:absolute;
   width:100%;
-  color:#777;
+  height:100%;
+  top:0;
+  left:0;
+  content:"";
+  background:black;
+  opacity:0.2;
+  z-index: -1;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 #customer{
   width:840px;
