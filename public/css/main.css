@@ -1,3 +1,6 @@
+/*
+ *  Global
+ */
 *,*:after,*:before{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -41,6 +44,24 @@ h1{
 h2{
   font-size:1.25em;
 }
+button{
+  color:#3FC380;
+  background:transparent;
+  font-size:16px;
+  font-weight:bolder;
+  padding:20px 25px;
+  border:solid #3FC380 3px;
+  cursor:pointer;
+}
+button:hover{
+  color:white;
+  background:#3FC380;
+}
+header {
+  width:620px;
+  margin:auto;
+  margin-bottom:77px;
+}
 input{
   width:100%;
   line-height:44px;
@@ -49,6 +70,205 @@ input{
 .glyphicon{
   padding:0;
 }
+.layover{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  color:white;
+  background:#333;
+  opacity:0;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/*.layover:hover{
+  opacity:0.4;
+}*/
+.pageEnd{
+  width:100%;
+  height:300px;
+  position:relative;
+  display:inline-block;
+  color:white;
+}
+.banner:before, #playerLayer:before{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  content:"";
+  color:white;
+  background:#333;
+  opacity:0.6;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.banner{
+  width:100%;
+  height:100%;
+}
+.banner div{
+  color:white;
+  position:absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.panelContainer{
+  background:white;
+  width:100%;
+  padding:0 20px;
+  margin-bottom:20px;
+}
+.panelContainer:last-child{
+  margin-bottom:100px;
+}
+.panel{
+  background:white;
+  padding:30px;
+  border-bottom:solid #eee 1px;
+}
+.panel:last-child{
+  border-bottom:none;
+}
+.panel a{
+  text-decoration: underline;
+  color:#777;
+}
+.thumbnail img{
+  height:77px;
+  max-width:none;
+}
+.simpleButton{
+  margin-top:20px;
+  color:#3FC380;
+  cursor:pointer;
+}
+.container{
+  width:840px;
+  margin:auto;
+  padding-top:77px;
+}
+.container:before{
+  width:100%;
+  display:table;
+  content:"";
+}
+.grid-half{
+  display:inline-block;
+  width:48%;
+  margin:20px 0;
+  float:left;
+/*  margin-right:4%;*/
+}
+/*footer .grid-third{
+  width:33.3333333333%;
+  display:inline-block;
+  float:left;
+}
+footer .grid-third:last-child{
+  float:right;
+}*/
+.grid-third{
+  width:30%;
+  margin-right:5%;
+  display:inline-block;
+  float:left;
+}
+.grid-third:nth-child(3n+0){
+/*  float:right;
+*/
+  margin-right:0; 
+}
+.grid-half:last-child{
+  float:right;
+/*  margin-right:0;*/
+}
+.grid-quarter{
+  width:21.25%;
+  margin-right:5%;
+  display:inline-block;
+  float:left;
+}
+.grid-quarter:nth-child(4n+0){
+  margin-right:0;
+}
+
+.italic {
+    font-style: italic;
+}
+.bold{
+  font-weight:700;
+}
+.title{
+  margin-top:77px;
+}
+.small{
+  font-size:13px;
+  font-weight:700;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.smallest{
+  font-size:11px;
+  font-weight:700;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.dark{
+  color:black;
+}
+.underline{
+  text-decoration: underline;
+}
+
+.invisible{
+  /*top:-100% !important;*/
+  visibility:hidden !important;
+}
+.hideBottom{
+  bottom:0 !important;
+  opacity:0 !important;
+}
+.hideTop{
+  top:0 !important;
+}
+.ease{
+  -ms-transition: all 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+.easein{
+  -ms-transition: all 0.8s ease-in;
+  -webkit-transition: all 0.8s ease-in;
+  -moz-transition: all 0.8s ease-in;
+  -o-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
+}
+.easeout{
+  -ms-transition: all 0.8s ease-out;
+  -webkit-transition: all 0.8s ease-out;
+  -moz-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+}
+
+/*
+ *  Header & Footer
+ */
 nav{
   position:fixed;
   top:0;
@@ -64,7 +284,6 @@ nav{
   -ms-transform: translate(-50%, 0%);
   -o-transform: translate(-50%, 0%);
 }
-
 #brand,#menu,#menu li,#menu li a{
   display:inline-block;
 }
@@ -149,43 +368,9 @@ footer .credit{
   margin-bottom:40px;
   display:inline-block;
 }
-.pageEnd{
-  width:100%;
-  height:300px;
-  position:relative;
-  display:inline-block;
-  color:white;
-}
-.banner:before, #playerLayer:before{
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  content:"";
-  color:white;
-  background:#333;
-  opacity:0.6;
-  -ms-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.banner{
-  width:100%;
-  height:100%;
-}
-.banner div{
-  color:white;
-  position:absolute;
-  top:50%;
-  left:50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-}
+/*
+ *  Home Page
+ */
 #homeCover{
   width:100%;
   background:url('../homeCover.JPG');
@@ -207,27 +392,6 @@ footer .credit{
 #customer .grid-half{
   vertical-align:top;
 }
-.panelContainer{
-  background:white;
-  width:100%;
-  padding:0 20px;
-  margin-bottom:20px;
-}
-.panelContainer:last-child{
-  margin-bottom:100px;
-}
-.panel{
-  background:white;
-  padding:30px;
-  border-bottom:solid #eee 1px;
-}
-.panel:last-child{
-  border-bottom:none;
-}
-.panel a{
-  text-decoration: underline;
-  color:#777;
-}
 #customer .thumbnail{
   display:inline-block;
   vertical-align:middle;
@@ -235,10 +399,6 @@ footer .credit{
   height:77px;
   overflow:hidden;
   border-radius:15px;
-}
-.thumbnail img{
-  height:77px;
-  max-width:none;
 }
 #customer .customerInfo{
   padding:0 0 0 60px;
@@ -253,6 +413,9 @@ footer .credit{
   text-align:left;
   padding-left:40px;
 }
+/*
+ *  About Page
+ */
 #bio, #philosophy{
   text-align:left;
 }
@@ -288,45 +451,10 @@ footer .credit{
   background:#1F3A93;
   color:white;
 }
-#homeEnd{
-  background:url('../DancingTails_HomePageScrollImage_Opt1.jpg');
-  background-size:cover;
-  background-position:bottom center;
-  background-attachment:fixed;
-}
-#aboutMeEnd{
-  background:url('../philosophy.jpg');
-  background-size:cover;
-  background-position:center center;
-  background-attachment:fixed;
-}
-#videoEnd{
-  background:url('../DancingTails_AboutMe3.jpg');
-  background-size:cover;
-  background-position:top center;
-  background-attachment:fixed;
-}
-#philosophyEnd{
-  background:url('../DancingTails_HomePageScrollImage_Opt2.jpg');
-  background-size:cover;
-  background-position:center center;
-  background-attachment:fixed;
-}
-#servicesEnd{
-  background:url('../homeCover.jpg');
-  background-size:cover;
-  background-position:center left;
-  background-attachment:fixed;
-}
-#contactEnd{
-  background:url('../dogPortrait.jpg');
-  background-size:cover;
-  background-position:center center;
-  background-attachment:fixed;
-}
-/*#students .grid-third{
-  float:none;
-}*/
+
+/*
+ *  Video Page
+ */
 #video .panelContainer{
   padding:0;
   position:relative;
@@ -396,6 +524,9 @@ footer .credit{
 #video .panelContainer p, #services .panel:first-child p{
   bottom:5%;
 }
+/*
+ *  Services Page
+ */
 #services .panelContainer{
   border-radius:5px;
   padding:0;
@@ -444,6 +575,9 @@ footer .credit{
 #services .panel:first-child:hover:before{
   opacity:0.7;
 }
+/*
+ *  Contact Page
+ */
 #contact .thumbnail{
   height:44px;
   display:inline-block;
@@ -474,106 +608,7 @@ footer .credit{
   height:300px;
   padding:20px;
 }
-.simpleButton{
-  margin-top:20px;
-  color:#3FC380;
-  cursor:pointer;
-}
-.container{
-  width:840px;
-  margin:auto;
-  padding-top:77px;
-}
-.container:before{
-  width:100%;
-  display:table;
-  content:"";
-}
-.grid-half{
-  display:inline-block;
-  width:48%;
-  margin:20px 0;
-  float:left;
-/*  margin-right:4%;*/
-}
-/*footer .grid-third{
-  width:33.3333333333%;
-  display:inline-block;
-  float:left;
-}
-footer .grid-third:last-child{
-  float:right;
-}*/
-.grid-third{
-  width:30%;
-  margin-right:5%;
-  display:inline-block;
-  float:left;
-}
-.grid-third:nth-child(3n+0){
-/*  float:right;
-*/
-  margin-right:0; 
-}
-.grid-half:last-child{
-  float:right;
-/*  margin-right:0;*/
-}
-.grid-quarter{
-  width:21.25%;
-  margin-right:5%;
-  display:inline-block;
-  float:left;
-}
-.grid-quarter:nth-child(4n+0){
-  margin-right:0;
-}
 
-.italic {
-    font-style: italic;
-}
-.bold{
-  font-weight:700;
-}
-.title{
-  margin-top:77px;
-}
-.small{
-  font-size:13px;
-  font-weight:700;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-.smallest{
-  font-size:11px;
-  font-weight:700;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-.dark{
-  color:black;
-}
-.underline{
-  text-decoration: underline;
-}
-button{
-  color:#3FC380;
-  background:transparent;
-  font-size:16px;
-  font-weight:bolder;
-  padding:20px 25px;
-  border:solid #3FC380 3px;
-  cursor:pointer;
-}
-button:hover{
-  color:white;
-  background:#3FC380;
-}
-header {
-  width:620px;
-  margin:auto;
-  margin-bottom:77px;
-}
 #playerLayer{
   visibility: visible;
   position:fixed;
@@ -598,104 +633,43 @@ header {
   margin:auto;
   line-height:100%;
 }
-.layover{
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  color:white;
-  background:#333;
-  opacity:0;
-  -ms-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+
+/*
+ *  End banner
+ */
+#homeEnd{
+  background:url('../DancingTails_HomePageScrollImage_Opt1.jpg');
+  background-size:cover;
+  background-position:bottom center;
+  background-attachment:fixed;
 }
-/*.layover:hover{
-  opacity:0.4;
-}*/
-.invisible{
-  /*top:-100% !important;*/
-  visibility:hidden !important;
+#aboutMeEnd{
+  background:url('../philosophy.jpg');
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
 }
-.hideBottom{
-  bottom:0 !important;
-  opacity:0 !important;
+#videoEnd{
+  background:url('../DancingTails_AboutMe3.jpg');
+  background-size:cover;
+  background-position:top center;
+  background-attachment:fixed;
 }
-.hideTop{
-  top:0 !important;
+#philosophyEnd{
+  background:url('../DancingTails_HomePageScrollImage_Opt2.jpg');
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
 }
-.ease{
-  -ms-transition: all 0.8s ease;
-  -webkit-transition: all 0.8s ease;
-  -moz-transition: all 0.8s ease;
-  -o-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+#servicesEnd{
+  background:url('../homeCover.JPG');
+  background-size:cover;
+  background-position:center left;
+  background-attachment:fixed;
 }
-.easein{
-  -ms-transition: all 0.8s ease-in;
-  -webkit-transition: all 0.8s ease-in;
-  -moz-transition: all 0.8s ease-in;
-  -o-transition: all 0.8s ease-in;
-  transition: all 0.8s ease-in;
+#contactEnd{
+  background:url('../dogPortrait.jpg');
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
 }
-.easeout{
-  -ms-transition: all 0.8s ease-out;
-  -webkit-transition: all 0.8s ease-out;
-  -moz-transition: all 0.8s ease-out;
-  -o-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out;
-}
-/*.grid-half{
-  width:45.4545455%;
-  margin-right:9.09090909%;
-  margin-top: auto !important;
-  margin-bottom: auto !important;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: -moz-box;
-  display:box;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -moz-box-pack: center;
-  -webkit-box-pack: center;
-  box-pack: center;
-}
-.grid-thirds{
-  width: 27.2727273%;
-  margin-right: 9.09090909%;
-  margin-top: auto !important;
-  margin-bottom: auto !important;
-  display: -moz-box;
-  display: -webkit-box;
-  display: box;
-  -moz-box-orient: vertical;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  -moz-box-pack: center;
-  -webkit-box-pack: center;
-  box-pack: center;
-}
-.grid-half:nth-child(2){
-  margin-right:0;
-}
-.grid-thirds:nth-child(3){
-  margin-right:0;
-}
-.grid-fourth:nth-child(4){
-  margin-right:0;
-}
-.center{
-    display: -moz-box;
-    display: -webkit-box;
-    display: box;
-    /*newer flexbox*
-    display: -webkit-flex;
-    display: flex;
-  }
-840
-  640
-  */
