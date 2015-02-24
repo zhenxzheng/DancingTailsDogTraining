@@ -1,27 +1,28 @@
-section.container#playerLayer.hideTop.ease
-	div#player
-	div(ng-click="closeVideo()")#playerBackground
+section#playerLayer.invisible.ease(ng-click="closeVideo()")
+	div.container.playerContainer
+		div#player
 section#video.container
-	header
-		h1.title Watch Our Students in Action!
-		p.small Watch our students in training action.
 	div.panelContainer
-			button(ng-click="playVideo('WaZPgBrbfn8')") Play
-			img(src="sharpei.jpg")
+		div.viewButton(ng-click="playVideo('R4v_Iu5o_ew')"): span.glyphicon.glyphicon-play
+		h2 Golden Retriver Aces Training Test!
+		img(src="video1.jpg")
 	div
 		div.grid-half
 			div.panelContainer
-				button(ng-click="playVideo('R4v_Iu5o_ew')") Play
-				img(src="sharpei.jpg")
+				div.viewButton(ng-click="playVideo('WaZPgBrbfn8')"): span.glyphicon.glyphicon-play
+				p.hideBottom French Bulldog Aces Training Test!
+				img(src="video2.jpg")
 		div.grid-half
 			div.panelContainer
-				button(ng-click="playVideo('5_sjCwPU3tI')") Play
-				img(src="sharpei.jpg")
-section#programs
-	div
-		h1 Finding the Right Program
-		p.small Read about our differnt training progams and see which one fits your pup the best
-		button View Programs
+				div.viewButton(ng-click="playVideo('5_sjCwPU3tI')"): span.glyphicon.glyphicon-play
+				p.hideBottom Poodle Waits for Command to Go Out
+				img(src="video3.jpg")
+section.pageEnd
+	figure.banner#videoEnd
+		div
+			h1 Getting to Know Me
+			p.small Learn more about my background and experience!
+			a(href="/about"): button About Me
 
 script(type="text/javascript").
 	

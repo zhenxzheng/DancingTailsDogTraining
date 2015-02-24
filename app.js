@@ -16,8 +16,8 @@ var express = require('express'),
 var app = module.exports = express();
 
 //mongoDB setup
-// var mongoose = require('mongoose');
-// mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/DancingTails');
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/DancingTails');
 
 /**
  * Configuration

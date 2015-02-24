@@ -67,3 +67,14 @@ function onPlayerStateChange(event) {
 function stopVideo() {
   player.stopVideo();
 }
+
+function hoverEffect(parent, child){
+	$(parent).hover(
+    function(){
+      $(this).find(child).removeClass("hideBottom");
+    },
+    function(){
+      $(this).find(child).addClass("hideBottom");
+    }
+  )
+}

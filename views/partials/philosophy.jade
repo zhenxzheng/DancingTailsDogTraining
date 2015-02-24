@@ -1,83 +1,40 @@
-section#gallery.container
-	header
-		h1.title Training Philosophy
-		p.small Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-	img(src="philosophy.jpg")
-	div.container
-		div.grid-half
-			img(src="dog.jpg")
-			img(src="sharpei.jpg")
-		div.grid-half
-			img(src="sharpei.jpg")
-			img(src="philosophy.jpg")
-	img(src="dog.jpg")
-section#programs
-	div
-		h1 Training Tips
-		p.small Read about our differnt training progams and see which one fits your pup the best
-		button View Programs
-section.container
-	div.grid-half
-		div.panelContainer
+section.container#philosophy
+	div.panelContainer
+		div.panel
+			h1 Training Philosophy
+		div.portrait
 			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..."
-			div.panel
-				figure.thumbnail
-					img(src="sharpei.jpg")
-				div.customerInfo
-					p.bold.dark Penelope
-					p.italic Shar Pei mix
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-			div.panel
-				figure.thumbnail
-					img(src="dog.jpg")
-				div.customerInfo
-					p.bold.dark Pookie
-					p.italic Maltese mix
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text .."
-			div.panel
-				figure.thumbnail
-					img(src="sharpei.jpg")
-				div.customerInfo
-					p.bold.dark 
-					p.italic Shar Pei mix
-	div.grid-half
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply ."
-			div.panel
-				figure.thumbnail
-					img(src="dog.jpg")
-				div.customerInfo
-					p.bold.dark Hachi
-					p.italic Husky mix
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-			div.panel
-				figure.thumbnail
-					img(src="sharpei.jpg")
-				div.customerInfo
-					p.bold.dark Stanlee
-					p.italic lil Pug
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown alley of type and scrambled it to make a type specimen book..."
-			div.panel
-				figure.thumbnail
-					img(src="dog.jpg")
-				div.customerInfo
-					p.bold.dark Mace
-					p.italic Maltese mix
-section#programs
-	div
-		h1 Finding the Right Program
-		p.small Read about our differnt training progams and see which one fits your pup the best
-		button View Programs
+				img(src="DancingTails_TrainingPhilosophy.jpg",style="max-width:100%")
+		div.panel
+			p As a certified dog trainer and a member of the 
+				a(href="http://www.petprofessionalguild.com/", target="_blank") Pet Professional Guild
+				| , my mission is to provide the highest quality, force-free, scientific-based dog training and care to each of my clients and their furry family members. Dancing tails are a natural result because I attend to the physical, emotional, and environmental well being of the dogs in my care.
+			p Certified in Training and Behavior Consultation from the Dog Training Internship Academy in San Francisco, my training philosophy is based on animal learning theory, which explains how learning works and occurs. I use Classical and Operant Conditioning when designing the best training plan for your dog.
+			p Classical Condition: Dogs learn through association.
+			p Operant Consition: Dogs learn through consequences.
+			p.italic See below for explaination
+		div.panel
+			h2 Classical Conditioning
+			img(src="classicalConditioning.jpg")
+		div.panel
+			h2 Operant Conditioning
+			img(src="operantConditioning.jpg")
+		div.panel
+			p Out of the four ways to increase or decrease behavior, I only use two: positive reinforcement and negative punishment. Both are humane training techniques, resulting in dancing tails and a strong bond between dog and handler.
+			ul
+			p Positive Reinforcement increases a behavior due to the presentation of a good consequence when the response is performed. From a dog’s perspective this translates to, “This wonderful thing will happen if I…”
+			p For example, I ask Charlie to sit, he sits, and then he gets his favorite treat.
+			p Negative Punishment decreases a behavior by removing a good consequence when the response is performed. From a dog’s perspective this translates to, “This wonderful thing will stop if I…”
+			p For example, Lola plays too rough, so I walk away.
+		div.panel
+			h2 My take on dominance theory...
+			p According to the Pet Professional Guild, “Dominance theory is an obsolete and aversive method of interacting with animals that has at its foundation incorrect and misinterpreted data which can result in damage to the animal-human relationship and cause behavioral problems in the animal.” Further explanation—all of which I wholly agree with—can be found on 
+				a(href="http://www.petprofessionalguild.com/DominanceTheoryPositionStatement",target="_blank") this Pet Professional Guild webpage
+				| .
+section.pageEnd
+	figure.banner(style="background: url('../dog.jpg'); background-size:cover;background-position:center left;background-attachment:fixed")
+		div
+			h1 Training Tips
 section.container
 	div.grid-half
 		div.panelContainer
@@ -104,8 +61,9 @@ section.container
 				a.underline: p Lorem Ipsum is simply dummy text of the 
 				a.underline: p Lorem Ipsum is simply dummy text of the 
 				a.underline: p Lorem Ipsum is simply dummy text of the 
-ection#programs
-	div
-		h1 Finding the Right Program
-		p.small Read about our differnt training progams and see which one fits your pup the best
-		button View Programs
+section.pageEnd
+	figure.banner#philosophyEnd
+		div
+			h1 See for Yourself
+			p.small Watch our students in action!
+			a(href="/videos"): button Video List

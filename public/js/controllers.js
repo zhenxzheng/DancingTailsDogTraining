@@ -1,68 +1,36 @@
 'use strict';
 
 /* Controllers */
-
-function IndexCtrl($scope, $http){
-  $http.get('api/posts')
-    .success(function(data, status, headers, config){
-      $scope.posts = data.posts;
-    });
+function HomeCtrl($scope){
+  window.scrollTo(0,0);
 }
-
-function AddPostCtrl($scope, $http, $location) {
-  $scope.form = {};
-  $scope.submitPost = function () {
-    $http.post('/api/post', $scope.form).
-      success(function(data) {
-        $location.path('/');
-      });
-  };
+function AboutCtrl($scope){
+  window.scrollTo(0,0);
+  $scope.ReadMore=false;
 }
-
-function ReadPostCtrl($scope, $http, $routeParams) {
-  $http.get('/api/post/' + $routeParams.id).
-    success(function(data) {
-      $scope.post = data.post;
-    });
+function PhilosophyCtrl($scope){
+  window.scrollTo(0,0);
 }
-
-function EditPostCtrl($scope, $http, $location, $routeParams) {
-  $scope.form = {};
-  $http.get('/api/post/' + $routeParams.id).
-    success(function(data) {
-      $scope.form = data.post;
-    });
-
-  $scope.editPost = function () {
-    $http.put('/api/post/' + $routeParams.id, $scope.form).
-      success(function(data) {
-        $location.url('/readPost/' + $routeParams.id);
-      });
-  };
+function ContactCtrl($scope){
+  window.scrollTo(0,0);
 }
-
-function DeletePostCtrl($scope, $http, $location, $routeParams) {
-  $http.get('/api/post/' + $routeParams.id).
-    success(function(data) {
-      $scope.post = data.post;
-    });
-
-  $scope.deletePost = function () {
-    $http.delete('/api/post/' + $routeParams.id).
-      success(function(data) {
-        $location.url('/');
-      });
-  };
-
-  $scope.home = function () {
-    $location.url('/');
-  };
+function ServicesCtrl($scope){
+  window.scrollTo(0,0);
+  $scope.a=$scope.b=$scope.c=$scope.d=false;
+  hoverEffect(".panel:first-child", "p");
+  $(".panel:first-child").hover(
+    function(){
+      $(this).find(".price").css("top","45%");
+    },
+    function(){
+      $(this).find(".price").css("top","50%");
+    })
 }
-
 function VideosCtrl($scope){
-
+  window.scrollTo(0,0);
+  hoverEffect(".panelContainer", "p");
   $scope.playVideo = function (id){
-    $("#playerLayer").removeClass("hideTop");
+    $("#playerLayer").removeClass("invisible").css("opacity",1);
     if(iframeLoaded) player.loadVideoById(id);
     else{
       iframeLoaded = true;
@@ -75,6 +43,6 @@ function VideosCtrl($scope){
   }
   $scope.closeVideo = function(){
     stopVideo();
-    $("#playerLayer").addClass("hideTop");
+    $("#playerLayer").css("opacity",0).addClass("invisible");
   }
 }

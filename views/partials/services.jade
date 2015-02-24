@@ -1,0 +1,114 @@
+section.container#services
+	header
+		h1.title I Am Here to Help!
+		p.small Serving the East Bay Area!
+		p.small I offer private consultations for behavior modification and basic obedience.
+		p.small These are one-on-one appointments where I come to your home or we meet at a public location to discuss and develop a training plan for you and your dog. 
+	div
+		div.grid-quarter
+			div.panelContainer
+				div.panel(ng-click="a=!a")
+					div.price: span $100
+					p.hideBottom
+						span(ng-hide="a") View Details
+						span(ng-show="a") Hide Details
+					img(src="dog4.jpg")
+				div.panel
+					h2 Consultation
+				div.panel
+					p Find Out What Your Pups Need
+				div.panel(ng-show="a")
+					ul
+						li: p.smallest A pre-consult Phone Call
+						li: p.smallest A 60-minute in-home or on-location consult
+						li: p.smallest A detailed follow-up Email from our meeting inclucding a summary of the consult and key recommendation
+				div.panel
+					p.simpleButton(ng-click="a=!a")
+						span(ng-hide="a") View Details
+						span(ng-show="a") Hide Details
+		div.grid-quarter
+			div.panelContainer
+				div.panel(ng-click="b=!b")
+					div.price: span $199
+					p.hideBottom
+						span(ng-hide="b") View Details
+						span(ng-show="b") Hide Details
+					img(src="dog1.jpg")
+				div.panel
+					h2 Puppies
+				div.panel
+					p Early Puppy Behavior Training
+				div.panel(ng-show="b")
+					ul
+						li: p.smallest Pre-puppy planning
+						li: p.smallest Puppy manners
+						li: p.smallest Puppy socialization
+						li: p.smallest Potty training
+						li: p.smallest Crate Training
+				div.panel
+					p.simpleButton(ng-click="b=!b")
+						span(ng-hide="b") View Details
+						span(ng-show="b") Hide Details
+		div.grid-quarter
+			div.panelContainer
+				div.panel(ng-click="c=!c")
+					div.price: span $259
+					p.hideBottom
+						span(ng-hide="c") View Details
+						span(ng-show="c") Hide Details
+					img(src="dog2.jpg")
+				div.panel
+					h2 Basic
+				div.panel
+					p Basic Obedience & Behavior
+				div.panel(ng-show="c")
+					ul
+						li: p.smallest Sit
+						li: p.smallest Down
+						li: p.smallest Sit-stay
+						li: p.smallest Down-stay
+						li: p.smallest Leave it
+						li: p.smallest Come when called
+						li: p.smallest Wait at the door
+						li: p.smallest Go to your mat
+						li: p.smallest Walking politely on leash
+				div.panel
+					p.simpleButton(ng-click="c=!c")
+						span(ng-hide="c") View Details
+						span(ng-show="c") Hide Details
+		div.grid-quarter
+			div.panelContainer
+				div.panel(ng-click="d=!d")
+					div.price: span $299
+					p.hideBottom
+						span(ng-hide="d") View Details
+						span(ng-show="d") Hide Details
+					img(src="dog3.jpg")
+				div.panel
+					h2 Behavior
+				div.panel
+					p Behavior Modification
+				div.panel(ng-show="d")
+					ul
+						li: p.smallest Jumping
+						li: p.smallest Barking
+						li: p.smallest Begging
+						li: p.smallest Chewing
+						li: p.smallest Digging
+						li: p.smallest Counter surfing
+						li: p.smallest Dog-dog aggression
+						li: p.smallest Shy or fearful behavior
+							ul
+								li: p.smallest Resource guarding
+								li: p.smallest Stranger fear
+								li: p.smallest Fear of unfamiliar sounds or sights
+				div.panel
+					p.simpleButton(ng-click="d=!d") 
+						span(ng-hide="d") View Details
+						span(ng-show="d") Hide Details
+section.pageEnd
+	figure.banner#servicesEnd
+		div
+			h1 Have Questions | Want More Details?
+			p.small Reach out to me & start training your pooch today
+			a(href="/contact"): button Contact Me
