@@ -2,23 +2,23 @@ section.container#contact
 	header
 		h1.title Contact Me
 		p.small Hi, I'm Alyssa Hosbach!
-		p.small You can reach me by phone, Email, or leaving a message below.
-	div
+		p.small You can reach me by phone, Email, or leave a message below.
+	div.container
 		div.grid-half
 			div.panel
 				div.thumbnail
 					span.glyphicon.glyphicon-earphone
 				div.contactInfo
 					h2 Phone
-					p (555)123-4567
+					a(href="tel:1-805-302-4691"): p (805)302-4691
 		div.grid-half
 			div.panel
 				div.thumbnail
 					span.glyphicon.glyphicon-envelope
 				div.contactInfo
 					h2 Email
-					p dancingtailsdogtraining@gmail.com
-	form
+					a(href="mailto:dancingtailstraining@gmail.com"): p dancingtailstraining@gmail.com
+	form.panelContainer
 		div
 			div.grid-half
 				div.panelContainer.formInput
@@ -47,12 +47,11 @@ section.container#contact
 					div.panel
 						p Age
 						input(placeholder="2 months")
-		div.container
-			div.panelContainer
-				div.panel
-					p Inquiry
-					textarea
-				div.panel
-					button Message
+		div.panelContainer
+			div.panel
+				p Inquiry
+				textarea
+			div.panel
+				button Message
 section.pageEnd
 	figure.banner#contactEnd
