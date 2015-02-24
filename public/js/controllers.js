@@ -5,6 +5,7 @@ function HomeCtrl($scope){
   window.scrollTo(0,0);
   layoutResize();
   logoAnimation();
+  
 }
 function AboutCtrl($scope){
   window.scrollTo(0,0);

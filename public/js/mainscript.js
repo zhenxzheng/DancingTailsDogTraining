@@ -9,17 +9,16 @@ $(document).ready(function(){
 	windowWidth=$(window).width();
 	windowHeight=$(window).height();
 	windowResize()
+  document.addEventListener("scroll", headerScroll, false);
+  document.addEventListener("touchmove", headerScroll, false);
+  $(window).scroll(function(){
+      headerScroll();
+  })
 })
 
 function layoutResize(){
 	$('#homeCover').css('height',windowHeight);
 }
-
-// function mainResize(){
-// 	windowWidth=$(window).width();
-// 	windowHeight=$(window).height();
-// 	$('#main').css('height',windowHeight)
-// }
 
 function windowResize(){
 	$(window).resize(function(){
@@ -79,13 +78,23 @@ function logoAnimation(){
   window.setTimeout(function(){
     $("#logoText").css("top",0);
     window.setTimeout(function(){
-      $("#logoDog1").css("opacity",1);
+      $("#logoDog1").css({"opacity":1,"top":0});
       window.setTimeout(function(){
-        $("#logoDog2").css("opacity",1);
+        $("#logoDog2").css({"opacity":1,"top":0});
         window.setTimeout(function(){
-          $("#logoDog3").css("opacity",1);
+          $("#logoDog3").css({"opacity":1,"top":0});
         },800);
       },800);
     },800);
   },800);
+}
+
+function headerScroll(){
+  
+  // if ($(window).scrollTop() < windowHeight){
+  //   $("nav").addClass("seeThrough");
+  // }
+  // else{
+  //   $("nav").removeClass("seeThrough");
+  // }
 }

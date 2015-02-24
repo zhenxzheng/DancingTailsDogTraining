@@ -1,7 +1,7 @@
 extends layout
 
 block body
-  nav
+  nav.seeThrough.ease
     div#brand
       a(href='/'): h1: i.fa.fa-paw
     div#menu
@@ -15,7 +15,7 @@ block body
     div#navContact
       h2 Dancing Tails
       p.smallest Call Now
-      h2 (555)555-5555
+      a(href="tel:1-805-302-4691"): h2 (805)302-4691
   section#main(ng-view)
   section#footerSpace
 
@@ -25,7 +25,8 @@ block body
         aside
           p.bold Contact
           p To acquire more information, please contact Alyssa @ 
-            span.underline alyssa.hosbach@gmail.com
+            a(href="mailto:dancingtailstraining@gmail.com") dancingtailstraining@gmail.com
+            | .
         aside
           p.bold Location
           p We are located in Berkeley, California, and we are currently serving only in the East Bay area.
