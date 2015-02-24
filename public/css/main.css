@@ -424,6 +424,26 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+#homeLogo img:first-child{
+  position:relative;
+  visibility:hidden;
+}
+#logoText,#logoDog1,#logoDog2,#logoDog3{
+  position:absolute;
+  opacity:0;
+  top:0;
+  left:0;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#logoText{
+  top:-30%;
+  opacity:1;
+}
 #customer{
   width:840px;
   margin:auto;

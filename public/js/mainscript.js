@@ -8,15 +8,11 @@ $(document).ready(function(){
 	$isMobile=navigator.userAgent.match(/(Phone|iPod|iPad|Android|BlackBerry)/);
 	windowWidth=$(window).width();
 	windowHeight=$(window).height();
-
-	// mainResize();
-	layoutResize();
 	windowResize()
 })
 
 function layoutResize(){
 	$('#homeCover').css('height',windowHeight);
-	$
 }
 
 // function mainResize(){
@@ -77,4 +73,19 @@ function hoverEffect(parent, child){
       $(this).find(child).addClass("hideBottom");
     }
   )
+}
+
+function logoAnimation(){
+  window.setTimeout(function(){
+    $("#logoText").css("top",0);
+    window.setTimeout(function(){
+      $("#logoDog1").css("opacity",1);
+      window.setTimeout(function(){
+        $("#logoDog2").css("opacity",1);
+        window.setTimeout(function(){
+          $("#logoDog3").css("opacity",1);
+        },800);
+      },800);
+    },800);
+  },800);
 }
