@@ -16,18 +16,34 @@ function PhilosophyCtrl($scope){
 }
 function ContactCtrl($scope){
   window.scrollTo(0,0);
+  hoverEffect("#contact .grid-half:last-child .panel","p");
 }
 function ServicesCtrl($scope){
   window.scrollTo(0,0);
   $scope.a=$scope.b=$scope.c=$scope.d=false;
-  hoverEffect(".panel:first-child", "p");
-  $(".panel:first-child").hover(
+  hoverEffect("#services .grid-third .panel:first-child", "p");
+  $("#services .grid-third .panel:first-child").hover(
     function(){
-      $(this).find(".price").css("top","45%");
+      $(this).find("h1").css("top","47%");
     },
     function(){
-      $(this).find(".price").css("top","50%");
-    })
+      $(this).find("h1").css("top","50%");
+    }
+  );
+  $scope.showProgram = function(program){
+    if (program == 'a'){
+      $scope.a=!$scope.a;$scope.b=false;$scope.c=false;$scope.d=true;
+    }
+    else if (program == 'b'){
+      $scope.b=!$scope.b;$scope.a=false;$scope.c=false;$scope.d=true;
+    }
+    else if (program == 'c'){
+      $scope.c=!$scope.c;$scope.a=false;$scope.b=false;$scope.d=true;
+    }
+    if ($scope.a==false && $scope.b==false && $scope.c==false){
+      $scope.d=false;
+    }
+  }
 }
 function VideosCtrl($scope){
   window.scrollTo(0,0);

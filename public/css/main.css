@@ -49,7 +49,7 @@ button{
   background:transparent;
   font-size:16px;
   font-weight:bolder;
-  padding:20px 25px;
+  padding:10px 25px;
   border:solid #3FC380 3px;
   cursor:pointer;
 }
@@ -304,33 +304,42 @@ nav:after{
   background:#f5f5f5;
   z-index: -1;
 }
-#brand,#menu,#menu li,#menu li a,#navContact{
+#menu,#menu li,#menu li a,#navContact{
   display:inline-block;
 }
 #brand{
   float:left;
+  display:table;
   width:172px;
+  height:77px;
   border-right:solid 1px;
 }
-#brand h1 {
+#brand a {
+  display:table-cell;
+  vertical-align:middle;
   padding:0 10px;
 }
-#brand h1, #menu li, #menu li a{
+#menu li, #menu li a{
   line-height:75px;
   font-weight:700;
 }
 #navContact{
   float:right;
   height:77px;
-  padding:10px 20px 0 20px;
+  display:table;
+  padding:0 20px;
   border-left:solid 1px
 }
-#navContact h2:first-child{
-  color:#333;
+#navContact div{
+  display:table-cell;
+  vertical-align: middle;
 }
 #navContact .smallest{
+  line-height:15px;
   margin:0;
-  color:#3FC380;
+}
+#navContact h2{
+  line-height:22px;
 }
 #main{
   background:#f5f5f5;
@@ -498,7 +507,7 @@ footer .credit{
   padding-left:40px;
 }
 /*
- *  About Page
+ *  About & Philosophy Page
  */
 #bio, #philosophy{
   text-align:left;
@@ -519,11 +528,28 @@ footer .credit{
 #bio .smallest{
   margin-top:0;
 }
-.portrait{
+.portraitLeft{
   width:50%;
   float:left;
   margin-right:30px;
   border-right:solid #eee 1px;
+}
+.portraitRight{
+  width:50%;
+  float:right;
+  margin-left:30px;
+  border-left:solid #eee 1px;
+}
+#bio .panel .portraitLeft .panel{
+  padding: 0 30px 0 0;
+}
+#bio .panel .portraitRight .panel{
+  padding: 0 0 0 30px;
+}
+
+#philosophy .portraitLeft{
+  height:380px;
+  overflow: hidden;
 }
 #bio button, #philosophy button{
   display:block;
@@ -562,7 +588,7 @@ footer .credit{
 #video .panelContainer:hover:before{
   opacity:0.4;
 }
-#video .viewButton, #services .price{
+#video .viewButton, #contact .contactInfo .grid-half:last-child .panel span{
   color:white;
   border: solid 2px;
   border-radius:100px;
@@ -582,14 +608,14 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#video .viewButton:hover{
+#video .viewButton:hover, #contact .contactInfo .grid-half:last-child .panel span:hover{
   color:#3FC380;
 }
 #video span{
   font-size:40px;
   padding:5px 3px 5px 7px;
 }
-#video .panelContainer h2, #video .panelContainer p, #services .panel:first-child p{
+#video .panelContainer h2, #video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   color:white;
   position:absolute;
   bottom:20%;
@@ -605,22 +631,80 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#video .panelContainer p, #services .panel:first-child p{
+#video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   bottom:5%;
 }
 /*
  *  Services Page
  */
-#services .panelContainer{
-  border-radius:5px;
+#services .grid-third .panelContainer{
+  border-radius:0 0 5px 5px;
   padding:0;
   overflow: hidden;
+}
+#services > .panelContainer{
+  border-radius: 5px 5px 0 0;
+  margin-bottom:20px;
+  padding:0;
+  overflow:hidden;
+}
+#services .grid-third h1{
+  color:white;
+  position:absolute;
+  top:50%;
+  left:50%;
+  border-top:solid;
+  border-bottom:solid;
+  opacity:1;
+  cursor:pointer;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#services > .panelContainer li{
+  display:inline-block;
+  list-style: disc;
+  width:18%;
+  vertical-align: top;
 }
 #services .panel{
   padding:30px 0;
   margin:0 20px;
 }
-#services .panel:first-child{
+#services > .panelContainer .panel:first-child{
+  display:inline-block;
+  float:left;
+  width:25%;
+  height:100%;
+  padding:0 20px 0 0;
+  border-bottom:none;
+  border-right:solid #eee 1px;
+}
+#services > .panelContainer .panel:last-child{
+  float:right;
+  text-align:center;
+}
+#services > .panelContainer .panel:first-child li{
+  width:100%;
+}
+#services > .panelContainer .panel:first-child li:first-child{
+  border-bottom:solid 1px #eee;
+  margin-top:20px;
+}
+#services > .panelContainer .panel:first-child li:last-child{
+  border-top:solid 1px #eee;
+  margin-bottom:20px;
+}
+#services > .panelContainer .panel{
+  text-align:left;
+}
+#services .grid-third .panel:first-child{
   padding:0;
   margin:0;
   position:relative;
@@ -628,9 +712,11 @@ footer .credit{
   overflow:hidden;
   cursor:pointer;
 }
-#services .price span{
+#services .price{
   font-size:25px;
-  line-height: 56px;
+  float:right;
+  border:solid 2px;
+  padding:4px 10px;
 }
 #services .panel ul{
   text-align:left;
@@ -640,7 +726,7 @@ footer .credit{
 #services li ul{
   list-style:square !important;
 }
-#services .panelContainer .panel:first-child:before{
+#services .grid-third .panelContainer .panel:first-child:before, #contact .contactInfo .grid-half:last-child .panel:before{
   position:absolute;
   width:100%;
   height:100%;
@@ -656,20 +742,12 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#services .panel:first-child:hover:before{
+#services .grid-third .panel:first-child:hover:before, #contact .contactInfo .grid-half:last-child .panel:hover:before{
   opacity:0.7;
 }
 /*
  *  Contact Page
  */
-#contact .thumbnail{
-  height:44px;
-  display:inline-block;
-  vertical-align:middle;
-  font-size:44px;
-  overflow:hidden;
-  float:left;
-}
 #contact .container{
   padding-top:0;
 }
@@ -678,17 +756,30 @@ footer .credit{
   width:100%;
   content:"";
 }
-#contact .grid-half{
-  margin-top:0;
-}
-#contact .contactInfo{
-  padding:0 0 0 40px;
-  text-align:left;
-  display:inline-block;
+#contact .contactInfo .grid-half{
+  width:50%;
+  height:100%;
+  margin:0;
+  float:none;
   vertical-align:middle;
 }
-#contact .contactInfo h1{
-  line-height:44px;
+#contact .contactInfo .grid-half .panel{
+  height:100%;
+}
+#contact .contactInfo .grid-half:last-child .panel{
+  position:relative;
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow:hidden;
+}
+/*#contact .grid-half:last-child .panel img{
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}*/
+#contact .contactInfo{
+  height:150px;
+  margin-bottom:20px
 }
 #contact form .formInput{
   margin-bottom:0;
@@ -697,7 +788,7 @@ footer .credit{
   text-align:left;
   line-height:1.5em;
 }
-#contact textarea{
+textarea{
   width:100%;
   max-width:100%;
   height:300px;
@@ -739,9 +830,9 @@ footer .credit{
   background-attachment:fixed;
 }
 #aboutMeEnd{
-  background:url('../philosophy.jpg');
+  background:url('../Maysie3.jpg');
   background-size:cover;
-  background-position:center center;
+  background-position:top right;
   background-attachment:fixed;
 }
 #videoEnd{
@@ -757,13 +848,13 @@ footer .credit{
   background-attachment:fixed;
 }
 #servicesEnd{
-  background:url('../homeCover.JPG');
+  background:url('../Maysie4.JPG');
   background-size:cover;
-  background-position:center left;
+  background-position:center center;
   background-attachment:fixed;
 }
 #contactEnd{
-  background:url('../dogPortrait.jpg');
+  background:url('../Bailey1.jpg');
   background-size:cover;
   background-position:center center;
   background-attachment:fixed;

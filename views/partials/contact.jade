@@ -1,57 +1,68 @@
 section.container#contact
-	header
-		h1.title Contact Me
-		p.small Hi, I'm Alyssa Hosbach!
-		p.small You can reach me by phone, Email, or leave a message below.
 	div.container
-		div.grid-half
-			div.panel
-				div.thumbnail
-					span.glyphicon.glyphicon-earphone
-				div.contactInfo
+		header
+			h1.title Contact Me
+			p.small Hi, I'm Alyssa Hosbach!
+			p.small You can reach me by phone, email, or leaving a message below.
+		div(style="height:150px;margin-bottom:20px").contactInfo
+			div.grid-half
+				div.panel
 					h2 Phone
+					p.smallest Give us a call.
 					a(href="tel:1-805-302-4691"): p (805)302-4691
-		div.grid-half
-			div.panel
-				div.thumbnail
-					span.glyphicon.glyphicon-envelope
-				div.contactInfo
+			div.grid-half
+				div.panel
+					img(src="dogPhone2.jpg",style)
+					h2: a(href="tel:1-805-302-4691"): span(style="padding:20px").glyphicon.glyphicon-earphone
+					p.hideBottom Call Now
+		div(style="height:150px").contactInfo
+			div.grid-half
+				div.panel
 					h2 Email
+					p.smallest Send us an email.
 					a(href="mailto:dancingtailstraining@gmail.com"): p dancingtailstraining@gmail.com
-	form.panelContainer
-		div
 			div.grid-half
-				div.panelContainer.formInput
-					div.panel
-						h1 Parent Info
-					div.panel
-						p Name:
-						input(placeholder="Alyssa Hosbach")
-					div.panel
-						p Phone:
-						input(placeholder="(555)555-5555")
-					div.panel
-						p Email:
-						input(placeholder="dancing@tails.com")
+				div.panel
+					img(src="dogEmail2.jpg",style)
+					h2: a(href="mailto:dancingtailstraining@gmail.com"): span(style="padding:20px").glyphicon.glyphicon-envelope
+					p.hideBottom Send Email
+	div.container
+		form.panelContainer
+			div
+				div.grid-half
+					div.panelContainer.formInput
+						div.panel
+							h1 Parent Info
+						div.panel
+							p Name:
+							input(placeholder="Alyssa Hosbach")
+						div.panel
+							p Phone:
+							input(placeholder="(555)555-5555")
+						div.panel
+							p Email:
+							input(placeholder="dancing@tails.com")
 
-			div.grid-half
-				div.panelContainer.formInput
-					div.panel
-						h1 Pup Info
-					div.panel
-						p Name:
-						input(placeholder="Puppy")
-					div.panel
-						p Breed
-						input(placeholder="Puppy mix")
-					div.panel
-						p Age
-						input(placeholder="2 months")
-		div.panelContainer
-			div.panel
-				p Inquiry
-				textarea
-			div.panel
-				button Message
+				div.grid-half
+					div.panelContainer.formInput
+						div.panel
+							h1 Pup Info
+						div.panel
+							p Name:
+							input(placeholder="Puppy")
+						div.panel
+							p Breed
+							input(placeholder="Puppy mix")
+						div.panel
+							p Age
+							input(placeholder="2 months")
+			div.panelContainer
+				div.panel
+					p Inquiry
+					textarea
+				div.panel
+					button Message
 section.pageEnd
 	figure.banner#contactEnd
+		div
+			img(src="logoTextWhite.png")
