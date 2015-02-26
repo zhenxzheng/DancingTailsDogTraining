@@ -31,6 +31,9 @@ function ServicesCtrl($scope){
     }
   );
   $scope.showProgram = function(program){
+    if($("body").scrollTop() > $("#consultation").offset().top-80){
+      $("html body").animate({scrollTop:$("#consultation").offset().top-80}, '500', 'swing');
+    }
     if (program == 'a'){
       $scope.a=!$scope.a;$scope.b=false;$scope.c=false;$scope.d=true;
     }
