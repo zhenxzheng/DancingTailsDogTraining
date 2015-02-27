@@ -516,6 +516,13 @@ footer .credit{
   margin-bottom:25px;
   line-height: 22px;
 }
+#bio ul{
+  padding-left:20px;
+}
+#bio li i, #bio li img{
+  margin-left:-20px;
+  padding-right:5px;
+}
 #bio p:last-child, #philosophy p:last-child{
   margin-bottom:0;
 }
