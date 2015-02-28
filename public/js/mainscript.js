@@ -2,7 +2,13 @@
 
 var $isMobile,
 	windowHeight,
-	windowWidth;
+	windowWidth,
+  preload;
+
+//pages to keep track of if high resolution loaded
+var home,services,philosophy,video,about,contact;
+
+home=services=philosophy=video=about=contact=true;
 
 $(document).ready(function(){
 	$isMobile=navigator.userAgent.match(/(Phone|iPod|iPad|Android|BlackBerry)/);
@@ -14,54 +20,32 @@ $(document).ready(function(){
   $(window).scroll(function(){
       headerScroll();
   })
+  $('html body').css("opacity",1);
 })
 
 function layoutResize(){
+  windowWidth=$(window).width();
+  windowHeight=$(window).height();
 	$('#homeCover').css('height',windowHeight);
+  $('.pageEnd').css('height',windowHeight/2);
+  if (windowWidth >= 2000){
+    loadHighRes();
+    window.setTimeout(function(){
+      if (windowWidth >= 3000){
+        loadHighRes();
+      }
+    },500);
+  }
 }
 
 function windowResize(){
 	$(window).resize(function(){
 		if($(window).width() != windowWidth || $(window).height() != windowHeight ){
-			// mainResize();
 			layoutResize();
 		}
 	});
 }
-/*
- *	Video
- */
 
-function setVideoID(id){
-	videoID = id;
-}
-
-var player, videoID, iframeLoaded = false;
-function onYouTubeIframeAPIReady() {
-  console.log("API ready")
-  player = new YT.Player('player', {
-    height: '500',
-    width: '840',
-    videoId: videoID,
-    events: {
-      'onReady': onPlayerReady,
-      // 'onStateChange': onPlayerStateChange
-    }
-  });
-}
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
-var done = false;
-function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
-  }
-}
-function stopVideo() {
-  player.stopVideo();
-}
 
 function hoverEffect(parent, child){
 	$(parent).hover(
@@ -91,10 +75,102 @@ function logoAnimation(){
 
 function headerScroll(){
   
-  // if ($(window).scrollTop() < windowHeight){
-  //   $("nav").addClass("seeThrough");
-  // }
-  // else{
-  //   $("nav").removeClass("seeThrough");
-  // }
+//   if ($(window).scrollTop() < windowHeight){
+//     $("nav").addClass("seeThrough").css("width","100%");
+//   }
+//   else{
+//     $("nav").removeClass("seeThrough").css("width","840px");
+//   }
+ }
+
+function loadingHome(){
+  var homeCover;
+  var url = "../homeCover-standard.jpg";
+  homeCover= new Image();
+  homeCover.src=url;
+  var bgUrl="url('"+url+"')";
+  homeCover.onload = function(){
+    $("#homeCover").css("background-image",bgUrl );
+    $('html body').css("opacity",1);
+    logoAnimation();
+  }
+}
+
+function loadHighRes(){
+      if (preload != null) preload.onload=null;
+      preload = new Array();
+      var bg = $("#main").find(".bg, img");
+      var i;
+      for (i=0; i<bg.length;i++){
+        var imageUrl;
+        if ($(bg[i]).attr('src')===undefined){
+          var imageUrl = $(bg[i]).attr("style").match(/background-image.+/)[0]; //background image 
+          var pattern = /.+\/([^\/'");]+)/; //regex for image name
+          imageUrl = pattern.exec(imageUrl); //image name
+          imageUrl = "../"+imageUrl[1];
+        }
+        else{
+          imageUrl = $(bg[i]).attr('src')
+        }
+        var res = imageUrl.match(/-.+\./); //resolution level
+        if (res && res[0].substring(1,res[0].length-1) != "high"){
+          if (res[0].substring(1,res[0].length-1) == "low"){
+            imageUrl = imageUrl.replace(/-.+\./, "-standard.");
+          }
+          else if(res[0].substring(1,res[0].length-1) == "standard"){
+            imageUrl = imageUrl.replace(/-.+\./,"-high.");
+          }
+        }
+        preloading(bg[i], imageUrl, i);
+      }
+}
+function preloading(selector, url, i){
+  preload[i]= new Image();
+  preload[i].src=url;
+  if ($(selector).attr('src')===undefined){
+    var bgUrl="url('"+url+"')";
+    preload[i].onload = function(){
+      $(selector).css("background-image",bgUrl );
+    }
+  }
+  else{
+    preload[i].onload=function(){
+      $(selector).attr('src', url);
+    }
+  }
+}
+
+/*
+ *  Video
+ */
+
+function setVideoID(id){
+  videoID = id;
+}
+
+var player, videoID, iframeLoaded = false;
+function onYouTubeIframeAPIReady() {
+  console.log("API ready")
+  player = new YT.Player('player', {
+    height: '500',
+    width: '840',
+    videoId: videoID,
+    events: {
+      'onReady': onPlayerReady,
+      // 'onStateChange': onPlayerStateChange
+    }
+  });
+}
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+var done = false;
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    setTimeout(stopVideo, 6000);
+    done = true;
+  }
+}
+function stopVideo() {
+  player.stopVideo();
 }

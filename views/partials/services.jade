@@ -7,9 +7,9 @@ section.container#services
 	div.panelContainer
 		div.panel#consultation
 			ul
-				li: p.small Each consult costs $100 and include:
+				li: p.small Each private consult includes:
 				li: p.smallest A pre-consult Phone Call
-				li: p.smallest A 60-minute in-home or on-location consult
+				li: p.smallest A 90-minute in-home or on-location consult
 				li: p.smallest A detailed follow-up Email from our meeting inclucding a summary of the consult and key recommendation
 				li: p.smallest.italic All programs include all consultation features.
 		div.panel(ng-show="a")
@@ -63,31 +63,27 @@ section.container#services
 	div
 		div.grid-third
 			div.panelContainer
-				div.panel(ng-click="showProgram('a')")
+				div.panel#package1(ng-click="showProgram('a')",style="background-image:url('../dog1-low.jpg')").bg
 					h1 Puppy
 					p.hideBottom
 						span(ng-hide="a") View Details
 						span(ng-show="a") Hide Details
-					img(src="dog1.jpg")
 		div.grid-third
 			div.panelContainer
-				div.panel(ng-click="showProgram('b')")
+				div.panel#package2(ng-click="showProgram('b')",style="background-image:url('../Ollie-low.jpg')").bg
 					h1 Basic
 					p.hideBottom
 						span(ng-hide="b") View Details
 						span(ng-show="b") Hide Details
-					img(src="dog2.jpg")
 		div.grid-third
 			div.panelContainer
-				div.panel(ng-click="showProgram('c')")
+				div.panel#package3(ng-click="showProgram('c')",style="background-image:url('../dog3-low.jpg')").bg
 					h1 Behavior
 					p.hideBottom
 						span(ng-hide="c") View Details
-						span(ng-show="c") Hide Details
-					img(src="dog3.jpg")
-	
+						span(ng-show="c") Hide Details	
 section.pageEnd
-	figure.banner#servicesEnd
+	figure.banner#servicesEnd(style="background-image:url('../Maysie4-standard.jpg')").bg
 		div
 			h1 Have Questions | Want More Details?
 			p.small Reach out to me & start training your pooch today

@@ -1,71 +1,34 @@
-section#homeCover
+section#homeCover.bg(style="background-image:url('../homeCover-low.jpg')")
 	figure#homeLogo
-		img(src="DTDTLogo.png")
-		img(src="logoText.png")#logoText
-		img(src="logoDog1.png")#logoDog1
-		img(src="logoDog2.png")#logoDog2
-		img(src="logoDog3.png")#logoDog3
+		img(src="logoText-low.png")#logoText
+		img(src="logoDog1-low.png")#logoDog1
+		img(src="logoDog2-low.png")#logoDog2
+		img(src="logoDog3-low.png")#logoDog3
 section#customer
 	h1.title Customer Testimonials
 	p.small check out what people have to say about us.
 	div.grid-half
-		div.panelContainer
+		div.panelContainer(ng-repeat="review in reviews")
 			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book..."
-			div.panel
-				figure.thumbnail
-					img(src="dog1.jpg")
-				div.customerInfo
-					p.bold.dark Penelope
-					p.italic Shar Pei mix
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+				p.italic "{{review.text}}"
 			div.panel
 				figure.thumbnail
-					img(src="dog2.jpg")
+					img(src="{{review.image}}")
 				div.customerInfo
-					p.bold.dark Pookie
-					p.italic Maltese mix
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text .."
-			div.panel
-				figure.thumbnail
-					img(src="dog3.jpg")
-				div.customerInfo
-					p.bold.dark 
-					p.italic Shar Pei mix
+					p.bold.dark {{review.author}}
+					p.italic {{review.location}}
 	div.grid-half
-		div.panelContainer
+		div.panelContainer(ng-repeat="review in reviews")
 			div.panel
-				p.italic "Lorem Ipsum is simply ."
-			div.panel
-				figure.thumbnail
-					img(src="dog4.jpg")
-				div.customerInfo
-					p.bold.dark Hachi
-					p.italic Husky mix
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+				p.italic "{{review.text}}"
 			div.panel
 				figure.thumbnail
-					img(src="sharpei.jpg")
+					img(src="{{review.image}}")
 				div.customerInfo
-					p.bold.dark Stanlee
-					p.italic lil Pug
-		div.panelContainer
-			div.panel
-				p.italic "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown alley of type and scrambled it to make a type specimen book..."
-			div.panel
-				figure.thumbnail
-					img(src="dog.jpg")
-				div.customerInfo
-					p.bold.dark Mace
-					p.italic Maltese mix
+					p.bold.dark {{review.author}}
+					p.italic {{review.location}}
 section.pageEnd
-	figure.banner#homeEnd
+	figure.banner#homeEnd(style="background-image:url('../Hubert1-standard.jpg')").bg
 		div
 			h1 Finding the Right Program
 			p.small Read about our differnt training progams and see which one fits your pup the best

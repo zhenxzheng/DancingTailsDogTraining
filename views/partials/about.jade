@@ -4,7 +4,7 @@ section.container#bio
 			h1 Let me tell you a little bit about myself...
 		div.portraitLeft
 			div.panel
-				img(src="DancingTails_AboutMe1.jpg",style="max-width:100%")
+				img(src="Alyssa-low.jpg",style="max-width:100%")
 			div.panel
 				ul
 					li.smallest 
@@ -27,7 +27,7 @@ section.container#bio
 	div.panelContainer
 		div.panel
 			h1 I invite you to learn more about my motivation for becoming a dog trainer...
-		div.panel
+		div.panel(style="text-align:center")
 			button(ng-click="ReadMore=!ReadMore")
 				span(ng-hide="ReadMore") More	
 					span.glyphicon.glyphicon-chevron-down
@@ -50,14 +50,13 @@ section.container#bio
 				a(href="/contact") contact me
 				| .
 		div.panel
-			img(src="DancingTails_AboutMe3.jpg")
+			img(src="Alyssa2-low.jpg")
 
 
 
 section.pageEnd
-	figure.banner#aboutMeEnd
+	figure.banner#aboutMeEnd(style="background-image:url('../Maysie3-standard.jpg')").bg
 		div
 			h1 Training Philosophy
-			p.small Training your pups comes in different approaches and tatics. Make sure you choose one that is comfortable for you and your pal.
+			p.small Learn about the humane, science-based, and effective methods I use
 			a(href="/philosophy"): button Learn More
-script(src='/js/mainscript.js')

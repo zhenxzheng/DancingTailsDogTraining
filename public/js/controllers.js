@@ -1,25 +1,32 @@
 'use strict';
 
 /* Controllers */
-function HomeCtrl($scope){
+function HomeCtrl($scope, $http){
   window.scrollTo(0,0);
+  loadingHome();
   layoutResize();
-  logoAnimation();
-  
+  $http.get('api/reviews')
+    .success(function(data, status, headers, config){
+      $scope.reviews = data.reviews;
+    });
 }
 function AboutCtrl($scope){
   window.scrollTo(0,0);
   $scope.ReadMore=false;
+  layoutResize();
 }
 function PhilosophyCtrl($scope){
   window.scrollTo(0,0);
+  layoutResize();
 }
 function ContactCtrl($scope){
   window.scrollTo(0,0);
-  hoverEffect("#contact .grid-half:last-child .panel","p");
+  layoutResize();
+  hoverEffect("#contact #contactInfo .grid-half:last-child .panel","p");
 }
 function ServicesCtrl($scope){
   window.scrollTo(0,0);
+  layoutResize();
   $scope.a=$scope.b=$scope.c=$scope.d=false;
   hoverEffect("#services .grid-third .panel:first-child", "p");
   $("#services .grid-third .panel:first-child").hover(
@@ -51,6 +58,7 @@ function ServicesCtrl($scope){
 function VideosCtrl($scope){
   window.scrollTo(0,0);
   hoverEffect(".panelContainer", "p");
+  layoutResize();
   $scope.playVideo = function (id){
     $("#playerLayer").removeClass("invisible").css("opacity",1);
     if(iframeLoaded) player.loadVideoById(id);

@@ -16,6 +16,7 @@ body{
   text-align:center;
   font-family:"Gotham A", "Gotham B", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#777;
+  opacity:0;
 }
 h1,h2,p,li{
   line-height:1.1;
@@ -45,6 +46,7 @@ h2{
   font-size:1.25em;
 }
 button{
+  height:44px;
   color:#3FC380;
   background:transparent;
   font-size:16px;
@@ -64,7 +66,7 @@ header {
 }
 input{
   width:100%;
-  line-height:44px;
+  height:48px;
   padding:0 20px;
 }
 .glyphicon{
@@ -319,6 +321,9 @@ nav:after{
   vertical-align:middle;
   padding:0 10px;
 }
+#brand img{
+  width:100%;
+}
 #menu li, #menu li a{
   line-height:75px;
   font-weight:700;
@@ -421,7 +426,6 @@ footer .credit{
  */
 #homeCover{
   width:100%;
-  background:url('../homeCover.JPG');
   background-size:cover;
   background-position:bottom left;
   background-attachment:fixed;
@@ -461,13 +465,14 @@ footer .credit{
 
 #homeLogo img:first-child{
   position:relative;
-  visibility:hidden;
+  top:-120px;
 }
 #logoText,#logoDog1,#logoDog2,#logoDog3{
   position:absolute;
   opacity:0;
   top:-5%;
   left:0;
+  width:100%;
   -ms-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -559,8 +564,6 @@ footer .credit{
   overflow: hidden;
 }
 #bio button, #philosophy button{
-  display:block;
-  margin:auto;
   color:#1F3A93;
   border-color:#1F3A93;
 }
@@ -568,7 +571,24 @@ footer .credit{
   background:#1F3A93;
   color:white;
 }
-
+.list{
+  text-align:left;
+}
+.listItem{
+  margin-bottom:20px;
+  padding-left:5px;
+  border-left:solid 1px #777;
+}
+.listItem:last-child{
+  margin-bottom:0;
+}
+.listItem a{
+  text-decoration: none;
+  color:#446CB3;
+}
+.listItem p:last-child{
+  color:#999;
+}
 /*
  *  Video Page
  */
@@ -718,6 +738,8 @@ footer .credit{
   height:150px;
   overflow:hidden;
   cursor:pointer;
+  background-size:cover;
+  background-position:center center;
 }
 #services .price{
   font-size:25px;
@@ -831,37 +853,37 @@ textarea{
  *  End banner
  */
 #homeEnd{
-  background:url('../DancingTails_HomePageScrollImage_Opt1.jpg');
+  
   background-size:cover;
   background-position:bottom center;
   background-attachment:fixed;
 }
 #aboutMeEnd{
-  background:url('../Maysie3.jpg');
+
   background-size:cover;
   background-position:top right;
   background-attachment:fixed;
 }
 #videoEnd{
-  background:url('../DancingTails_AboutMe3.jpg');
+
   background-size:cover;
   background-position:top center;
   background-attachment:fixed;
 }
 #philosophyEnd{
-  background:url('../DancingTails_HomePageScrollImage_Opt2.jpg');
+
   background-size:cover;
   background-position:center center;
   background-attachment:fixed;
 }
 #servicesEnd{
-  background:url('../Maysie4.JPG');
+
   background-size:cover;
   background-position:center center;
   background-attachment:fixed;
 }
 #contactEnd{
-  background:url('../Bailey1.jpg');
+  
   background-size:cover;
   background-position:center center;
   background-attachment:fixed;
