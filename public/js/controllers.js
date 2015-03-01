@@ -22,7 +22,7 @@ function PhilosophyCtrl($scope){
 function ContactCtrl($scope){
   window.scrollTo(0,0);
   layoutResize();
-  hoverEffect("#contact #contactInfo .grid-half:last-child .panel","p");
+  hoverEffect("#contact .contactInfo .grid-half:last-child .panel","p");
 }
 function ServicesCtrl($scope){
   window.scrollTo(0,0);
