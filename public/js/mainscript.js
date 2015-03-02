@@ -28,6 +28,7 @@ function layoutResize(){
   windowHeight=$(window).height();
 	$('#homeCover').css('height',windowHeight);
   $('.pageEnd').css('height',windowHeight/2);
+  $('#footerSpace').css('height',$('footer').height());
   if (windowWidth >= 2000){
     loadHighRes();
     window.setTimeout(function(){
