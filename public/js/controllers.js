@@ -41,8 +41,14 @@ function ServicesCtrl($scope){
     }
   );
   $(".price").click(function(){
-    $(".price").removeClass("active");
-    $(this).addClass("active");
+    if ($(this).hasClass("active")){
+      $(".price").removeClass("active");
+    }
+    else{
+      $(".price").removeClass("active");
+      $(this).addClass("active");
+    }
+    
   })
   $scope.showDetails = function(session){
     if($("body").scrollTop() > $("#consultation").offset().top-80){
