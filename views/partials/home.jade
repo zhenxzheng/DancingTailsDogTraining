@@ -15,7 +15,7 @@ section#customer
 				figure.thumbnail
 					img(src="{{review.image}}")
 				div.customerInfo
-					p.bold.dark {{review.author}}
+					p.bold.green {{review.author}}
 					p.italic {{review.location}}
 	div.grid-half
 		div.panelContainer(ng-repeat="review in reviews")
@@ -25,7 +25,7 @@ section#customer
 				figure.thumbnail
 					img(src="{{review.image}}")
 				div.customerInfo
-					p.bold.dark {{review.author}}
+					p.bold.green {{review.author}}
 					p.italic {{review.location}}
 section.pageEnd
 	figure.banner#homeEnd(style="background-image:url('../Hubert1-standard.jpg')").bg

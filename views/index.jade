@@ -3,7 +3,7 @@ extends layout
 block body
   nav.seeThrough.ease
     div#brand
-      a(href='/'): img(src="logoText2.png")
+      a(href='/'): img(src="logoTextWhite-standard.png")
     div#menu
       ul
         li: a(href='/') Home
@@ -15,13 +15,13 @@ block body
     div#navContact
       div
         p.smallest Serving the East Bay Area
-        a(href="tel:1-805-302-4691"): h2 (805) 302-4691
+        h2: a(href="tel:1-805-302-4691") (805) 302-4691
   section#main(ng-view)
   section#footerSpace
 
   footer
       div.grid-third
-        h1 Dancing Tails
+        h1.green Dancing Tails
         aside
           p.bold Contact
           p To acquire more information, please contact Alyssa at 

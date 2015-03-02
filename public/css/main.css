@@ -34,10 +34,26 @@ nav #menu a{
   padding:0 10px;
 }
 nav a{
-  color:#777;
+  color:white;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-nav a:hover{
-  color:#333;
+nav #menu li a:hover{
+  border-top:solid white;
+  border-bottom:solid white;
+  line-height:60px;
+}
+nav #menu li a:active{
+  border-top:solid white;
+  border-bottom:solid white;
+  line-height:40px;
+}
+nav #navContact a:hover{
+  border-bottom:solid white;
+  padding-bottom:5px;
 }
 h1{
   font-size:2.5em;
@@ -60,6 +76,7 @@ button:hover{
   background:#3FC380;
 }
 header {
+  text-align:center;
   width:620px;
   margin:auto;
   margin-bottom:77px;
@@ -68,6 +85,13 @@ input{
   width:100%;
   height:48px;
   padding:0 20px;
+  border:solid 1px #777;
+}
+input:focus, textarea:focus{
+  outline:none;
+  border:solid 2px #41BA73;
+  padding-left:19px;
+  padding-right:19px;
 }
 .glyphicon{
   padding:0;
@@ -146,7 +170,7 @@ input{
 }
 .panel a{
   text-decoration: underline;
-  color:#777;
+  color:#41BA73;
 }
 .thumbnail img{
   height:77px;
@@ -215,6 +239,7 @@ footer .grid-third:last-child{
 }
 .title{
   margin-top:77px;
+  color:#41BA73;
 }
 .small{
   font-size:13px;
@@ -230,6 +255,12 @@ footer .grid-third:last-child{
 }
 .dark{
   color:black;
+}
+.green{
+  color:#41BA73;
+}
+.greenBlue{
+  color:#1BA39C;
 }
 .underline{
   text-decoration: underline;
@@ -275,8 +306,8 @@ nav{
   position:fixed;
   top:0;
   left:50%;
-  color:#777;
-  width:840px;
+  color:white;
+  width:100%;
   height:77px;
   z-index:100;
   border-bottom:solid 1px;
@@ -292,7 +323,7 @@ nav.seeThrough:after{
   width:100%;
   height:100%;
   content:"";
-  background:#f5f5f5;
+  background:#41BA73;
   z-index: -1;
   opacity:0.9;
 }
@@ -303,7 +334,7 @@ nav:after{
   width:100%;
   height:100%;
   content:"";
-  background:#f5f5f5;
+  background:#41BA73;
   z-index: -1;
 }
 #menu,#menu li,#menu li a,#navContact{
@@ -343,7 +374,7 @@ nav:after{
   line-height:15px;
   margin:0;
 }
-#navContact h2{
+#navContact a{
   line-height:22px;
 }
 #main{
@@ -383,6 +414,9 @@ footer p a{
   color:#999;
   text-decoration:underline;
 }
+footer p a:hover{
+  color:#41BA73;
+}
 footer ul{
   list-style:none;
   text-align:left;
@@ -401,6 +435,7 @@ footer ul li a{
   opacity:0.5;
 }
 footer ul li a:hover{
+  color:#41BA73;
   opacity:1;
 }
 footer h1, footer p{
@@ -453,7 +488,7 @@ footer .credit{
   top:0;
   left:0;
   content:"";
-  background:black;
+  background:#41BA73;
   opacity:0.2;
   z-index: -1;
   -ms-transition: all 0.3s ease;
@@ -584,7 +619,7 @@ footer .credit{
 }
 .listItem a{
   text-decoration: none;
-  color:#446CB3;
+  color:#41BA73;
 }
 .listItem p:last-child{
   color:#999;
@@ -669,8 +704,9 @@ footer .credit{
   padding:0;
   overflow: hidden;
 }
-#services > .panelContainer{
+#services #servicesPanel{
   border-radius: 5px 5px 0 0;
+  height:400px;
   margin-bottom:20px;
   padding:0;
   overflow:hidden;
@@ -694,42 +730,86 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#services > .panelContainer li{
-  display:inline-block;
-  list-style: disc;
-  width:18%;
+#services #consultation ul{
+  width:100% !important;
+}
+#servicesPanel figure{
   vertical-align: top;
+  display:inline-block;
+  width:48%;
+}
+#services #servicesPanel .description ul{
+  list-style: disc;
+  vertical-align: top;
+  display:inline-block;
+  width:100%;
+}
+#services #servicesPanel .description{
+  overflow:hidden;
+  height:300px;
+  padding-top:0;
+}
+#services #servicesPanel .description ul.full{
+  list-style: disc;
+  width:40% !important;
+}
+#services #servicesPanel .description .smallest{
+  margin-bottom:10px;
+}
+#services figure{
+  float:right;
+  text-align:center;
+}
+#services figure img{
+
+}
+#services .description .panel{
+  float:right;
+  width:50% !important;
 }
 #services .panel{
   padding:30px 0;
   margin:0 20px;
 }
-#services > .panelContainer .panel:first-child{
+#services #servicesPanel > .panel{
+  float:left;
+  padding:0;
+  margin:0;
+}
+#services #servicesPanel #consultation{
   display:inline-block;
   float:left;
-  width:25%;
+  width:200px;
   height:100%;
   padding:0 20px 0 0;
+  margin:0 20px;
   border-bottom:none;
   border-right:solid #eee 1px;
 }
-#services > .panelContainer .panel:last-child{
+#services #servicesPanel > .panel:last-child{
   float:right;
   text-align:center;
 }
-#services > .panelContainer .panel:first-child li{
+#services #servicesPanel #consultation li{
+  display:inline-block;
   width:100%;
+  vertical-align: top;
 }
-#services > .panelContainer .panel:first-child li:first-child{
+#services #servicesPanel #consultation li:first-child{
   border-bottom:solid 1px #eee;
   margin-top:20px;
 }
-#services > .panelContainer .panel:first-child li:last-child{
+#services #servicesPanel #consultation li:last-child{
   border-top:solid 1px #eee;
   margin-bottom:20px;
 }
-#services > .panelContainer .panel{
+#services #servicesPanel .panel{
   text-align:left;
+  width:560px;
+}
+#services #servicesPanel .panel .panel{
+  width:100%;
+  margin:0;
 }
 #services .grid-third .panel:first-child{
   padding:0;
@@ -742,10 +822,26 @@ footer .credit{
   background-position:center center;
 }
 #services .price{
-  font-size:25px;
+  color:#1BA39C;
+  font-size:18px;
+  text-align:center;
   float:right;
+  width:120px;
   border:solid 2px;
   padding:4px 10px;
+  margin-left:5px;
+  cursor:pointer;
+  position:relative;
+}
+#services .price:hover{
+  background:#1BA39C;
+  color:white;
+  border:solid 2px #1BA39C;
+}
+#services .price.active{
+  background:#1BA39C;
+  color:white;
+  border:solid 2px #1BA39C;
 }
 #services .panel ul{
   text-align:left;
@@ -802,6 +898,9 @@ footer .credit{
   width:100%;
   overflow:hidden;
 }
+#contact .contactInfo a{
+  color:inherit;
+}
 /*#contact .grid-half:last-child .panel img{
   -webkit-filter: blur(5px);
   filter: blur(5px);
@@ -822,6 +921,7 @@ textarea{
   max-width:100%;
   height:300px;
   padding:20px;
+  border:solid 1px #777;
 }
 
 #playerLayer{
