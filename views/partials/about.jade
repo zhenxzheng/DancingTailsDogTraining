@@ -28,7 +28,7 @@ section.container#bio
 		div.panel
 			h1 I invite you to learn more about my motivation for becoming a dog trainer...
 		div.panel(style="text-align:center")
-			button(ng-click="ReadMore=!ReadMore")
+			button(ng-click="ReadMore=!ReadMore").ease
 				span(ng-hide="ReadMore") More	
 					span.glyphicon.glyphicon-chevron-down
 				span(ng-show="ReadMore") Less	
@@ -59,4 +59,4 @@ section.pageEnd
 		div
 			h1 Training Philosophy
 			p.small Learn about the humane, science-based, and effective methods I use
-			a(href="/philosophy"): button Learn More
+			a(href="/philosophy"): button.ease Learn More

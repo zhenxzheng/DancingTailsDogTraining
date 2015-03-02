@@ -25,7 +25,7 @@ block body
         aside
           p.bold Contact
           p To acquire more information, please contact Alyssa at 
-            a(href="mailto:dancingtailstraining@gmail.com") dancingtailstraining@gmail.com
+            a(href="mailto:dancingtailstraining@gmail.com").ease dancingtailstraining@gmail.com
             | .
         aside
           p.bold Location
@@ -34,18 +34,20 @@ block body
         img#ppg(src="PPG.png")
       div.grid-third
         ul
-          li: a(href='/') Home
-          li: a(href='videos') Videos
+          li: a(href='/').ease Home
+          li: a(href='videos').ease Videos
         ul
-          li: a(href='/services') Services
-          li: a(href='/Philosophy') Philosophy
+          li: a(href='/services').ease Services
+          li: a(href='/Philosophy').ease Philosophy
         ul
-          li: a(href='/about') About
-          li: a(href='/contact') Contact
+          li: a(href='/about').ease About
+          li: a(href='/contact').ease Contact
         
         div.credit
           p Handcrafted in San Francisco, California.
-          p Designed & Developed by zxzdesigns ©2015
+          p Designed & Developed by 
+            a(href="http://zxzdesigns.com", target="_blank") zxzdesigns
+            |  ©2015
 
 
   script(src='js/lib/angular/angular.js')

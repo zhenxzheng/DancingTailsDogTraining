@@ -15,19 +15,19 @@ section.container#services
 		div.panel(ng-show="a")
 			div.panel
 				h2(style="color:#1BA39C") Puppies
-					span(ng-click="showDetails('c')").price
+					span(ng-click="showDetails('c')").price.ease
 						| 12-Session
 						br
 						| Package
 						br
 						| $1,250
-					span(ng-click="showDetails('b')").price
+					span(ng-click="showDetails('b')").price.ease
 						| 4-Session
 						br
 						| Package
 						br
 						| $450
-					span(ng-click="showDetails('a')").price
+					span(ng-click="showDetails('a')").price.ease
 						| Single
 						br
 						| Session
@@ -57,19 +57,19 @@ section.container#services
 		div.panel(ng-show="b")
 			div.panel
 				h2(style="color:#1BA39C") Basic
-					span(ng-click="showDetails('c')").price
+					span(ng-click="showDetails('c')").price.ease
 						| 12-Session
 						br
 						| Package
 						br
 						| $1,250
-					span(ng-click="showDetails('b')").price
+					span(ng-click="showDetails('b')").price.ease
 						| 4-Session
 						br
 						| Package
 						br
 						| $450
-					span(ng-click="showDetails('a')").price
+					span(ng-click="showDetails('a')").price.ease
 						| Single
 						br
 						| Session
@@ -103,19 +103,19 @@ section.container#services
 		div.panel(ng-show="c")
 			div.panel
 				h2(style="color:#1BA39C") Behavior
-					span(ng-click="showDetails('c')").price
+					span(ng-click="showDetails('c')").price.ease
 						| 12-Session
 						br
 						| Package
 						br
 						| $1,250
-					span(ng-click="showDetails('b')").price
+					span(ng-click="showDetails('b')").price.ease
 						| 4-Session
 						br
 						| Package
 						br
 						| $450
-					span(ng-click="showDetails('a')").price
+					span(ng-click="showDetails('a')").price.ease
 						| Single
 						br
 						| Session
@@ -179,4 +179,4 @@ section.pageEnd
 		div
 			h1 Have Questions | Want More Details?
 			p.small Reach out to me & start training your pooch today
-			a(href="/contact"): button Contact Me
+			a(href="/contact"): button.ease Contact Me

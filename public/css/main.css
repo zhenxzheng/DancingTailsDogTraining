@@ -278,11 +278,11 @@ footer .grid-third:last-child{
   top:0 !important;
 }
 .ease{
-  -ms-transition: all 0.8s ease;
-  -webkit-transition: all 0.8s ease;
-  -moz-transition: all 0.8s ease;
-  -o-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -ms-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .easein{
   -ms-transition: all 0.8s ease-in;
@@ -597,14 +597,6 @@ footer .credit{
 #philosophy .portraitLeft{
   height:380px;
   overflow: hidden;
-}
-#bio button, #philosophy button{
-  color:#1F3A93;
-  border-color:#1F3A93;
-}
-#bio button:hover, #philosophy button:hover{
-  background:#1F3A93;
-  color:white;
 }
 .list{
   text-align:left;
