@@ -5,7 +5,6 @@ var $isMobile,
 	windowWidth,
   preload;
 
-//pages to keep track of if high resolution loaded
 var home,services,philosophy,video,about,contact;
 
 home=services=philosophy=video=about=contact=true;
@@ -28,7 +27,7 @@ function layoutResize(){
   windowHeight=$(window).height();
 	$('#homeCover').css('height',windowHeight);
   $('.pageEnd').css('height',windowHeight/2);
-  $('#footerSpace').css('height',$('footer').height());
+  $('#footerSpace').css('height',$('footer').height()+40);
   if (windowWidth >= 2000){
     loadHighRes();
     window.setTimeout(function(){
@@ -75,13 +74,12 @@ function logoAnimation(){
 }
 
 function headerScroll(){
-  
-//   if ($(window).scrollTop() < windowHeight){
-//     $("nav").addClass("seeThrough").css("width","100%");
-//   }
-//   else{
-//     $("nav").removeClass("seeThrough").css("width","840px");
-//   }
+/*  if ($(window).scrollTop() < windowHeight){
+    $("nav").addClass("seeThrough").css("width","100%");
+  }
+  else{
+    $("nav").removeClass("seeThrough").css("width","840px");
+  }*/
  }
 
 function loadingHome(){
@@ -105,15 +103,15 @@ function loadHighRes(){
       for (i=0; i<bg.length;i++){
         var imageUrl;
         if ($(bg[i]).attr('src')===undefined){
-          var imageUrl = $(bg[i]).attr("style").match(/background-image.+/)[0]; //background image 
-          var pattern = /.+\/([^\/'");]+)/; //regex for image name
-          imageUrl = pattern.exec(imageUrl); //image name
+          var imageUrl = $(bg[i]).attr("style").match(/background-image.+/)[0];
+          var pattern = /.+\/([^\/'");]+)/;
+          imageUrl = pattern.exec(imageUrl);
           imageUrl = "../"+imageUrl[1];
         }
         else{
           imageUrl = $(bg[i]).attr('src')
         }
-        var res = imageUrl.match(/-.+\./); //resolution level
+        var res = imageUrl.match(/-.+\./);
         if (res && res[0].substring(1,res[0].length-1) != "high"){
           if (res[0].substring(1,res[0].length-1) == "low"){
             imageUrl = imageUrl.replace(/-.+\./, "-standard.");
@@ -158,7 +156,6 @@ function onYouTubeIframeAPIReady() {
     videoId: videoID,
     events: {
       'onReady': onPlayerReady,
-      // 'onStateChange': onPlayerStateChange
     }
   });
 }

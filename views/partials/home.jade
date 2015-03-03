@@ -8,7 +8,7 @@ section#customer
 	h1.title Customer Testimonials
 	p.small check out what people have to say about us.
 	div.grid-half
-		div.panelContainer(ng-repeat="review in reviews")
+		div.panelContainer(ng-repeat="review in reviews1")
 			div.panel
 				p.italic "{{review.text}}"
 			div.panel
@@ -18,7 +18,7 @@ section#customer
 					p.bold.green {{review.author}}
 					p.italic {{review.location}}
 	div.grid-half
-		div.panelContainer(ng-repeat="review in reviews")
+		div.panelContainer(ng-repeat="review in reviews2")
 			div.panel
 				p.italic "{{review.text}}"
 			div.panel

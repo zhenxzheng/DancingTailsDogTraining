@@ -7,7 +7,16 @@ function HomeCtrl($scope, $http){
   layoutResize();
   $http.get('api/reviews')
     .success(function(data, status, headers, config){
-      $scope.reviews = data.reviews;
+      $scope.reviews1=[];
+      $scope.reviews2=[];
+      for(var i=0;i<data.reviews.length;i++){
+        if(i<data.reviews.length/2){
+          $scope.reviews1.push(data.reviews[i]);
+        }
+        else{
+          $scope.reviews2.push(data.reviews[i]);
+        }
+      }
     });
 }
 function AboutCtrl($scope){
