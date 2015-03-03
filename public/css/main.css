@@ -547,11 +547,25 @@ footer .credit{
   line-height: 22px;
 }
 #bio ul{
-  padding-left:20px;
+  padding-left:33px;
 }
-#bio li i, #bio li img{
+#bio ul li{
+  position:relative;
+}
+/*#bio li i, #bio li img{
   margin-left:-20px;
   padding-right:5px;
+}*/
+#bio .listIcon{
+  font-size:18px;
+  width:26px;
+  position:absolute;
+  top:50%;
+  left:-20px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 #bio p:last-child, #philosophy p:last-child{
   margin-bottom:0;
