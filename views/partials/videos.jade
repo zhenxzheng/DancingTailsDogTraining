@@ -11,7 +11,43 @@ section#video.container
 		div(style="float:right")
 			a(href="https://www.youtube.com/channel/UCsM9t3PX5wriPBHigH9intw/videos",target="_blank")
 				img(src="http://www.youtube.com/yt/brand/media/image/YouTube-logo-dark.png")#youtubeLogo
-	div(ng-repeat="video in videos", ng-init="hoverEffect()" style="text-align:left")
+	div(ng-repeat="video in videos", ng-init="hoverEffect()", style="text-align:left")
+		div.panelContainer(ng-show="$index%5==0", style="height:400px;background-image:url({{videos[$index].snippet.thumbnails.high.url}})")
+			div.viewButton(ng-click="playVideo(videos[$index].snippet.resourceId.videoId)")
+						svg(version="1.1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",width="54px",height="54px",x="0px",y="0px",viewBox="0 0 54 54",enable-background="new 0 0 54 54",xml:space="preserve")
+							path(fill="#ffffff",d="M27.1,4c12.7,0,23,10.3,23,23s-10.3,23-23,23s-23-10.3-23-23S14.4,4,27.1,4 M27.1,2c-13.8,0-25,11.2-25,25 s11.2,25,25,25s25-11.2,25-25S40.9,2,27.1,2L27.1,2z").ease
+							polygon(fill="none",stroke="#ffffff",stroke-width="2",stroke-linejoin="round",stroke-miterlimit="10",points="20.1,18 20.1,36 38.1,27").ease
+			h2 {{videos[$index].snippet.title}}
+		div(ng-show="$index%5==0")
+			div.grid-half(ng-show="videos[$index].snippet.resourceId.videoId")
+				div.panelContainer(style="background-image:url({{videos[$index+1].snippet.thumbnails.high.url}})")
+					div.viewButton(ng-click="playVideo(videos[$index+1].snippet.resourceId.videoId)")
+						svg(version="1.1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",width="54px",height="54px",x="0px",y="0px",viewBox="0 0 54 54",enable-background="new 0 0 54 54",xml:space="preserve")
+							path(fill="#ffffff",d="M27.1,4c12.7,0,23,10.3,23,23s-10.3,23-23,23s-23-10.3-23-23S14.4,4,27.1,4 M27.1,2c-13.8,0-25,11.2-25,25 s11.2,25,25,25s25-11.2,25-25S40.9,2,27.1,2L27.1,2z").ease
+							polygon(fill="none",stroke="#ffffff",stroke-width="2",stroke-linejoin="round",stroke-miterlimit="10",points="20.1,18 20.1,36 38.1,27").ease
+					p.hideBottom {{videos[$index+1].snippet.title}}
+
+			div.grid-half(ng-show="videos[$index+2].snippet.resourceId.videoId")
+				div.panelContainer(style="background-image:url({{videos[$index+2].snippet.thumbnails.high.url}})")
+					div.viewButton(ng-click="playVideo(videos[$index+2].snippet.resourceId.videoId)")
+						svg(version="1.1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",width="54px",height="54px",x="0px",y="0px",viewBox="0 0 54 54",enable-background="new 0 0 54 54",xml:space="preserve")
+							path(fill="#ffffff",d="M27.1,4c12.7,0,23,10.3,23,23s-10.3,23-23,23s-23-10.3-23-23S14.4,4,27.1,4 M27.1,2c-13.8,0-25,11.2-25,25 s11.2,25,25,25s25-11.2,25-25S40.9,2,27.1,2L27.1,2z").ease
+							polygon(fill="none",stroke="#ffffff",stroke-width="2",stroke-linejoin="round",stroke-miterlimit="10",points="20.1,18 20.1,36 38.1,27").ease
+					p.hideBottom {{videos[$index+2].snippet.title}}
+			div.grid-half(ng-show="videos[$index+3].snippet.resourceId.videoId")
+				div.panelContainer(style="background-image:url({{videos[$index+3].snippet.thumbnails.high.url}})")
+					div.viewButton(ng-click="playVideo(videos[$index+3].snippet.resourceId.videoId)")
+						svg(version="1.1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",width="54px",height="54px",x="0px",y="0px",viewBox="0 0 54 54",enable-background="new 0 0 54 54",xml:space="preserve")
+							path(fill="#ffffff",d="M27.1,4c12.7,0,23,10.3,23,23s-10.3,23-23,23s-23-10.3-23-23S14.4,4,27.1,4 M27.1,2c-13.8,0-25,11.2-25,25 s11.2,25,25,25s25-11.2,25-25S40.9,2,27.1,2L27.1,2z").ease
+							polygon(fill="none",stroke="#ffffff",stroke-width="2",stroke-linejoin="round",stroke-miterlimit="10",points="20.1,18 20.1,36 38.1,27").ease
+					p.hideBottom {{videos[$index+3].snippet.title}}
+			div.grid-half(ng-show="videos[$index+4].snippet.resourceId.videoId")
+				div.panelContainer(style="background-image:url({{videos[$index+4].snippet.thumbnails.high.url}})")
+					div.viewButton(ng-click="playVideo(videos[$index+4].snippet.resourceId.videoId)")
+						svg(version="1.1",xmlns="http://www.w3.org/2000/svg",xmlns:xlink="http://www.w3.org/1999/xlink",width="54px",height="54px",x="0px",y="0px",viewBox="0 0 54 54",enable-background="new 0 0 54 54",xml:space="preserve")
+							path(fill="#ffffff",d="M27.1,4c12.7,0,23,10.3,23,23s-10.3,23-23,23s-23-10.3-23-23S14.4,4,27.1,4 M27.1,2c-13.8,0-25,11.2-25,25 s11.2,25,25,25s25-11.2,25-25S40.9,2,27.1,2L27.1,2z").ease
+							polygon(fill="none",stroke="#ffffff",stroke-width="2",stroke-linejoin="round",stroke-miterlimit="10",points="20.1,18 20.1,36 38.1,27").ease
+					p.hideBottom {{videos[$index+4].snippet.title}}
 section.pageEnd
 	figure.banner#videoEnd(style="background-image:url('../Alyssa2-standard.jpg')").bg
 		div
