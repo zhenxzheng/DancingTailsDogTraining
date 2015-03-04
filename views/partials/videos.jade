@@ -11,6 +11,7 @@ section#video.container
 		div(style="float:right")
 			a(href="https://www.youtube.com/channel/UCsM9t3PX5wriPBHigH9intw/videos",target="_blank")
 				img(src="http://www.youtube.com/yt/brand/media/image/YouTube-logo-dark.png")#youtubeLogo
+	div(ng-repeat="video in videos", ng-init="hoverEffect()" style="text-align:left")
 section.pageEnd
 	figure.banner#videoEnd(style="background-image:url('../Alyssa2-standard.jpg')").bg
 		div
