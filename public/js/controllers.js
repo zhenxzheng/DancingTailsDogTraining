@@ -7,17 +7,11 @@ function HomeCtrl($scope, $http){
   layoutResize();
   $http.get('api/reviews')
     .success(function(data, status, headers, config){
-      $scope.reviews1=[];
-      $scope.reviews2=[];
-      for(var i=0;i<data.reviews.length;i++){
-        if(i<data.reviews.length/2){
-          $scope.reviews1.push(data.reviews[i]);
-        }
-        else{
-          $scope.reviews2.push(data.reviews[i]);
-        }
-      }
+      $scope.reviews = data.reviews;
     });
+  $scope.moveDown = function(){
+      $("html body").animate({scrollTop:$("#customer").offset().top-80}, '500', 'swing');
+  }
 }
 function AboutCtrl($scope){
   window.scrollTo(0,0);
@@ -32,6 +26,9 @@ function ContactCtrl($scope){
   window.scrollTo(0,0);
   layoutResize();
   hoverEffect("#contact .contactInfo .grid-half:last-child .panel","p");
+  $scope.moveDown = function(){
+      $("html body").animate({scrollTop:$(".contactInfo").offset().top-80}, '500', 'swing');
+  }
 }
 function ServicesCtrl($scope){
   window.scrollTo(0,0);
@@ -128,10 +125,16 @@ function ServicesCtrl($scope){
     }
   }
 }
-function VideosCtrl($scope){
+function VideosCtrl($scope,$http){
   window.scrollTo(0,0);
-  hoverEffect(".panelContainer", "p");
   layoutResize();
+  $http.get('api/videos')
+    .success(function(data, status, headers, config){
+        $scope.channel = data.channel;
+        $scope.videos = data.videos;
+        console.log(data);
+      });
+
   $scope.playVideo = function (id){
     $("#playerLayer").removeClass("invisible").css("opacity",1);
     if(iframeLoaded) player.loadVideoById(id);
@@ -147,5 +150,23 @@ function VideosCtrl($scope){
   $scope.closeVideo = function(){
     stopVideo();
     $("#playerLayer").css("opacity",0).addClass("invisible");
+  }
+  $scope.hoverEffect = function(){
+    hoverEffect(".panelContainer", "p");
+    $("#video .grid-half .panelContainer").hover(
+      function(){
+        $(this).find(".viewButton").css("top","47%");
+      },
+      function(){
+        $(this).find(".viewButton").css("top","50%");
+      }
+    );
+    $("#video .viewButton").hover(function(){
+      $(this).find("path").css("fill","#1BA39C");
+      $(this).find("polygon").css("stroke","#1BA39C")
+    },function(){
+      $(this).find("path").css("fill","#ffffff");
+      $(this).find("polygon").css("stroke","#ffffff")
+    });
   }
 }

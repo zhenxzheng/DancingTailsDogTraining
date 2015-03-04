@@ -1,14 +1,16 @@
-section#homeCover.bg(style="background-image:url('../homeCover-low.jpg')")
+section#homeCover.splash.bg(style="background-image:url('../homeCover-low.jpg')")
 	figure#homeLogo
 		img(src="logoText-low.png")#logoText
 		img(src="logoDog1-low.png")#logoDog1
 		img(src="logoDog2-low.png")#logoDog2
 		img(src="logoDog3-low.png")#logoDog3
+	div(style="top:auto;bottom:4%")
+		h1: span.glyphicon.glyphicon-chevron-down(ng-click="moveDown()")
 section#customer
 	h1.title Customer Testimonials
 	p.small check out what people have to say about us.
 	div.grid-half
-		div.panelContainer(ng-repeat="review in reviews1")
+		div.panelContainer(ng-repeat="review in reviews | slice:0:reviews.length/2")
 			div.panel
 				p.italic "{{review.text}}"
 			div.panel
@@ -18,7 +20,7 @@ section#customer
 					p.bold.green {{review.author}}
 					p.italic {{review.location}}
 	div.grid-half
-		div.panelContainer(ng-repeat="review in reviews2")
+		div.panelContainer(ng-repeat="review in reviews | slice:reviews.length/2:reviews.length")
 			div.panel
 				p.italic "{{review.text}}"
 			div.panel

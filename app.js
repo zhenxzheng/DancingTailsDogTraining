@@ -19,6 +19,10 @@ var app = module.exports = express();
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/DancingTails');
 
+//load environment variables
+var dotenv = require('dotenv');
+dotenv.load();
+
 /**
  * Configuration
  */
@@ -55,7 +59,7 @@ app.get('/partials/:name', routes.partials);
 
 // JSON API
 app.get('/api/reviews', api.reviews);
-app.get('/api/post/:id', api.post);
+app.get('/api/videos', api.videos);
 app.post('/api/post', api.addPost);
 app.put('/api/post/:id', api.editPost);
 app.delete('/api/post/:id', api.deletePost);

@@ -1,9 +1,4 @@
 section.container#services
-	header
-		h1.title I Am Here to Help!
-		p.small Serving the East Bay Area!
-		p.small I offer private consultations for behavior modification and basic obedience.
-		p.small These are one-on-one appointments where I come to your home or we meet at a public location to discuss and develop a training plan for you and your dog. 
 	div.panelContainer#servicesPanel
 		div.panel#consultation
 			ul
@@ -131,8 +126,10 @@ section.container#services
 						li: p.smallest Chewing
 						li: p.smallest Digging
 						li: p.smallest Counter surfing
-						li: p.smallest Dog-dog aggression	
+						li: p.smallest Dog-dog aggression
 					ul.full
+						li: p.smallest Leash Pulling
+						li: p.smallest Body Handling(for Grooming)
 						li: p.smallest Shy or fearful behavior:
 						li: p.smallest Resource guarding
 						li: p.smallest Stranger fear
@@ -149,7 +146,7 @@ section.container#services
 					div.panel
 						p This package involves a first consult with you on the weekend. Then, I will come to your home and work with your dog on the problem behavior during the day, every business day for two weeks (10 sessions in total). Finally, during the weekend after the 10th training session I will have a consult with you to discuss your dog’s progress and how you can maintain his improved behavior going forward. This package is ideal for busy owners without the time to train their dog.
 		div.panel(ng-hide="d")
-			h1(style="margin-top:100px") Services
+			h1(style="margin-top:100px").title I Am Here to Help!
 			p.small Select a program below to see more details.
 			p: span.glyphicon.glyphicon-hand-down
 	div
@@ -169,7 +166,7 @@ section.container#services
 						span(ng-show="b") Hide Details
 		div.grid-third
 			div.panelContainer
-				div.panel#package3(ng-click="showProgram('c')",style="background-image:url('../dog3-low.jpg')").bg
+				div.panel#package3(ng-click="showProgram('c')",style="background-image:url('../Biggie1-low.jpg')").bg
 					h1 Behavior
 					p.hideBottom
 						span(ng-hide="c") View Details

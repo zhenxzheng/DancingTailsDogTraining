@@ -46,7 +46,7 @@ nav #menu li a:hover{
   line-height:60px;
 }
 nav #navContact a:hover{
-  color:#eee;
+  color:#3DC5BE;
 }
 h1{
   font-size:2.5em;
@@ -107,6 +107,12 @@ input:focus, textarea:focus{
 /*.layover:hover{
   opacity:0.4;
 }*/
+.splash{
+  width:100%;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
 .pageEnd{
   width:100%;
   height:300px;
@@ -133,6 +139,9 @@ input:focus, textarea:focus{
 .banner{
   width:100%;
   height:100%;
+  background-size:cover;
+  background-attachment: fixed;
+  background-position:center center;
 }
 .banner div{
   color:white;
@@ -189,6 +198,7 @@ input:focus, textarea:focus{
   width:48%;
   margin:20px 0;
   margin-right:4%;
+  vertical-align:top;
 }
 /*footer .grid-third{
   width:33.3333333333%;
@@ -286,7 +296,11 @@ footer .grid-third:last-child{
   -o-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
 }
-
+.innerShadow {
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
 /*
  *  Header & Footer
  */
@@ -311,7 +325,7 @@ nav.seeThrough:after{
   width:100%;
   height:100%;
   content:"";
-  background:#555;
+  background:#ddd;
   z-index: -1;
   opacity:0.9;
 }
@@ -418,11 +432,11 @@ footer ul:nth-child(3){
 footer li{
   line-height:40px;
 }
-footer ul li a{
+footer ul li a, #video p a{
   color:#333;
   opacity:0.5;
 }
-footer ul li a:hover{
+footer ul li a:hover, #video p a:hover{
   color:#1BA39C;
   opacity:1;
 }
@@ -453,7 +467,8 @@ footer .credit{
   background-position:bottom left;
   background-attachment:fixed;
 }
-#homeLogo{
+.splash figure, .splash div{
+  color:white;
   position:absolute;
   top:50%;
   left:50%;
@@ -469,14 +484,14 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#homeLogo:after{
+.splash figure:after{
   position:absolute;
   width:100%;
   height:100%;
   top:0;
   left:0;
   content:"";
-  background:#1BA39C;
+  background:black;
   opacity:0.2;
   z-index: -1;
   -ms-transition: all 0.3s ease;
@@ -485,7 +500,13 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
+#homeCover div h1 span{
+/*  width:100px;
+  border-radius: 40px 40px 0 0;
+  background:#f5f5f5;
+  line-height:40px;*/
+  color:#777;
+}
 #homeLogo img:first-child{
   position:relative;
   top:-120px;
@@ -635,7 +656,42 @@ footer .credit{
 /*
  *  Video Page
  */
+#youtube{
+  width:100%;
+  height:140px;
+  padding:20px;
+  padding-left:40px;
+}
+#youtubeLogo{
+  height:100px;
+  opacity:0.3;
+}
+#youtubeLogo:hover{
+  opacity:0.5;
+}
+.headshot{
+  width:100px;
+  height:100px;
+  border:solid 10px #eee;
+  border-radius:100px;
+  background-size:cover;
+  background-position:center center;
+}
+#youtube .smallest{
+  margin:0;
+  opacity:0.5;
+}
+#video {
+  margin-bottom:77px;
+}
+#video span{
+  padding-left:10px;
+}
+#video .grid-half:last-child{
+  margin-bottom:40px;
+}
 #video .panelContainer{
+  text-align:center;
   padding:0;
   position:relative;
   margin:0;
@@ -654,7 +710,7 @@ footer .credit{
   content:"";
   color:white;
   background:#333;
-  opacity:0;
+  opacity:0.2;
   -ms-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -664,7 +720,7 @@ footer .credit{
 #video .panelContainer:hover:before{
   opacity:0.4;
 }
-#video .viewButton, #contact .contactInfo .grid-half:last-child .panel span{
+#video .viewButton, #contact .contactInfo .grid-half:last-child .panel span, .splash h1 span{
   color:white;
   border: solid 2px;
   border-radius:100px;
@@ -684,12 +740,17 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+#video .viewButton, .splash h1 span{
+  border:none;
+}
+.splash h1 span{
+  opacity:0.7;
+}
+.splash h1 span:hover{
+  opacity:1;
+}
 #video .viewButton:hover, #contact .contactInfo .grid-half:last-child .panel span:hover{
   color:#1BA39C;
-}
-#video span{
-  font-size:40px;
-  padding:5px 3px 5px 7px;
 }
 #video .panelContainer h2, #video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   color:white;
@@ -709,6 +770,7 @@ footer .credit{
 }
 #video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   bottom:5%;
+  width:70%;
 }
 /*
  *  Services Page

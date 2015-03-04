@@ -1,24 +1,26 @@
 {
   "name": "Dancing-Tails",
   "version": "0.0.1",
-  "author":"Zhen Zheng",
-  "scripts":{
-    "start":"node app.js"
+  "author": "Zhen Zheng",
+  "scripts": {
+    "start": "node app.js"
   },
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/zhenxzheng/DancingTailsDogTraining"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhenxzheng/DancingTailsDogTraining"
   },
   "dependencies": {
     "express": "3.x",
     "jade": "*",
     "method-override": "*",
     "morgan": "^1.0.0",
-    "mongodb":"*",
-    "mongoose": "*"
+    "mongodb": "*",
+    "mongoose": "*",
+    "dotenv":"*",
+    "youtube-api": "^0.3.2"
   },
-  "engines":{
-    "node":"0.10.x",
-    "npm":"2.1.x"
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.1.x"
   }
 }
