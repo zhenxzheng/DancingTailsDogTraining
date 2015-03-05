@@ -10,7 +10,7 @@ function HomeCtrl($scope, $http){
       $scope.reviews = data.reviews;
     });
   $scope.moveDown = function(){
-      $("html body").animate({scrollTop:$("#customer").offset().top-80}, '500', 'swing');
+      $("html, body").animate({scrollTop:$("#customer").offset().top-80}, '500', 'swing');
   }
 }
 function AboutCtrl($scope){
@@ -27,7 +27,7 @@ function ContactCtrl($scope){
   layoutResize();
   hoverEffect("#contact .contactInfo .grid-half:last-child .panel","p");
   $scope.moveDown = function(){
-      $("html body").animate({scrollTop:$(".contactInfo").offset().top-80}, '500', 'swing');
+      $("html, body").animate({scrollTop:$(".contactInfo").offset().top-80}, '500', 'swing');
   }
 }
 function ServicesCtrl($scope){
