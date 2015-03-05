@@ -8,7 +8,7 @@ section#homeCover.splash.bg(style="background-image:url('../homeCover-low.jpg')"
 		h1: span.glyphicon.glyphicon-chevron-down(ng-click="moveDown()")
 section#customer
 	h1.title Customer Testimonials
-	p.small check out what people have to say about us.
+	p.small See what past clients have said:
 	div.grid-half
 		div.panelContainer(ng-repeat="review in reviews | slice:0:reviews.length/2")
 			div.panel
@@ -33,5 +33,5 @@ section.pageEnd
 	figure.banner#homeEnd(style="background-image:url('../Hubert1-standard.jpg')").bg
 		div
 			h1 Finding the Right Program
-			p.small Read about our different training progams and see which one fits your pup the best
+			p.small Read about the different training programs I offer and see which one fits your pup the best
 			a(href="/services"): button.ease View Programs
