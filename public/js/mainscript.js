@@ -74,14 +74,52 @@ function logoAnimation(){
 }
 
 function headerScroll(){
+  
 /*  if ($(window).scrollTop() < windowHeight){
     $("nav").addClass("seeThrough").css("width","100%");
   }
   else{
     $("nav").removeClass("seeThrough").css("width","840px");
-  }*/
- }
+  }*/  
 
+  //hides if pass sessions
+  // if($('#categoryInner').hasClass('fixed') && $('#categoryInner').offset().top < $('.package').offset().top+100){
+  //   $('#categoryInner').css("width","0");
+  // }
+  // else{
+  //   $('#categoryInner').css("width","840px");
+  // }
+
+  //button within view
+  var pattern = /.+\/([^\/]+)/;
+  var regexpMatches = pattern.exec(window.location.href);
+  if (regexpMatches[1] == "services"){
+    if ($('#categoryOutter').offset().top < windowHeight){
+      $('#categoryInner').removeClass("fixed");
+    }
+    //
+    else if($(window).scrollTop()+windowHeight+$('#categoryOutter').height()*0.7-$('#categoryOutter').height() < $('#categoryOutter').offset().top){
+      fixedCategory();
+    }
+    else{
+      $('#categoryInner').removeClass("fixed");
+      console.log("else")
+      if($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top>=70 || $(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top<=150)
+        $('#categoryInner .grid-third').find('.panel').css("height",$(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
+    }
+    if(!($("#categoryInner").hasClass('fixed'))){
+      $("#services2 .grid-third .panel:first-child").find("p").css("display","block");
+      hoverEffect("#services2 .grid-third .panel:first-child", "p");
+    }
+    else $("#services2 .grid-third .panel:first-child").find("p").css("display","none");
+  }
+ }
+function fixedCategory(){
+  $('#categoryInner').addClass("fixed");
+  console.log($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
+  if($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top>=70 || $(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top<=150)
+      $('#categoryInner .grid-third').find('.panel').css("height",$(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
+}
 function loadingHome(){
   var homeCover;
   var url = "../homeCover-standard.jpg";

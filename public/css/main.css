@@ -275,6 +275,9 @@ footer .grid-third:last-child{
 .hideTop{
   top:0 !important;
 }
+.hide{
+  height:0 !important;
+}
 .ease{
   -ms-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
@@ -312,7 +315,7 @@ nav{
   width:100%;
   height:77px;
   z-index:100;
-  border-bottom:solid 1px;
+  /*border-bottom:solid 1px;*/
   -webkit-transform: translate(-50%, 0%);
   -moz-transform: translate(-50%, 0%);
   -ms-transform: translate(-50%, 0%);
@@ -325,7 +328,7 @@ nav.seeThrough:after{
   width:100%;
   height:100%;
   content:"";
-  background:#ddd;
+  background:#f5f5f5;
   z-index: -1;
   opacity:0.9;
 }
@@ -347,7 +350,7 @@ nav:after{
   display:table;
   width:172px;
   height:77px;
-  border-right:solid 1px;
+  /*border-right:solid 1px;*/
 }
 #brand a {
   display:table-cell;
@@ -366,7 +369,7 @@ nav:after{
   height:77px;
   display:table;
   padding:0 20px;
-  border-left:solid 1px
+  /*border-left:solid 1px*/
 }
 #navContact div{
   display:table-cell;
@@ -466,6 +469,8 @@ footer .credit{
   background-size:cover;
   background-position:bottom left;
   background-attachment:fixed;
+  position:relative
+;  overflow:hidden;
 }
 .splash figure, .splash div{
   color:white;
@@ -752,7 +757,7 @@ footer .credit{
 #video .viewButton:hover, #contact .contactInfo .grid-half:last-child .panel span:hover{
   color:#1BA39C;
 }
-#video .panelContainer h2, #video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
+#video .panelContainer h2, #video .panelContainer p, #services2 .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   color:white;
   position:absolute;
   bottom:20%;
@@ -768,26 +773,117 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
+#video .panelContainer p, #services2 .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   bottom:5%;
   width:70%;
 }
 /*
  *  Services Page
  */
-#services .grid-third .panelContainer{
-  border-radius:0 0 5px 5px;
-  padding:0;
-  overflow: hidden;
+#services2 .panelContainer{
+  height:405px;
+  text-align:left;
+  background-size:cover;
+  background-position:bottom left;
+  position:relative;
 }
-#services #servicesPanel{
-  border-radius: 5px 5px 0 0;
-  height:400px;
+#services2 .panelContainer .serviceIntro{
+  color:#777;
+  padding:20px;
+  width:50%;
+  position:absolute;
+  top:50%;
+  right:60px;
+  opacity:1;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+}
+#services2 .panelContainer .serviceIntro h1{
   margin-bottom:20px;
-  padding:0;
+}
+#services2 .panelContainer .serviceIntro ul li{
+  margin-top: 10px;
+  list-style: disc;
+  margin-left:20px;
+}
+#services2 .panelContainer .serviceIntro:after{
+  position:absolute;
+  background:white;
+  content:"";
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity:0.7;
+  z-index:-1;
+/*  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);*/
+}
+#services2 .serviceInner{
+  height:0;
   overflow:hidden;
 }
-#services .grid-third h1{
+#services2 .panelContainer .panel .panel{
+  padding:0;
+}
+#services2 .panel, #services2 .package .panel h2{
+  display:inline-block;
+}
+#services2 .panel{
+  position:relative;
+  width:100%;
+}
+#services2 .price{
+  color:#1BA39C;
+  font-size:18px;
+  text-align:center;
+  width:120px;
+  border:solid 2px;
+  padding:4px 10px;
+  margin-left:5px;
+  cursor:pointer;
+  position:relative;
+}
+#services2 .price:hover{
+  background:#1BA39C;
+  color:white;
+  border:solid 2px #1BA39C;
+}
+#services2 .price.active{
+  background:#1BA39C;
+  color:white;
+  border:solid 2px #1BA39C;
+}
+
+#services2 .package .panel div > ul{
+  -webkit-columns: 2; 
+  -moz-columns: 2;
+  columns: 2;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+}
+#services2 .package .panel ul li{
+  list-style:none;
+  vertical-align: top;
+  width:95%;
+  text-align:center;
+  padding:10px 5px;
+  margin-right:5%;
+  margin-bottom:11px;
+  border:solid 1px #eee;
+}
+#services2 .package .panel ul li ul li{
+  display:block;
+  width:90%;
+  padding:5px;
+  margin:5px 5%;
+}
+#services2 .grid-third h1{
   color:white;
   position:absolute;
   top:50%;
@@ -806,128 +902,20 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#services #consultation ul{
-  width:100% !important;
-}
-#servicesPanel figure{
-  vertical-align: top;
-  display:inline-block;
-  width:48%;
-}
-#services #servicesPanel .description ul{
-  list-style: disc;
-  vertical-align: top;
-  display:inline-block;
-  width:100%;
-}
-#services #servicesPanel .description{
-  overflow:hidden;
-  height:300px;
-  padding-top:0;
-}
-#services #servicesPanel .description ul.full{
-  list-style: disc;
-  width:40% !important;
-}
-#services #servicesPanel .description .smallest{
-  margin-bottom:10px;
-}
-#services figure{
-  float:right;
-  text-align:center;
-}
-#services figure img{
-
-}
-#services .description .panel{
-  float:right;
-  width:50% !important;
-}
-#services .panel{
-  padding:30px 0;
-  margin:0 20px;
-}
-#services #servicesPanel > .panel{
-  float:left;
-  padding:0;
-  margin:0;
-}
-#services #servicesPanel #consultation{
-  display:inline-block;
-  float:left;
-  width:200px;
-  height:100%;
-  padding:0 20px 0 0;
-  margin:0 20px;
-  border-bottom:none;
-  border-right:solid #eee 1px;
-}
-#services #servicesPanel > .panel:last-child{
-  float:right;
-  text-align:center;
-}
-#services #servicesPanel #consultation li{
-  display:inline-block;
-  width:100%;
-  vertical-align: top;
-}
-#services #servicesPanel #consultation li:first-child{
-  border-bottom:solid 1px #eee;
-  margin-top:20px;
-}
-#services #servicesPanel #consultation li:last-child{
-  border-top:solid 1px #eee;
-  margin-bottom:20px;
-}
-#services #servicesPanel .panel{
-  text-align:left;
-  width:560px;
-}
-#services #servicesPanel .panel .panel{
-  width:100%;
-  margin:0;
-}
-#services .grid-third .panel:first-child{
+#services2 .grid-third .panel:first-child{
   padding:0;
   margin:0;
   position:relative;
   height:150px;
+  min-height:70px;
+  max-height:150px;
   overflow:hidden;
   cursor:pointer;
   background-size:cover;
   background-position:center center;
 }
-#services .price{
-  color:#1BA39C;
-  font-size:18px;
-  text-align:center;
-  float:right;
-  width:120px;
-  border:solid 2px;
-  padding:4px 10px;
-  margin-left:5px;
-  cursor:pointer;
-  position:relative;
-}
-#services .price:hover{
-  background:#1BA39C;
-  color:white;
-  border:solid 2px #1BA39C;
-}
-#services .price.active{
-  background:#1BA39C;
-  color:white;
-  border:solid 2px #1BA39C;
-}
-#services .panel ul{
-  text-align:left;
-  list-style:disc;
-  margin:0 0 0 20px;
-}
-#services li ul{
-  list-style:square !important;
-}
-#services .grid-third .panelContainer .panel:first-child:before, #contact .contactInfo .grid-half:last-child .panel:before{
+
+#services2 .grid-third .panel:first-child:before, #contact .contactInfo .grid-half:last-child .panel:before{
   position:absolute;
   width:100%;
   height:100%;
@@ -943,8 +931,30 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#services .grid-third .panel:first-child:hover:before, #contact .contactInfo .grid-half:last-child .panel:hover:before{
+#services2 .grid-third .panel:first-child:hover:before, #contact .contactInfo .grid-half:last-child .panel:hover:before{
   opacity:0.7;
+}
+#services2 #categoryOutter{
+  height:250px;
+  width:100%;
+}
+#services2 #categoryInner{
+  width:840px;
+  border-top:solid 5px #f5f5f5;
+  position:relative;
+  bottom:0;
+  left:50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+}
+#services2 #categoryInner.fixed{
+  position:fixed;
+  background:#f5f5f5;
+}
+#services2 #categoryInner .grid-third .mini{
+  height:60px;
 }
 /*
  *  Contact Page

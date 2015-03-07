@@ -60,7 +60,7 @@ app.get('/partials/:name', routes.partials);
 // JSON API
 app.get('/api/reviews', api.reviews);
 app.get('/api/videos', api.videos);
-app.post('/api/post', api.addPost);
+app.get('/api/services', api.services);
 app.put('/api/post/:id', api.editPost);
 app.delete('/api/post/:id', api.deletePost);
 

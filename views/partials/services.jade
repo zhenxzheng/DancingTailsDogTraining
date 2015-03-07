@@ -1,172 +1,52 @@
-section.container#services
-	div.panelContainer#servicesPanel
-		div.panel#consultation
+section.container#services2
+	div.panelContainer(style="background-image:url('homeCover-low.jpg')")
+		div.serviceIntro
+			h1 I am Here to Help!
+			h2 Each Private consult includes:
 			ul
-				li: p.small Each private consult includes:
-				li: p.smallest A pre-consult Phone Call
-				li: p.smallest A 90-minute in-home or on-location consult
-				li: p.smallest A detailed follow-up Email from our meeting inclucding a summary of the consult and key recommendation
-				li: p.smallest.italic All programs include all consultation features.
-		div.panel(ng-show="a")
-			div.panel
-				h2(style="color:#1BA39C") Puppies
-					span(ng-click="showDetails('c')").price.ease
-						| 12-Session
+				li A pre-consult phone call
+				li A 90-minute in-home or on-location consult
+				li A detailed follow-up Email from our meeting inclucding a summary of the consult and key recommendation
+			p.smallest.italic All programs include all consultation features.
+	div.panelContainer.serviceInner.ease
+		div.package(ng-repeat="category in services")
+			div(ng-show="category.state")
+				div.panel
+					h2
+						span.green {{category.title}} 
 						br
-						| Package
-						br
-						| $1,250
-					span(ng-click="showDetails('b')").price.ease
-						| 4-Session
-						br
-						| Package
-						br
-						| $450
-					span(ng-click="showDetails('a')").price.ease
-						| Single
-						br
-						| Session
-						br
-						| $125
-				p(style="height:34px") Early puppy behavior training
-			div.panel.description
-				div(style="height:300px;width:48%;float:left;border-right:solid 1px #eee")
-					ul.full
-						li: p.smallest Pre-puppy planning
-						li: p.smallest Puppy manners
-						li: p.smallest Puppy socialization
-						li: p.smallest Potty training
-						li: p.smallest Crate Training
-				figure(ng-hide="ad")
-					img(src="basset.jpg")
-				div(ng-show="aa")
-					div.panel
-						p Perfect for pre-puppy consultations and first appointments after you've brought your puppy home.
-				div(ng-show="ab")
-					div.panel
-						p One session per week for four weeks. Perfect for gaining traction on a small set of basic behaviors: Sit, down, stay, and walking politely on leash. I show you the training mechanics during our sessions, and you get the chance to pratice training your puppy during the week (which, by the way, is a great way to build your relationship!)..
-				div(ng-show="ac")
-					div.panel
-						p Three sessions per week for four weeks. Perfect package for busy owners without the time to train their puppy. I will come to your home to train your puppy while you are away at work, and will have intermittent coaching sessions with you as well (one per week). Each puppy will have a custom training plan, which will be discussed during the pre-consult phone call and first session.
-
-		div.panel(ng-show="b")
-			div.panel
-				h2(style="color:#1BA39C") Basic
-					span(ng-click="showDetails('c')").price.ease
-						| 12-Session
-						br
-						| Package
-						br
-						| $1,250
-					span(ng-click="showDetails('b')").price.ease
-						| 4-Session
-						br
-						| Package
-						br
-						| $450
-					span(ng-click="showDetails('a')").price.ease
-						| Single
-						br
-						| Session
-						br
-						| $125
-				p(style="height:34px") Basic obedience & behavior
-			div.panel.description
-				div(style="height:300px;width:48%;float:left;border-right:solid 1px #eee")
-					ul.full
-						li: p.smallest Sit
-						li: p.smallest Down
-						li: p.smallest Sit-stay
-						li: p.smallest Down-stay
-						li: p.smallest Leave it
-					ul.full
-						li: p.smallest Come when called
-						li: p.smallest Wait at the door
-						li: p.smallest Go to your mat
-						li: p.smallest Walking politely on leash
-				figure(ng-hide="bd")
-					img(src="bulldog.JPG")
-				div(ng-show="ba")
-					div.panel
-						p A single session, ideal for coaching you on training 1-2 specific behaviors you desire for your pooch.
-				div(ng-show="bb")
-					div.panel
-						p One session per week for four weeks. Perfect for gaining traction on a small set of basic behaviors: Sit, down, stay, and walking politely on leash. I show you the training mechanics during our sessions, and you get the chance to practice training your pooch during the week.
-				div(ng-show="bc")
-					div.panel
-						p Three sessions per week for four weeks. Perfect for busy owners without the time to train their dog. I will come to your home to train your pooch while you are away at work, and will have intermittent coaching sessions with you as well (one per week). Each dog will have a custom training plan, which will be discussed during the pre-consult phone call and first session.
-		div.panel(ng-show="c")
-			div.panel
-				h2(style="color:#1BA39C") Behavior
-					span(ng-click="showDetails('c')").price.ease
-						| 12-Session
-						br
-						| Package
-						br
-						| $1,250
-					span(ng-click="showDetails('b')").price.ease
-						| 4-Session
-						br
-						| Package
-						br
-						| $450
-					span(ng-click="showDetails('a')").price.ease
-						| Single
-						br
-						| Session
-						br
-						| $125
-				p(style="height:34px") Behavior modification
-			div.panel.description
-				div(style="height:300PX;width:48%;float:left;border-right:solid 1px #eee")
-					ul.full
-						li: p.smallest Jumping
-						li: p.smallest Barking
-						li: p.smallest Begging
-						li: p.smallest Chewing
-						li: p.smallest Digging
-						li: p.smallest Counter surfing
-						li: p.smallest Dog-dog aggression
-					ul.full
-						li: p.smallest Leash Pulling
-						li: p.smallest Body Handling(for Grooming)
-						li: p.smallest Shy or fearful behavior:
-						li: p.smallest Resource guarding
-						li: p.smallest Stranger fear
-						li: p.smallest Fear of unfamiliar sounds or sights
-				figure(ng-hide="cd")
-					img(src="jumping.JPG")
-				div(ng-show="ca")
-					div.panel
-						p This 90-minute consult involves assessing the problem behavior and discussing best practices for training it out.
-				div(ng-show="cb")
-					div.panel
-						p One session per week for four weeks, where I provide you with training techniques to work on your dog’s problem behavior(s). Each session after the first will involve a check-in to see how the previous week’s training went, and best ways to move forward. This is an ideal package for the motivated owner who’s enthusiastic about being an integral part of their dog’s training.
-				div(ng-show="cc")
-					div.panel
-						p This package involves a first consult with you on the weekend. Then, I will come to your home and work with your dog on the problem behavior during the day, every business day for two weeks (10 sessions in total). Finally, during the weekend after the 10th training session I will have a consult with you to discuss your dog’s progress and how you can maintain his improved behavior going forward. This package is ideal for busy owners without the time to train their dog.
-		div.panel(ng-hide="d")
-			h1(style="margin-top:100px").title I Am Here to Help!
-			p.small Select a program below to see more details.
-			p: span.glyphicon.glyphicon-hand-down
-	div
-		div.grid-third
-			div.panelContainer
-				div.panel#package1(ng-click="showProgram('a')",style="background-image:url('../dog1-low.jpg')").bg
+						| {{category.description}}
+					div.green(style="float:right")
+						h2(ng-repeat="(i, package) in category.packages", ng-click="showDetails(i)").price.ease
+							| {{package.session}} {{package.price}}
+				div.panel(ng-repeat="package in category.packages", ng-show="package.state",style="border:solid #1BA39C")
+					p {{package.description}}
+				div.panel
+					div(style="width:70%;display:inline-block;vertical-align:top")
+						ul
+							li(ng-repeat="item in category.items")
+								p {{item.service}}
+								ul(ng-show="item.sub")
+									li(ng-repeat="item in item.sub")
+										p {{item}}
+					figure(style="width:30%;display:inline-block")
+						img(src="{{category.image}}")
+	div#categoryOutter
+		div#categoryInner.ease
+			div.grid-third
+				div.panel(ng-click="showProgram(0)",style="background-image:url('../dog1-low.jpg')").bg.ease
 					h1 Puppy
 					p.hideBottom
 						span(ng-hide="a") View Details
 						span(ng-show="a") Hide Details
-		div.grid-third
-			div.panelContainer
-				div.panel#package2(ng-click="showProgram('b')",style="background-image:url('../Ollie-low.jpg')").bg
+			div.grid-third
+				div.panel(ng-click="showProgram(1)",style="background-image:url('../Ollie-low.jpg')").bg.ease
 					h1 Basic
 					p.hideBottom
 						span(ng-hide="b") View Details
 						span(ng-show="b") Hide Details
-		div.grid-third
-			div.panelContainer
-				div.panel#package3(ng-click="showProgram('c')",style="background-image:url('../Biggie1-low.jpg')").bg
+			div.grid-third
+				div.panel(ng-click="showProgram(2)",style="background-image:url('../Biggie1-low.jpg')").bg.ease
 					h1 Behavior
 					p.hideBottom
 						span(ng-hide="c") View Details
