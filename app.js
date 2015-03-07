@@ -4,7 +4,7 @@
  */
 
 var express = require('express'),
-  // bodyParser = require('body-parser'),
+  bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
   // errorHandler = require('error-handler'),
   morgan = require('morgan'),
@@ -32,7 +32,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(morgan('dev'));
-// app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -61,7 +61,8 @@ app.get('/partials/:name', routes.partials);
 app.get('/api/reviews', api.reviews);
 app.get('/api/videos', api.videos);
 app.get('/api/services', api.services);
-app.put('/api/post/:id', api.editPost);
+app.get('/api/messages', api.viewMessage);
+app.post('/api/messages/new', api.saveMessage)
 app.delete('/api/post/:id', api.deletePost);
 
 // redirect all others to the index (HTML5 history)

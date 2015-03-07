@@ -205,3 +205,52 @@ function onPlayerStateChange(event) {
 function stopVideo() {
   player.stopVideo();
 }
+
+function validate(selector){
+  var pattern, input, match, validated;
+  var $input;
+  //user name, dog name, and breed [LETTERS ONLY]
+  if ($(selector).attr('id') == $('#userName').attr('id') || $(selector).attr('id') == $('#dogName').attr('id') || $(selector).attr('id') == $('#dogBreed').attr('id')){
+    pattern = /[a-zA-Z ]+/;
+    $input = $(selector).find('input');
+    input = $input.val().toUpperCase();
+    match = input.match(pattern);
+    validated = (match == input ? true : false);
+  }
+  //user phone [10-11 NUMBERS ONLY]
+  else if ($(selector).attr('id') == $('#userPhone').attr('id')){
+    $input = $(selector).find('input');
+    input = $input.val();
+    if (input.match(/[a-zA-Z]/)){
+      validated = false;
+    }
+    else{
+      input = input.replace(/[^0-9]/g,"");
+      validated = input.length==10 || input.length==11 ? true:false;
+    }
+  }
+  //user email [dancing@tails.com]
+  else if ($(selector).attr('id') == $('#userEmail').attr('id')){
+    pattern = /[a-z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b/;
+    $input = $(selector).find('input');
+    input = $input.val().toLowerCase();
+    match = input.match(pattern);
+    validated = (match == input ? true : false);
+  }
+  //content and age [!empty]
+  else if ($(selector).attr('id') == $('#messageContent').attr('id') || $(selector).attr('id') == $('#dogAge').attr('id')){
+    $input = $(selector).find('textarea').length?$(selector).find('textarea'):$(selector).find('input');
+    input = $input.val();
+    validated = (input != '' ? true : false);
+  }
+
+  if (validated){
+    $(selector).find('.validation').removeClass("glyphicon glyphicon-remove red").addClass("glyphicon glyphicon-ok green");
+    $input.css("border-color","#1BA39C");
+  }
+  else{
+    $(selector).find('.validation').removeClass("glyphicon glyphicon-ok green").addClass("glyphicon glyphicon-remove red");
+    $input.css("border-color","red");
+  }
+  return validated;
+}

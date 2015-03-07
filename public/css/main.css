@@ -83,9 +83,9 @@ input{
 input:focus, textarea:focus{
   outline:none;
   border:solid 2px #1BA39C;
-  padding-left:19px;
-  padding-right:19px;
+  padding:19px;
 }
+
 .glyphicon{
   padding:0;
 }
@@ -259,6 +259,9 @@ footer .grid-third:last-child{
 }
 .green{
   color:#1BA39C;
+}
+.red{
+  color:red;
 }
 .underline{
   text-decoration: underline;
@@ -1006,6 +1009,14 @@ footer .credit{
   text-align:left;
   line-height:1.5em;
 }
+#userName,#userPhone,#userEmail,#dogName,#dogBreed,#dogAge,#messageContent{
+  position:relative;
+}
+#contact .validation{
+  position:absolute;
+  right:0;
+  top:54%;
+}
 textarea{
   width:100%;
   max-width:100%;
@@ -1013,7 +1024,37 @@ textarea{
   padding:20px;
   border:solid 1px #777;
 }
-
+#messageResult{
+  display:none;
+  position:fixed;
+  width:840px;
+  color:white;
+  top:77px;
+  left:50%;
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+}
+#messageResult span{
+  position:absolute;
+  color:white;
+  right:0;
+  top:50%;
+  padding:15px;
+  cursor:pointer;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+}
+#messageResult span:hover{
+  opacity:0.7;
+/*  -webkit-transform: translate(0%, -50%) rotate(180deg);
+  -moz-transform: translate(0%, -50%) rotate(180deg);
+  -ms-transform: translate(0%, -50%) rotate(180deg);
+  -o-transform: translate(0%, -50%) rotate(180deg);*/
+}
 #playerLayer{
   visibility: visible;
   position:fixed;

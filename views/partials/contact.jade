@@ -35,35 +35,49 @@ section.container#contact
 					div.panelContainer.formInput
 						div.panel
 							h1 Parent Info
-						div.panel
+						div.panel#userName
 							p Name:
-							input(placeholder="Your Full Name")
-						div.panel
+							input(placeholder="Your Full Name", ng-model="form.owner")
+							span.validation
+						div.panel#userPhone
 							p Phone:
-							input(placeholder="(555)555-5555")
-						div.panel
+							input(placeholder="(555)555-5555", ng-model="form.phone")
+							span.validation
+						div.panel#userEmail
 							p Email:
-							input(placeholder="dancing@tails.com")
+							input(placeholder="dancing@tails.com", ng-model="form.email")
+							span.validation
 
 				div.grid-half
 					div.panelContainer.formInput
 						div.panel
 							h1 Pup Info
-						div.panel
+						div.panel#dogName
 							p Name:
-							input(placeholder="Name")
-						div.panel
+							input(placeholder="Name", ng-model="form.dog")
+							span.validation
+						div.panel#dogBreed
 							p Breed
-							input(placeholder="(e.g., German Shepherd)")
-						div.panel
+							input(placeholder="(e.g., German Shepherd)", ng-model="form.breed")
+							span.validation
+						div.panel#dogAge
 							p Age
-							input(placeholder="(e.g., 2 months)")
+							input(placeholder="(e.g., 2 months)", ng-model="form.age")
+							span.validation
 			div.panelContainer
-				div.panel
+				div.panel#messageContent
 					p Inquiry
-					textarea
+					textarea(ng-model="form.message")
+					span.validation
 				div.panel
-					button.ease Message
+					
+					button(ng-click="submitMessage()").ease Message
+section#messageResult
+	div.panel(style="background:#1BA39C")
+		p(ng-show="sent")
+			| {{sent}}
+		span.glyphicon.glyphicon-remove.ease(ng-click="close()")
+
 section.pageEnd
 	figure.banner#contactEnd(style="background-image:url('../Bailey1-standard.jpg')").bg
 		div

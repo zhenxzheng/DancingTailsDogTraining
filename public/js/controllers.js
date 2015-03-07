@@ -22,13 +22,79 @@ function PhilosophyCtrl($scope){
   window.scrollTo(0,0);
   layoutResize();
 }
-function ContactCtrl($scope){
+function ContactCtrl($scope, $http){
   window.scrollTo(0,0);
   layoutResize();
   loadingContact();
   hoverEffect("#contact .contactInfo .grid-half:last-child .panel","p");
   $scope.moveDown = function(){
       $("html, body").animate({scrollTop:$(".contactInfo").offset().top-80}, '500', 'swing');
+  }
+  $('#userName').change(function(){
+    validate($(this));
+  });
+  $('#userPhone').change(function(){
+    validate($(this));
+  });
+  $('#userEmail').change(function(){
+    validate($(this));
+  });
+  $('#dogName').change(function(){
+    validate($(this));
+  });
+  $('#dogBreed').change(function(){
+    validate($(this));
+  });
+  $('#dogAge').change(function(){
+    validate($(this));
+  });
+  $('#messageContent').change(function(){
+    validate($(this));
+  });
+  $scope.form = {};
+  $scope.submitMessage = function(){
+    $scope.form.date = new Date();
+    var validitymsg = "validated";
+    if (!validate($('#userName')) || !validate($('#userEmail')) || !validate($('#userPhone')) || !validate($('#dogName')) || !validate($('#dogBreed')) || !validate($('#dogAge')) || !validate($('#messageContent'))){
+      validitymsg = "Something is not right..\n";
+      if (!validate($('#userName'))){
+        validitymsg = validitymsg+"\nInvalid Name. [Alphabet A-Z Only]";
+      } 
+      if (!validate($('#userEmail'))){
+        validitymsg = validitymsg+"\nInvalid E-mail. [John.Smith@example.com]";
+      }
+      if (!validate($('#userPhone'))){
+        validitymsg = validitymsg+"\nInvalid Phone Number. [9-10 numbers]";
+      }
+      if (!validate($('#dogName'))){
+        validitymsg = validitymsg+"\nInvalid Dog Name. [Alphabet A-Z Only]";
+      }
+      if (!validate($('#dogBreed'))){
+        validitymsg = validitymsg+"\nInvalid Breed. [Alphabet A-Z Only]";
+      }
+      if (!validate($('#dogAge'))){
+        validitymsg = validitymsg+"\nInvalid Dog Age.";
+      }
+      if (!validate($('#messageContent'))){
+        validitymsg = validitymsg+"\nEmpty Message. ";
+      }
+    }
+    if(validitymsg == "validated"){
+      if(confirm("Ready to send?")==true){
+        $http.post('/api/messages/new', $scope.form)
+        .success(function(data){
+          $scope.sent="Message Sent! Thank you for your interest in Dancing Tails. I'll get back to you as soon as possible."
+          $('#messageResult').fadeIn("fast");
+        })
+      }
+    }
+    else{
+      console.log(validitymsg);
+      alert(validitymsg);
+    }
+  }
+  $scope.close = function(){
+    $('#messageResult').fadeOut("fast");
   }
 }
 function ServicesCtrl($scope,$http){
