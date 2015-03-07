@@ -89,7 +89,6 @@ function headerScroll(){
     }
     else{
       $('#categoryInner').removeClass("fixed");
-      console.log("else")
       if($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top>=70 || $(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top<=150)
         $('#categoryInner .grid-third').find('.panel').css("height",$(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
     }
@@ -102,7 +101,6 @@ function headerScroll(){
  }
 function fixedCategory(){
   $('#categoryInner').addClass("fixed");
-  console.log($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
   if($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top>=70 || $(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top<=150)
       $('#categoryInner .grid-third').find('.panel').css("height",$(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
 }
@@ -185,7 +183,6 @@ function setVideoID(id){
 
 var player, videoID, iframeLoaded = false;
 function onYouTubeIframeAPIReady() {
-  console.log("API ready")
   player = new YT.Player('player', {
     height: '500',
     width: '840',
