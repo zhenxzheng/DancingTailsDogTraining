@@ -25,6 +25,7 @@ function PhilosophyCtrl($scope){
 function ContactCtrl($scope){
   window.scrollTo(0,0);
   layoutResize();
+  loadingContact();
   hoverEffect("#contact .contactInfo .grid-half:last-child .panel","p");
   $scope.moveDown = function(){
       $("html, body").animate({scrollTop:$(".contactInfo").offset().top-80}, '500', 'swing');
@@ -45,12 +46,9 @@ function ServicesCtrl($scope,$http){
   $http.get('api/services')
     .success(function(data, status, headers, config){
       $scope.services = data.services;
-      console.log(data.services);
     });
   $scope.showDetails = function(session){
-    // if($("body").scrollTop() < $(".package").offset().top-80){
-      $("html body").animate({scrollTop:$(".package").offset().top-80}, '500', 'swing');
-    // }
+    $("html body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
     $scope.services.forEach(function(category, i){
       category.packages.forEach(function(pack, i){
         if (i == session) pack.state = true;
@@ -60,9 +58,7 @@ function ServicesCtrl($scope,$http){
   }
   $scope.showProgram = function(program){
     $(".serviceInner").css({height:"100%"});
-    if($("body").scrollTop() < $(".package").offset().top-80){
-      $("html body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
-    }
+    $("html body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
     $(".price").removeClass("active");
     $(".price").click(function(){
       $(".price").removeClass("active");
@@ -84,7 +80,6 @@ function VideosCtrl($scope,$http){
     .success(function(data, status, headers, config){
         $scope.channel = data.channel;
         $scope.videos = data.videos;
-        console.log(data);
       });
 
   $scope.playVideo = function (id){

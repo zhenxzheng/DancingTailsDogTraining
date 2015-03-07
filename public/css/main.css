@@ -276,7 +276,7 @@ footer .grid-third:last-child{
   top:0 !important;
 }
 .hide{
-  height:0 !important;
+  bottom:-100px !important;
 }
 .ease{
   -ms-transition: all 0.2s ease;
@@ -505,12 +505,18 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+.splash div span{
+  opacity:0.7;
+}
+.splash div span:hover{
+  opacity:1;
+}
 #homeCover div h1 span{
 /*  width:100px;
   border-radius: 40px 40px 0 0;
   background:#f5f5f5;
   line-height:40px;*/
-  color:#777;
+  color:white;
 }
 #homeLogo img:first-child{
   position:relative;
@@ -725,7 +731,7 @@ footer .credit{
 #video .panelContainer:hover:before{
   opacity:0.4;
 }
-#video .viewButton, #contact .contactInfo .grid-half:last-child .panel span, .splash h1 span{
+#video .viewButton, #contact .contactInfo .grid-half:last-child .panel span{
   color:white;
   border: solid 2px;
   border-radius:100px;
@@ -748,12 +754,7 @@ footer .credit{
 #video .viewButton, .splash h1 span{
   border:none;
 }
-.splash h1 span{
-  opacity:0.7;
-}
-.splash h1 span:hover{
-  opacity:1;
-}
+
 #video .viewButton:hover, #contact .contactInfo .grid-half:last-child .panel span:hover{
   color:#1BA39C;
 }
@@ -935,7 +936,7 @@ footer .credit{
   opacity:0.7;
 }
 #services2 #categoryOutter{
-  height:250px;
+  height:200px;
   width:100%;
 }
 #services2 #categoryInner{
@@ -955,6 +956,9 @@ footer .credit{
 }
 #services2 #categoryInner .grid-third .mini{
   height:60px;
+}
+#services2 .policy{
+  margin-bottom:100px;
 }
 /*
  *  Contact Page

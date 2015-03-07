@@ -3,7 +3,8 @@
 var $isMobile,
 	windowHeight,
 	windowWidth,
-  preload;
+  preload,
+  cover;
 
 var home,services,philosophy,video,about,contact;
 
@@ -61,6 +62,7 @@ function hoverEffect(parent, child){
 function logoAnimation(){
   window.setTimeout(function(){
     $("#logoText").css("top",0);
+    $("#homeCover").find(".hideBottom").removeClass("hideBottom");
     window.setTimeout(function(){
       $("#logoDog1").css({"opacity":1,"top":0});
       window.setTimeout(function(){
@@ -74,22 +76,6 @@ function logoAnimation(){
 }
 
 function headerScroll(){
-  
-/*  if ($(window).scrollTop() < windowHeight){
-    $("nav").addClass("seeThrough").css("width","100%");
-  }
-  else{
-    $("nav").removeClass("seeThrough").css("width","840px");
-  }*/  
-
-  //hides if pass sessions
-  // if($('#categoryInner').hasClass('fixed') && $('#categoryInner').offset().top < $('.package').offset().top+100){
-  //   $('#categoryInner').css("width","0");
-  // }
-  // else{
-  //   $('#categoryInner').css("width","840px");
-  // }
-
   //button within view
   var pattern = /.+\/([^\/]+)/;
   var regexpMatches = pattern.exec(window.location.href);
@@ -121,15 +107,27 @@ function fixedCategory(){
       $('#categoryInner .grid-third').find('.panel').css("height",$(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
 }
 function loadingHome(){
-  var homeCover;
+  if(cover != null) cover.onload=null;
   var url = "../homeCover-standard.jpg";
-  homeCover= new Image();
-  homeCover.src=url;
+  cover= new Image();
+  cover.src=url;
   var bgUrl="url('"+url+"')";
-  homeCover.onload = function(){
+  cover.onload = function(){
     $("#homeCover").css("background-image",bgUrl );
     $('html body').css("opacity",1);
     logoAnimation();
+  }
+}
+function loadingContact(){
+  if(cover != null) cover.onload=null;
+  var url = "../contact-standard.jpg";
+  cover= new Image();
+  cover.src=url;
+  var bgUrl="url('"+url+"')";
+  cover.onload = function(){
+    $(".splash").css("background-image",bgUrl );
+    $(".splash").find(".hideBottom").removeClass("hideBottom");
+
   }
 }
 
