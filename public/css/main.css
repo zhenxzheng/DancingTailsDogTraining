@@ -494,14 +494,14 @@ footer .credit{
 .splash figure, .splash div{
   color:white;
   position:absolute;
-  top:50%;
+  bottom:50%;
   left:50%;
   width:42%;
   text-align:center;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
   -ms-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -1191,7 +1191,10 @@ textarea{
     float:none !important;
   }
   #services2  .price{
-    margin-top:20px;
+    margin:20px 5px 0 0;
+  }
+  #services2 .price:last-child{
+    margin-right:0;
   }
   #bio .portraitLeft{
     float:left;
@@ -1222,7 +1225,7 @@ textarea{
     margin-bottom:auto;
   }
   footer .grid-third{
-    width:222px !important;
+    width:225px !important;
     float:none;
     margin:auto;
     display:block;
@@ -1254,6 +1257,10 @@ textarea{
     -webkit-columns: 1;
     -moz-columns: 1;
     columns: 1;
+  }
+  #services2 .package .panel ul li{
+    width:100%;
+    margin-right:0;
   }
   #video .grid-half{
     width:100%;
@@ -1306,8 +1313,8 @@ textarea{
     font-size:1.2em;
   }
   #services2 .price{
-    font-size:15px;
-    width:100px;
+    width:115px;
+    margin-right:1%;
   }
   #services2 .panelContainer{
     padding:0;
@@ -1335,18 +1342,25 @@ textarea{
   #bio .panel .portraitRight .panel {
     padding:0
   }
-  .splash div:first-child{
-    bottom:5%;
+  .splash div{
+    bottom:3%;
     top:auto;
-  }
-  .splash div:last-child{
-    bottom:0 !important;
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
   }
   #contact .contactInfo .grid-half{
     width:100%;
   }
   #contact form .panelContainer .panel{
     padding: 10px 30px;
+  }
+  #customer .customerInfo{
+    padding-left:10%;
+  }
+  #services2 .package div .panel:first-child{
+    padding: 30px 0;
   }
 }
 @media screen and (max-width:400px){
@@ -1355,5 +1369,10 @@ textarea{
   }
   .panelContainer{
     padding:0;
+  }
+  #services2 .price{
+    font-size:15px;
+    width:90px;
+    padding:4px 5px;
   }
 }

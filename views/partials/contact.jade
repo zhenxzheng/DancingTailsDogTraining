@@ -1,9 +1,8 @@
 section.splash(style="background-image:url('../contact-low.jpg')").bg
-	div(style="left:25%;height:20%")
+	div(style="left:25%").ease.hideBottom
 		h1(style="font-size:3em") Contact Me
 		h2 Reach Out to Me Today!
-	div(style="left:25%;top:auto;bottom:30%").hideBottom
-		span.ease.glyphicon.glyphicon-chevron-down(style="font-size:40px", ng-click="moveDown()")
+		span.glyphicon.glyphicon-chevron-down(style="font-size:40px;;margin-top:15px", ng-click="moveDown()")
 section.container#contact
 	div.container
 		div(style="margin-bottom:20px").contactInfo
