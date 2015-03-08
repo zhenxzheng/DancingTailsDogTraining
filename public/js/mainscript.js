@@ -6,9 +6,7 @@ var $isMobile,
   preload,
   cover;
 
-var home,services,philosophy,video,about,contact;
-
-home=services=philosophy=video=about=contact=true;
+var showMenu=false;
 
 $(document).ready(function(){
 	$isMobile=navigator.userAgent.match(/(Phone|iPod|iPad|Android|BlackBerry)/);
@@ -21,14 +19,51 @@ $(document).ready(function(){
       headerScroll();
   })
   $('html body').css("opacity",1);
+  $('#mobileMenu').click(function(){
+    if(!showMenu){
+      showMenu=true;
+      $('.navItem').addClass('showMenu');
+      $('nav').css({height:$(window).height(),"overflow-y":"scroll"});
+    }
+    else{
+      showMenu=false;
+      $('.navItem').removeClass('showMenu');
+      $('nav').css({height:"77px","overflow-y":"hidden"});
+    }
+  })
+  $('.navItem').click(function(){
+    showMenu=false;
+    $('.navItem').removeClass('showMenu');
+    $('nav').css({height:"77px","overflow-y":"hidden"});
+  });
 })
+
+function checkMobile(){
+  if($isMobile != null){
+    $('body').addClass("mobileMode");
+    $('.bg').css("background-attachment","scroll");
+  }
+}
+
 
 function layoutResize(){
   windowWidth=$(window).width();
   windowHeight=$(window).height();
+  checkMobile();
 	$('.splash').css('height',windowHeight);
-  $('.pageEnd').css('height',windowHeight*0.54);
   $('#footerSpace').css('height',$('footer').height()+40);
+
+  if (windowWidth <= 400) $('.pageEnd').css('height',windowHeight*0.8);
+  else $('.pageEnd').css('height',windowHeight*0.54);
+
+  if (windowWidth < 701) $('#video .panelContainer p').removeClass('hideBottom');
+  else $('#video .panelContainer p').addClass('hideBottom');
+
+  if (windowWidth > 520){
+    showMenu=false;
+    $('.navItem').removeClass('showMenu');
+    $('nav').css({height:"77px","overflow-y":"hidden"});
+  }
   if (windowWidth >= 2000){
     loadHighRes();
     window.setTimeout(function(){

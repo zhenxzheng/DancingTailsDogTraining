@@ -1,31 +1,29 @@
-section.splash(style="background-image:url('../contact-low.jpg')")
-	div(style="left:25%;height:200px")
+section.splash(style="background-image:url('../contact-low.jpg')").bg
+	div(style="left:25%;height:20%")
 		h1(style="font-size:3em") Contact Me
 		h2 Reach Out to Me Today!
 	div(style="left:25%;top:auto;bottom:30%").hideBottom
 		span.ease.glyphicon.glyphicon-chevron-down(style="font-size:40px", ng-click="moveDown()")
 section.container#contact
 	div.container
-		div(style="height:150px;margin-bottom:20px").contactInfo
+		div(style="margin-bottom:20px").contactInfo
 			div.grid-half
 				div.panel
 					h2.green Phone
 					p.smallest Give me a call.
 					a(href="tel:1-805-302-4691"): p (805) 302-4691
 			div.grid-half
-				div.panel
-					img(src="dogPhone2-low.jpg",style)
+				div.panel(style="background-image:url('dogPhone2-low.jpg')").bg
 					h2: a(href="tel:1-805-302-4691"): span(style="padding:20px").glyphicon.glyphicon-earphone
 					p.hideBottom Call Now
-		div(style="height:150px").contactInfo
+		div.contactInfo
 			div.grid-half
 				div.panel
 					h2.green Email
 					p.smallest Send me an email.
 					a(href="mailto:dancingtailstraining@gmail.com"): p dancingtailstraining@gmail.com
 			div.grid-half
-				div.panel
-					img(src="dogEmail2-low.jpg",style)
+				div.panel(style="background-image:url('dogEmail2-low.jpg')").bg
 					h2: a(href="mailto:dancingtailstraining@gmail.com"): span(style="padding:20px").glyphicon.glyphicon-envelope
 					p.hideBottom Send Email
 	div.container

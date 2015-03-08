@@ -114,7 +114,7 @@ function ServicesCtrl($scope,$http){
       $scope.services = data.services;
     });
   $scope.showDetails = function(session){
-    $("html body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
+    $("html, body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
     $scope.services.forEach(function(category, i){
       category.packages.forEach(function(pack, i){
         if (i == session) pack.state = true;
@@ -124,7 +124,7 @@ function ServicesCtrl($scope,$http){
   }
   $scope.showProgram = function(program){
     $(".serviceInner").css({height:"100%"});
-    $("html body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
+    $("html, body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
     $(".price").removeClass("active");
     $(".price").click(function(){
       $(".price").removeClass("active");
@@ -139,7 +139,7 @@ function ServicesCtrl($scope,$http){
     })
   }
 }
-function VideosCtrl($scope,$http){
+function VideosCtrl($scope,$http,$timeout){
   window.scrollTo(0,0);
   layoutResize();
   $http.get('api/videos')
@@ -162,16 +162,23 @@ function VideosCtrl($scope,$http){
   }
   $scope.closeVideo = function(){
     stopVideo();
-    $("#playerLayer").css("opacity",0).addClass("invisible");
+    $("#playerLayer").css("opacity",0);
+    $timeout(function(){$("#playerLayer").addClass("invisible")},500);
   }
   $scope.hoverEffect = function(){
+    if ($(window).width() < 701) $('#video .panelContainer p').removeClass('hideBottom');
+    else $('#video .panelContainer p').addClass('hideBottom');
     hoverEffect(".panelContainer", "p");
     $("#video .grid-half .panelContainer").hover(
       function(){
-        $(this).find(".viewButton").css("top","47%");
+        if ($(window).width() > 700){
+          $(this).find(".viewButton").css("top","47%");
+        }
       },
       function(){
-        $(this).find(".viewButton").css("top","50%");
+        if ($(window).width() > 701){
+          $(this).find(".viewButton").css("top","50%");
+        }
       }
     );
     $("#video .viewButton").hover(function(){

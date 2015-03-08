@@ -2,20 +2,25 @@ extends layout
 
 block body
   nav.seeThrough.ease
-    div#brand
-      a(href='/'): img(src="logoTextGreen-standard.png")
     div#menu
       ul
-        li: a(href='/') Home
-        li: a(href='/services') Services
-        li: a(href='/philosophy') Philosophy
-        li: a(href='videos') Videos
-        li: a(href='/about') About
-        li: a(href='/contact') Contact
+        li: span.glyphicon.glyphicon-th-list#mobileMenu
+        li.navItem: a(href='/') Home
+        li.navItem: a(href='/services') Services
+        li.navItem: a(href='/philosophy') Philosophy
+        li.navItem: a(href='videos') Videos
+        li.navItem: a(href='/about') About
+        li.navItem: a(href='/contact') Contact
+    div#brand
+      a(href='/')
+        img(src="logoTextGreen-standard.png")
+        i.fa.fa-paw(style="font-size:50px;display:none")
     div#navContact
       div
         p.smallest Serving the East Bay Area
         h2: a(href="tel:1-805-302-4691") (805) 302-4691
+      div(style="display:none;padding:10px 0")
+        h1(style="font-size:20px"): a(href="tel:1-805-302-4691"): span.glyphicon.glyphicon-earphone(style="border:solid;border-radius:50px;padding:15px")
   section#main(ng-view)
   section#footerSpace
 

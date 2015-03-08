@@ -13,7 +13,7 @@ section.container#services2
 		div.package(ng-repeat="category in services")
 			div(ng-show="category.state")
 				div.panel
-					h2
+					h2(style="float:left")
 						span.green {{category.title}} 
 						br
 						| {{category.description}}
