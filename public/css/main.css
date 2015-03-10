@@ -159,6 +159,9 @@ input:focus, textarea:focus{
   padding:0 20px;
   margin-bottom:20px;
 }
+.panelContainer:last-child{
+  margin-bottom:100px;
+}
 .grid-half:last-child{
   margin-bottom:100px;
 }
@@ -1362,7 +1365,7 @@ textarea{
     border-left:none;
     margin-bottom:20px;
   }
-  #bio .panel .portraitRight .panel {
+  #bio .panel .portraitRight .panel, #bio .panel .portraitLeft .panel{
     padding:0
   }
   .splash div{
