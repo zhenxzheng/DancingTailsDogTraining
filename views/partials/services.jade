@@ -1,6 +1,6 @@
 section.container#services2
-	div.panelContainer(style="background-image:url('homeCover-low.jpg')")
-		div.serviceIntro
+	div.panelContainer(style="background-image:url('services-low.jpg')")
+		div.serviceIntro.whiteStroke
 			h1 I am Here to Help!
 			h2 Each Private consult includes:
 			ul
@@ -8,7 +8,7 @@ section.container#services2
 				li A 90-minute in-home or on-location consult
 				li A detailed follow-up Email from our meeting inclucding a summary of the consult and key recommendation
 			p.smallest.italic All programs include all consultation features.
-			p.green Select a category below for services offered
+			p(ng-click="moveDown()",style="cursor:pointer") Select a category below for services offered
 	div.panelContainer.serviceInner.ease
 		div.package(ng-repeat="category in services")
 			div(ng-show="category.state")

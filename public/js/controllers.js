@@ -51,11 +51,15 @@ function ContactCtrl($scope, $http){
   $('#messageContent').change(function(){
     validate($(this));
   });
+  $('#how').change(function(){
+    validate($(this));
+  });
+
   $scope.form = {};
   $scope.submitMessage = function(){
     $scope.form.date = new Date();
     var validitymsg = "validated";
-    if (!validate($('#userName')) || !validate($('#userEmail')) || !validate($('#userPhone')) || !validate($('#dogName')) || !validate($('#dogBreed')) || !validate($('#dogAge')) || !validate($('#messageContent'))){
+    if (!validate($('#userName')) || !validate($('#userEmail')) || !validate($('#userPhone')) || !validate($('#dogName')) || !validate($('#dogBreed')) || !validate($('#dogAge')) || !validate($('#messageContent')) || !validate($('#how'))){
       validitymsg = "Something is not right..\n";
       if (!validate($('#userName'))){
         validitymsg = validitymsg+"\nInvalid Name. [Alphabet A-Z Only]";
@@ -78,6 +82,10 @@ function ContactCtrl($scope, $http){
       if (!validate($('#messageContent'))){
         validitymsg = validitymsg+"\nEmpty Message. ";
       }
+      if (!validate($('#how'))){
+        validitymsg = validitymsg+"\nPlease let us know how you heard about us.";
+      }
+
     }
     if(validitymsg == "validated"){
       if(confirm("Ready to send?")==true){
@@ -97,7 +105,7 @@ function ContactCtrl($scope, $http){
     $('#messageResult').fadeOut("fast");
   }
 }
-function ServicesCtrl($scope,$http){
+function ServicesCtrl($scope,$http,$timeout){
   window.scrollTo(0,0);
   layoutResize();
   $("#services2 .grid-third .panel:first-child").hover(
@@ -113,30 +121,45 @@ function ServicesCtrl($scope,$http){
     .success(function(data, status, headers, config){
       $scope.services = data.services;
     });
+  $scope.moveDown = function(){
+    $("html, body").animate({scrollTop:$(".serviceInner").offset().top-$(window).height()/2}, '500', 'swing');
+  }
   $scope.showDetails = function(session){
     $("html, body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
     $scope.services.forEach(function(category, i){
       category.packages.forEach(function(pack, i){
-        if (i == session) pack.state = true;
+        if (i == session) pack.state = !pack.state;
         else pack.state = false;
       });
     });
   }
   $scope.showProgram = function(program){
-    $(".serviceInner").css({height:"100%"});
-    $("html, body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
-    $(".price").removeClass("active");
-    $(".price").click(function(){
+    if ($scope.services[program].state==true){
+      $(".serviceInner").css({height:"0"});
+      $("html, body").animate({scrollTop:$(".serviceInner").offset().top-$(window).height()/2}, '500', 'swing')
+      $timeout(function(){
+        $scope.services[program].state = false;
+      }, 500);
+    }
+    else{
+      $(".serviceInner").css({height:"100%"});
+      $("html, body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
       $(".price").removeClass("active");
-      $(this).addClass("active");
-    })
-    $scope.services.forEach(function(category, i){
-      if(i==program) category.state = true;
-      else category.state = false;
-      category.packages.forEach(function(pack, i){
-        pack.state = false;
-      });
-    })
+      $(".price").click(function(){
+        if (!($(this).hasClass("active"))) {
+          $(".price").removeClass("active");
+          $(this).addClass("active");
+        }
+        else $(this).removeClass("active");
+      })
+      $scope.services.forEach(function(category, i){
+        if(i==program) category.state = true;
+        else category.state = false;
+        category.packages.forEach(function(pack, i){
+          pack.state = false;
+        });
+      })
+    }
   }
 }
 function VideosCtrl($scope,$http,$timeout){

@@ -52,6 +52,7 @@ function layoutResize(){
   checkMobile();
 	$('.splash').css('height',windowHeight);
   $('#footerSpace').css('height',$('footer').height()+40);
+  $('#services2 .panelContainer:first-child').css('height',windowHeight-77);
 
   if (windowWidth <= 400) $('.pageEnd').css('height',windowHeight*0.8);
   else $('.pageEnd').css('height',windowHeight*0.54);
@@ -115,7 +116,7 @@ function headerScroll(){
   var pattern = /.+\/([^\/]+)/;
   var regexpMatches = pattern.exec(window.location.href);
   if (regexpMatches[1] == "services"){
-    if ($('#categoryOutter').offset().top < windowHeight){
+    if ($('#categoryOutter').height()*0.5+windowHeight >= $(window).scrollTop()+windowHeight){
       $('#categoryInner').removeClass("fixed");
     }
     //
@@ -273,7 +274,7 @@ function validate(selector){
     validated = (match == input ? true : false);
   }
   //content and age [!empty]
-  else if ($(selector).attr('id') == $('#messageContent').attr('id') || $(selector).attr('id') == $('#dogAge').attr('id')){
+  else if ($(selector).attr('id') == $('#messageContent').attr('id') || $(selector).attr('id') == $('#dogAge').attr('id') || $(selector).attr('id') == $('#how').attr('id')){
     $input = $(selector).find('textarea').length?$(selector).find('textarea'):$(selector).find('input');
     input = $input.val();
     validated = (input != '' ? true : false);

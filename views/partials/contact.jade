@@ -9,7 +9,7 @@ section.container#contact
 			div.grid-half
 				div.panel
 					h2.green Phone
-					p.smallest Give me a call.
+					p.smallest Call Alyssa at
 					a(href="tel:1-805-302-4691"): p (805) 302-4691
 			div.grid-half
 				div.panel(style="background-image:url('dogPhone2-low.jpg')").bg
@@ -19,7 +19,7 @@ section.container#contact
 			div.grid-half
 				div.panel
 					h2.green Email
-					p.smallest Send me an email.
+					p.smallest Email Alyssa at
 					a(href="mailto:dancingtailstraining@gmail.com"): p dancingtailstraining@gmail.com
 			div.grid-half
 				div.panel(style="background-image:url('dogEmail2-low.jpg')").bg
@@ -62,12 +62,16 @@ section.container#contact
 							input(placeholder="(e.g., 2 months)", ng-model="form.age")
 							span.validation
 			div.panelContainer
+
 				div.panel#messageContent
 					p Inquiry
 					textarea(ng-model="form.message")
 					span.validation
+				div.panel#how
+					p How did you hear about Dancing Tails Dog Training?
+					input(placeholder="(e.g., Google, Yelp, personal reference, flier, etc.)", ng-model="form.how")
+					span.validation
 				div.panel
-					
 					button(ng-click="submitMessage()").ease Message
 section#messageResult
 	div.panel(style="background:#1BA39C")

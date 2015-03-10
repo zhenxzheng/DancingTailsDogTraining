@@ -280,6 +280,18 @@ footer .grid-third:last-child{
 .hide{
   bottom:-100px !important;
 }
+.whiteStroke{
+  text-shadow: 1px 1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px -1px 0 #fff;
+}
+.darkStroke{
+  text-shadow: 1px 1px 0 #333,
+                -1px 1px 0 #333,
+                1px -1px 0 #333,
+                -1px -1px 0 #333;
+}
 .ease{
   -ms-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
@@ -317,7 +329,7 @@ nav{
   height:77px;
   z-index:100;
   overflow:hidden;
-  /*border-bottom:solid 1px;*/
+  border-bottom:solid 1px;
 }
 nav.seeThrough:after{
   position:absolute;
@@ -326,7 +338,7 @@ nav.seeThrough:after{
   width:100%;
   height:100%;
   content:"";
-  background:#f5f5f5;
+  background:#ddd;
   z-index: -1;
   opacity:0.9;
 }
@@ -361,7 +373,7 @@ nav:after{
   display:table;
   width:172px;
   height:77px;
-  /*border-right:solid 1px;*/
+  border-right:solid 1px;
 }
 #brand a {
   display:table-cell;
@@ -385,7 +397,7 @@ nav:after{
   height:77px;
   display:table;
   padding:0 20px;
-  /*border-left:solid 1px*/
+  border-left:solid 1px
 }
 #navContact div{
   display:table-cell;
@@ -476,7 +488,7 @@ footer #ppg{
 }
 footer .credit{
   color:#ccc;
-  margin-top:53px;
+  margin-top:64px;
   margin-bottom:40px;
   display:inline-block;
 }
@@ -515,7 +527,7 @@ footer .credit{
   top:0;
   left:0;
   content:"";
-  background:black;
+  background:#1BA39C;
   opacity:0.2;
   z-index: -1;
   -ms-transition: all 0.3s ease;
@@ -800,20 +812,20 @@ footer .credit{
 /*
  *  Services Page
  */
-#services2 .panelContainer{
-  height:405px;
+#services2 .panelContainer:first-child{
+  max-height:660px;
   text-align:left;
   background-size:cover;
   background-position:bottom left;
   position:relative;
 }
 #services2 .panelContainer .serviceIntro{
-  color:#777;
+  color:#333;
   padding:20px;
   width:50%;
   position:absolute;
-  top:50%;
-  right:60px;
+  top:35%;
+  left:60px;
   opacity:1;
   -webkit-transform: translate(0%, -50%);
   -moz-transform: translate(0%, -50%);
@@ -828,15 +840,22 @@ footer .credit{
   list-style: disc;
   margin-left:20px;
 }
+#services2 .panelContainer .serviceIntro p:last-child{
+  color:#1BA39C;
+  font-weight: 700;
+  background:white;
+  padding:5px;
+  border:solid;
+}
 #services2 .panelContainer .serviceIntro:after{
   position:absolute;
-  background:white;
+  background: #1BA39C;
   content:"";
   width:100%;
   height:100%;
   top:0;
   left:0;
-  opacity:0.7;
+  opacity:0.2;
   z-index:-1;
 /*  -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -1026,7 +1045,7 @@ footer .credit{
   text-align:left;
   line-height:1.5em;
 }
-#userName,#userPhone,#userEmail,#dogName,#dogBreed,#dogAge,#messageContent{
+#userName,#userPhone,#userEmail,#dogName,#dogBreed,#dogAge,#messageContent,#how{
   position:relative;
 }
 #contact .validation{
@@ -1173,6 +1192,9 @@ textarea{
   #services2 #categoryInner{
     width:100%;
   }
+  #services2 #categoryInner.fixed{
+    width:95%;
+  }
   #services2 .serviceInner .package div .panel:last-child div{
     width:100% !important;
   }
@@ -1248,6 +1270,7 @@ textarea{
   #services2 .panelContainer .serviceIntro{
     width:70%;
     left:50%;
+    top:50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -1304,7 +1327,7 @@ textarea{
     width:90%;
   }
   #services2 .panelContainer .serviceIntro:after {
-    opacity:0.9;
+    opacity:0.2;
   }
   #services2 h1{
     font-size:1.7em;
