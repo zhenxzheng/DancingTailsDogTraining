@@ -1244,7 +1244,7 @@ textarea{
     display:none;
   }
   .splash figure:after{
-    background:white;
+    background:#1BA39C;
   }
   .grid-half{
     width:70%;
@@ -1331,9 +1331,6 @@ textarea{
   }
   #services2 .panelContainer .serviceIntro{
     width:90%;
-  }
-  #services2 .panelContainer .serviceIntro:after {
-    opacity:0.2;
   }
   #services2 h1{
     font-size:1.7em;

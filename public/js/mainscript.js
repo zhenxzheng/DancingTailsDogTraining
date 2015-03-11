@@ -164,6 +164,7 @@ function loadingHome(){
   var bgUrl="url('"+url+"')";
   cover.onload = function(){
     $("#homeCover").css("background-image",bgUrl );
+    logoAnimation();
   }
 }
 function loadingContact(){
