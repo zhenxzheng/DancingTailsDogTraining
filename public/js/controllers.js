@@ -102,6 +102,7 @@ function ContactCtrl($scope, $http){
     $scope.form.dog = $scope.form.dog.capitalizedFirst();
     $scope.form.breed = $scope.form.breed.capitalizedFirst();
     $scope.form.age = $scope.form.age.capitalizedFirst();
+    $scope.form.message = $scope.form.message.match(/^.+/mg);
 
     if(validitymsg == "validated"){
       if(confirm("Ready to send?")==true){

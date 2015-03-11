@@ -1,4 +1,4 @@
-section.container(style="position:fixed;padding-top:60px;left:50%;-webkit-transform: translate(-50%, 0%);-moz-transform: translate(-50%, 0%);-ms-transform: translate(-50%, 0%);-o-transform: translate(-50%, 0%);")
+section.container(style="position:fixed;padding-top:60px;left:50%;-webkit-transform: translate(-50%, 0%);-moz-transform: translate(-50%, 0%);-ms-transform: translate(-50%, 0%);-o-transform: translate(-50%, 0%);background:#f5f5f5;z-index:99;")
 	div.grid-half
 		input.ease(ng-model="search",placeholder="Search")
 	div.grid-half(style="margin-bottom:0")
@@ -10,7 +10,7 @@ section.container(style="position:fixed;padding-top:60px;left:50%;-webkit-transf
 			div(ng-click="viewStarred()", style="cursor:pointer;display:inline-block")
 				p(ng-show="starred").green Starred
 				p(ng-hide="starred") Starred
-section.container(style="padding-top:131px")
+section.container(style="padding-top:150px")
 	div.panelContainer(ng-repeat="(i, message) in messages | filter:search | orderBy:'-date.full'", id="{{message._id}}", style="border:solid;text-align:left")
 		div.panel				
 			div(style="display:inline-block;cursor:pointer",ng-click="show=!show")
@@ -55,7 +55,7 @@ section.container(style="padding-top:131px")
 			div.panel
 				p.green.bold Message:
 				div.panel(style="padding:1%")
-					p {{message.message}}
+					p(ng-repeat="paragraph in message.message") {{paragraph}}
 			div.panel
 				p.green.bold How {{message.owner}} heard about Dancing Tails:
 				div.panel(style="padding:1%")

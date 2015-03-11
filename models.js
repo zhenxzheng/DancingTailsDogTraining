@@ -13,7 +13,7 @@ var MessageSchema = new Mongoose.Schema({
 		date: String,
 		time: String
 	},
-	message: String,
+	message: [String],
 	how: String,
 	starred: {type:Boolean, default:false}
 });
