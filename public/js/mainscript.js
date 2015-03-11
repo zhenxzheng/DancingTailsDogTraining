@@ -23,6 +23,7 @@ $(document).ready(function(){
   temp.onload=function(){
     $('html body').css("opacity",1);
     logoAnimation();
+    preloadImages();
   }
   $('#mobileMenu').click(function(){
     if(!showMenu){
