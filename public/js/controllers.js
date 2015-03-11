@@ -17,10 +17,14 @@ function AboutCtrl($scope){
   window.scrollTo(0,0);
   $scope.ReadMore=false;
   layoutResize();
+  $('html body').css("opacity",1);
+
 }
 function PhilosophyCtrl($scope){
   window.scrollTo(0,0);
   layoutResize();
+  $('html body').css("opacity",1);
+
 }
 function ContactCtrl($scope, $http){
   window.scrollTo(0,0);
@@ -119,6 +123,7 @@ function ContactCtrl($scope, $http){
 }
 function ServicesCtrl($scope,$http,$timeout){
   window.scrollTo(0,0);
+  $('html body').css("opacity",1);
   layoutResize();
   $("#services2 .grid-third .panel:first-child").hover(
     function(){
@@ -176,6 +181,7 @@ function ServicesCtrl($scope,$http,$timeout){
 }
 function VideosCtrl($scope,$http,$timeout){
   window.scrollTo(0,0);
+  $('html body').css("opacity",1);
   layoutResize();
   $http.get('api/videos')
     .success(function(data, status, headers, config){
@@ -225,7 +231,9 @@ function VideosCtrl($scope,$http,$timeout){
     });
   }
 }
+
 function MessagesCtrl($scope, $http, $route){
+  $('html body').css("opacity",1);
   $scope.all=true;
   $http.get('api/messages')
     .success(function(data, status, headers, config){
