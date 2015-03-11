@@ -18,6 +18,12 @@ $(document).ready(function(){
   $(window).scroll(function(){
       headerScroll();
   })
+  var temp = new Image();
+  temp.src="../homeCover-low.jpg";
+  temp.onload=function(){
+    $('html body').css("opacity",1);
+    logoAnimation();
+  }
   $('#mobileMenu').click(function(){
     if(!showMenu){
       showMenu=true;
@@ -157,8 +163,6 @@ function loadingHome(){
   var bgUrl="url('"+url+"')";
   cover.onload = function(){
     $("#homeCover").css("background-image",bgUrl );
-    $('html, body').css("opacity",1);
-    logoAnimation();
   }
 }
 function loadingContact(){
