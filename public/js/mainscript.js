@@ -134,7 +134,7 @@ function headerScroll(){
     }
     else $("#services2 .grid-third .panel:first-child").find("p").css("display","none");
   }
- }
+}
 function fixedCategory(){
   $('#categoryInner').addClass("fixed");
   if($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top>=70 || $(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top<=150)
@@ -289,4 +289,36 @@ function validate(selector){
     $input.css("border-color","red");
   }
   return validated;
+}
+
+Date.prototype.formatDate = function () {
+  var monthArr = ["January","February","March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var weekdayArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return  monthArr[this.getMonth()]+" "+this.getDate()+", "+this.getFullYear()+" - "+weekdayArr[this.getDay()];
+}
+
+Date.prototype.convertDate = function(){
+  var month = (this.getMonth()+1).toString();
+  var date = this.getDate().toString();
+  return this.getFullYear() + "-" + (month.length==2?month:"0"+month[0])+"-"+(date.length==2?date:"0"+date[0]);
+}
+Date.prototype.formatTime = function(){
+  var hours = this.getHours();
+  var minutes = this.getMinutes();
+  var AMPM = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var time = hours + ':' + minutes + ' ' + AMPM;
+  return time;
+}
+
+String.prototype.formatPhone = function(){
+  var temp = this;
+  if (this.length == 10) temp = '1'+this;
+  return [temp.slice(0,1)," (",temp.slice(1,4),") ",temp.slice(4,7),"-",temp.slice(7,this.length)].join('');
+}
+
+String.prototype.capitalizedFirst = function(){
+  return this.replace(/\w\S*/g, function(word){return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();});
 }

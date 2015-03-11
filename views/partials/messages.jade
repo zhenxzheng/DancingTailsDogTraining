@@ -1,0 +1,62 @@
+section.container(style="position:fixed;padding-top:60px;left:50%;-webkit-transform: translate(-50%, 0%);-moz-transform: translate(-50%, 0%);-ms-transform: translate(-50%, 0%);-o-transform: translate(-50%, 0%);")
+	div.grid-half
+		input.ease(ng-model="search",placeholder="Search")
+	div.grid-half
+		div.grid-half
+			div(ng-click="viewAll()", style="cursor:pointer;display:inline-block") 
+				p(ng-show="all").green All
+				p(ng-hide="all") All
+		div.grid-half
+			div(ng-click="viewStarred()", style="cursor:pointer;display:inline-block")
+				p(ng-show="starred").green Starred
+				p(ng-hide="starred") Starred
+section.container(style="padding-top:131px")
+	div.panelContainer(ng-repeat="(i, message) in messages | filter:search | orderBy:'-date.full'", id="{{message._id}}", style="border:solid;text-align:left")
+		div.panel				
+			div(style="display:inline-block;cursor:pointer",ng-click="show=!show")
+				p.bold(ng-hide="show") {{message.date.date}} 
+					span.small at {{message.date.time}}
+				h2.bold(ng-show="show") {{message.date.date}} 
+					span.small at {{message.date.time}}
+				p(ng-hide="show")
+					span.green From 
+					| {{message.owner}} & {{message.dog}}
+
+			h2(style="display:inline-block;margin:0 5px;padding:5px;cursor:pointer;float:left",ng-click="message.starred=!message.starred; starMessage(message._id, message.starred)")
+					span(ng-hide="message.starred").glyphicon.glyphicon-star-empty
+					span(ng-show="message.starred").glyphicon.glyphicon-star.yellow
+			h2(style="display:inline-block;margin:0 5px;padding:5px;cursor:pointer;float:right",ng-click="deleteMessage(message._id)").red
+				span.glyphicon.glyphicon-trash
+			h2(style="display:inline-block;margin:0 5px;padding:5px;cursor:pointer;float:right",ng-hide="show",ng-click="show=!show").green
+				span.glyphicon.glyphicon-chevron-down
+			h2(style="display:inline-block;margin:0 5px;padding:5px;cursor:pointer;float:right",ng-show="show",ng-click="show=!show").green
+				span.glyphicon.glyphicon-chevron-up
+		div(ng-show="show")
+			div.panel
+				div.grid-half(style="margin-top:0;margin-bottom:0")
+					div.grid-half(style="margin:0;width:30%").green.bold
+						h2 From:
+						p.small Email: 
+						p.small Phone: 
+					div.grid-half(style="margin:0;width:70%")
+						h2 {{message.owner}}
+						p.small {{message.email}}
+						p.small {{message.phone}}
+
+				div.grid-half(style="margin-top:0;margin-bottom:0")
+					div.grid-half(style="margin:0;width:30%").green.bold
+						h2 Pup:
+						p.small Breed:
+						p.small Age:
+					div.grid-half(style="margin:0;width:70%")
+						h2 {{message.dog}}
+						p.small {{message.breed}}
+						p.small {{message.age}}
+			div.panel
+				p.green.bold Message:
+				div.panel(style="padding:1%")
+					p {{message.message}}
+			div.panel
+				p.green.bold How {{message.owner}} heard about Dancing Tails:
+				div.panel(style="padding:1%")
+					p {{message.how}}	

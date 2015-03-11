@@ -8,9 +8,14 @@ var MessageSchema = new Mongoose.Schema({
 	dog: String,
 	breed: String,
 	age: String,
-	date: Date,
+	date: {
+		full: Date,
+		date: String,
+		time: String
+	},
 	message: String,
-	how: String
+	how: String,
+	starred: {type:Boolean, default:false}
 });
 
 exports.Message = Mongoose.model('Message', MessageSchema);

@@ -37,6 +37,10 @@ angular.module('myApp', [
       templateUrl: 'partials/contact',
       controller: 'ContactCtrl'
     })
+    .when('/messages',{
+      templateUrl: 'partials/messages',
+      controller: 'MessagesCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });

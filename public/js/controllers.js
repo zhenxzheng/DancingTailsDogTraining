@@ -57,7 +57,12 @@ function ContactCtrl($scope, $http){
 
   $scope.form = {};
   $scope.submitMessage = function(){
-    $scope.form.date = new Date();
+    var temp = new Date();
+    $scope.form.date = {
+      full:temp,
+      date:temp.formatDate(),
+      time:temp.formatTime()
+    };
     var validitymsg = "validated";
     if (!validate($('#userName')) || !validate($('#userEmail')) || !validate($('#userPhone')) || !validate($('#dogName')) || !validate($('#dogBreed')) || !validate($('#dogAge')) || !validate($('#messageContent')) || !validate($('#how'))){
       validitymsg = "Something is not right..\n";
@@ -87,6 +92,13 @@ function ContactCtrl($scope, $http){
       }
 
     }
+    $scope.form.owner = $scope.form.owner.capitalizedFirst();
+    $scope.form.phone = $scope.form.phone.replace(/[^0-9]/g,"").formatPhone();
+    $scope.form.email = $scope.form.email.toLowerCase();
+    $scope.form.dog = $scope.form.dog.capitalizedFirst();
+    $scope.form.breed = $scope.form.breed.capitalizedFirst();
+    $scope.form.age = $scope.form.age.capitalizedFirst();
+
     if(validitymsg == "validated"){
       if(confirm("Ready to send?")==true){
         $http.post('/api/messages/new', $scope.form)
@@ -211,5 +223,43 @@ function VideosCtrl($scope,$http,$timeout){
       $(this).find("path").css("fill","#ffffff");
       $(this).find("polygon").css("stroke","#ffffff")
     });
+  }
+}
+function MessagesCtrl($scope, $http, $route){
+  $scope.all=true;
+  $http.get('api/messages')
+    .success(function(data, status, headers, config){
+      $scope.messages = data;
+    });
+  $scope.starMessage = function(id, starred){
+    $http.put('api/messages/'+id, {"starred":starred})
+      .success(function(data){
+      })
+  }
+
+  $scope.deleteMessage = function(id){
+    var currentMsg = "#"+id;
+    if(confirm("Are you sure you want to delete this message?")==true){
+      $http.delete('api/messages/'+id)
+        .success(function(data){
+          $(currentMsg).fadeOut("fast");
+        })
+    }
+  }
+  $scope.viewStarred = function(){
+    $scope.all = false;
+    $scope.starred = true;
+    $http.get('api/starredMessages')
+      .success(function(data, status, headers, config){
+        $scope.messages = data;
+      })
+  }
+  $scope.viewAll = function(){
+    $scope.all = true;
+    $scope.starred = false;
+    $http.get('api/messages')
+      .success(function(data, status, headers, config){
+        $scope.messages = data;
+      });
   }
 }

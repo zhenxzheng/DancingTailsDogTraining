@@ -61,9 +61,11 @@ app.get('/partials/:name', routes.partials);
 app.get('/api/reviews', api.reviews);
 app.get('/api/videos', api.videos);
 app.get('/api/services', api.services);
-app.get('/api/messages', api.viewMessage);
-app.post('/api/messages/new', api.saveMessage)
-app.delete('/api/post/:id', api.deletePost);
+app.get('/api/messages', api.viewMessages);
+app.get('/api/starredMessages', api.viewStarred)
+app.post('/api/messages/new', api.saveMessage);
+app.put('/api/messages/:id', api.starMessage);
+app.delete('/api/messages/:id', api.deleteMessage);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);

@@ -265,6 +265,9 @@ footer .grid-third:last-child{
 .red{
   color:red;
 }
+.yellow{
+  color:#F7CA18;
+}
 .underline{
   text-decoration: underline;
 }
