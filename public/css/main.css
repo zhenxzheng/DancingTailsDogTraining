@@ -456,9 +456,6 @@ footer p a{
   color:#999;
   text-decoration:underline;
 }
-footer p a:hover{
-  color:#1BA39C;
-}
 footer ul{
   list-style:none;
   text-align:left;
@@ -473,12 +470,10 @@ footer li{
   line-height:40px;
 }
 footer ul li a, #video p a{
-  color:#333;
-  opacity:0.5;
+  color:#999;
 }
-footer ul li a:hover, #video p a:hover{
+footer a:hover, #video p a:hover{
   color:#1BA39C;
-  opacity:1;
 }
 footer h1, footer p{
   text-align:left;
