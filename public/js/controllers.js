@@ -180,15 +180,12 @@ function ServicesCtrl($scope,$http,$timeout){
     }
   }
 }
-function VideosCtrl($scope,$http,$timeout){
+function VideosCtrl($scope,$http,$timeout,data){
   window.scrollTo(0,0);
   $('html body').css("opacity",1);
   layoutResize();
-  $http.get('api/videos')
-    .success(function(data, status, headers, config){
-        $scope.channel = data.channel;
-        $scope.videos = data.videos;
-      });
+  $scope.channel = data.channel;
+  $scope.videos = data.videos;
 
   $scope.playVideo = function (id){
     $("#playerLayer").removeClass("invisible").css("opacity",1);

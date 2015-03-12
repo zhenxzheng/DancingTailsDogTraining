@@ -11,23 +11,61 @@ angular.module('myApp', [
   $routeProvider
     .when('/', {
       templateUrl: 'partials/home',
-      controller: 'HomeCtrl'
+      controller: 'HomeCtrl',
+      resolve:{
+        delay: function($q, $timeout){
+          var delay = $q.defer();
+          delay.resolve(true);
+          return delay.promise;
+        }
+      }
     })
     .when('/about',{
       templateUrl: 'partials/about',
-      controller: 'AboutCtrl'
+      controller: 'AboutCtrl',
+      resolve:{
+        delay: function($q, $timeout){
+          var delay = $q.defer();
+          delay.resolve(true);
+          return delay.promise;
+        }
+      }
     })
     .when('/philosophy', {
       templateUrl: 'partials/philosophy',
-      controller: 'PhilosophyCtrl'
+      controller: 'PhilosophyCtrl',
+      resolve:{
+        delay: function($q, $timeout){
+          var delay = $q.defer();
+          delay.resolve(true);
+          return delay.promise;
+        }
+      }
     })
     .when('/services',{
       templateUrl: 'partials/services',
-      controller: 'ServicesCtrl'
+      controller: 'ServicesCtrl',
+      resolve:{
+        delay: function($q, $timeout){
+          var delay = $q.defer();
+          delay.resolve(true);
+          return delay.promise;
+        }
+      }
     })
     .when('/videos', {
       templateUrl: 'partials/videos',
-      controller: 'VideosCtrl'
+      controller: 'VideosCtrl',
+      resolve:{
+        data: function($q, $timeout,$http){
+          var delay = $q.defer();
+          $http.get('api/videos')
+            .success(function(data, status, headers, config){
+                delay.resolve(data)
+              });
+          return delay.promise;
+        }
+      }
     })
     .when('/clients',{
       templateUrl: 'partials/clients',
@@ -35,7 +73,14 @@ angular.module('myApp', [
     })
     .when('/contact',{
       templateUrl: 'partials/contact',
-      controller: 'ContactCtrl'
+      controller: 'ContactCtrl',
+      resolve:{
+        delay: function($q, $timeout){
+          var delay = $q.defer();
+          delay.resolve(true);
+          return delay.promise;
+        }
+      }
     })
     .when('/messages',{
       templateUrl: 'partials/messages',
