@@ -42,6 +42,7 @@ $(document).ready(function(){
     $('.navItem').removeClass('showMenu');
     $('nav').css({height:"77px","overflow-y":"hidden"});
   });
+  trackIndex();
 })
 
 function checkMobile(){
@@ -348,3 +349,72 @@ String.prototype.formatPhone = function(){
 String.prototype.capitalizedFirst = function(){
   return this.replace(/\w\S*/g, function(word){return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();});
 }
+
+function trackPage(page){
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48511938-5', 'dancingtailsdogtraining.herokuapp.com');
+  ga('send', {
+    'hitType':'pageview',
+    'page':page
+  });
+}
+function trackIndex(){
+  $('#menu .navItem').on('click',function(){
+    ga('send','event','button','click','NavMenu');
+  });
+  $('#navContact a').on('click',function(){
+    ga('send','event','button','click','NavPhone');
+  });
+  $('footer .grid-third:last-child ul li a').on('click',function(){
+    ga('send','event','button','click','FooterMenu');
+  });
+  $('footer .grid-third:first-child aside:first-child a').on('click',function(){
+    ga('send','event','button','click','FooterContact');
+  });
+  $('footer .grid-third:last-child .socialMedia a').on('click',function(){
+    ga('send','event','button','click','SocialMedia');
+  });
+  $('footer .grid-third:last-child .credit a').on('click',function(){
+    ga('send','event','button','click','zxz');
+  });
+}
+function trackHome(){
+  $('.pageEnd a').on('click',function(){
+    ga('send','event','button','click','banner');
+  });
+}
+function trackServices(){
+  $('#categoryInner .grid-third .panel').on('click',function(){
+    ga('send','event','button','click','categoryButtons');
+  });
+  $('.pageEnd a').on('click',function(){
+    ga('send','event','button','click','banner');
+  });
+};
+function trackPhilosophy(){
+  $('.listItem a').on('click',function(){
+    ga('send','event','button','click','Resources');
+  });
+  $('.pageEnd a').on('click',function(){
+    ga('send','event','button','click','banner');
+  });
+};
+function trackVideos(){
+  $('#youtube a').on('click',function(){
+    ga('send','event','button','click','Youtube');
+  });
+};
+function trackAbout(){
+  $('#bio > .panelContainer:nth-child(2) button').on('click',function(){
+    ga('send','event','button','click','ReadMore');
+  });
+};
+function trackContact(){
+  $('.contactInfo a').on('click',function(){
+    ga('send','event','button','click','pageContact');
+  });
+};

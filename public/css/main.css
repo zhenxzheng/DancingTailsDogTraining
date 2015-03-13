@@ -966,7 +966,9 @@ footer .credit{
   color:white;
   border:solid 2px #1BA39C;
 }
-
+#services .serviceInner .package > div > .panel{
+  text-align:left;
+}
 #services .package .panel div > ul{
   -webkit-columns: 2; 
   -moz-columns: 2;

@@ -12,19 +12,23 @@ function HomeCtrl($scope, $http){
   $scope.moveDown = function(){
       $("html, body").animate({scrollTop:$("#customer").offset().top-80}, '500', 'swing');
   }
+  trackPage('home');
+  trackHome();
 }
 function AboutCtrl($scope){
   window.scrollTo(0,0);
   $scope.ReadMore=false;
   layoutResize();
   $('html body').css("opacity",1);
-
+  trackPage('about');
+  trackAbout();
 }
 function PhilosophyCtrl($scope){
   window.scrollTo(0,0);
   layoutResize();
   $('html body').css("opacity",1);
-
+  trackPage('philosphy');
+  trackPhilosophy();
 }
 function ContactCtrl($scope, $http){
   window.scrollTo(0,0);
@@ -121,6 +125,8 @@ function ContactCtrl($scope, $http){
   $scope.close = function(){
     $('#messageResult').fadeOut("fast");
   }
+  trackPage('contact');
+  trackContact();
 }
 function ServicesCtrl($scope,$http,$timeout){
   window.scrollTo(0,0);
@@ -134,7 +140,6 @@ function ServicesCtrl($scope,$http,$timeout){
       $(this).find("h1").css("top","50%");
     }
   );
-
   $http.get('api/services')
     .success(function(data, status, headers, config){
       $scope.services = data.services;
@@ -144,6 +149,7 @@ function ServicesCtrl($scope,$http,$timeout){
   }
   $scope.showDetails = function(session){
     $("html, body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
+
     $scope.services.forEach(function(category, i){
       category.packages.forEach(function(pack, i){
         if (i == session) pack.state = !pack.state;
@@ -164,6 +170,7 @@ function ServicesCtrl($scope,$http,$timeout){
       $("html, body").animate({scrollTop:$(".serviceInner").offset().top-80}, '500', 'swing');
       $(".price").removeClass("active");
       $(".price").click(function(){
+        ga('send','event','button','click','sessionButtons');
         if (!($(this).hasClass("active"))) {
           $(".price").removeClass("active");
           $(this).addClass("active");
@@ -179,6 +186,8 @@ function ServicesCtrl($scope,$http,$timeout){
       })
     }
   }
+  trackPage('services');
+  trackServices()
 }
 function VideosCtrl($scope,$http,$timeout,data){
   window.scrollTo(0,0);
@@ -188,6 +197,7 @@ function VideosCtrl($scope,$http,$timeout,data){
   $scope.videos = data.videos;
 
   $scope.playVideo = function (id){
+    ga('send','event','button','click','playVideo');
     $("#playerLayer").removeClass("invisible").css("opacity",1);
     if(iframeLoaded) player.loadVideoById(id);
     else{
@@ -228,6 +238,8 @@ function VideosCtrl($scope,$http,$timeout,data){
       $(this).find("polygon").css("stroke","#ffffff")
     });
   }
+  trackPage('videos');
+  trackVideos();
 }
 
 function MessagesCtrl($scope, $http, $route){
@@ -268,4 +280,5 @@ function MessagesCtrl($scope, $http, $route){
         $scope.messages = data;
       });
   }
+  trackPage('messages');
 }
