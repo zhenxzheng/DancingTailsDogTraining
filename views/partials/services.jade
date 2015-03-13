@@ -32,8 +32,8 @@ section.container#services2
 								ul(ng-show="item.sub")
 									li(ng-repeat="item in item.sub")
 										p {{item}}
-					figure(style="width:30%;display:inline-block")
-						img(src="{{category.image}}")
+					figure(style="width:30%;display:inline-block;padding-left:40px")
+						img(src="{{category.image}}",style="border:solid #eee 15px")
 	div#categoryOutter
 		div#categoryInner.ease
 			div.grid-third

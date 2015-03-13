@@ -35,7 +35,7 @@
 		{
 			"title":"Puppies",
 			"description":"Early Puppy Behavior Training",
-			"image":"basset.jpg",
+			"image":"puppy-low.jpg",
 			"items":[
 				{
 					"service":"Pre-Puppy Planning"
@@ -74,7 +74,7 @@
 		{
 			"title":"Basic",
 			"description":"Basic Obedience & Behavior",
-			"image":"bulldog.JPG",
+			"image":"basic-low.JPG",
 			"items":[
 				{
 					"service":"Sit"
@@ -125,7 +125,7 @@
 		{
 			"title":"Behavior",
 			"description":"Behavior modification",
-			"image":"jumping.JPG",
+			"image":"behavior-low.jpg",
 			"items":[
 				{
 					"service":"Jumping"
