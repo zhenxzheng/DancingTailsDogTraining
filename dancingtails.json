@@ -1,6 +1,12 @@
 {
 	"reviews": [
 		{
+			"author": "Sonja",
+			"location":"Berkeley",
+			"image":"Biggie1-low.jpg",
+			"text": "Alyssa was a wonderful trainer with my 3-year-old golden retriever Biggie. She taught him to respond quickly and consistently to all of the commands he had learned as a puppy, but needed reinforcing. She was very attentive to Biggie, and went above & beyond training methods to make sure he was a happy, healthy dog, including suggesting coconut oil for a hot spot. On top of all this, she treated me with great respect and was flexible with her schedule around my work day. I would definitely recommend Alyssa and Dancing Tails Dog Training to others looking for help reinforcing well-trained behaviors with their pup!"
+		},
+		{
 			"author": "Angie & Rob",
 			"location":"Berkeley",
 			"image":"Hubert-low.jpg",

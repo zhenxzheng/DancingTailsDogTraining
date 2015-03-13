@@ -533,9 +533,24 @@ footer #ppg{
   display:inline-block;
   width:70%;
 }
+footer .socialMedia{
+  width:220px;
+  text-align: center;
+  display: inline-block;
+}
+footer .socialMedia p:last-child{
+  margin-right:0px;
+}
+footer .socialMedia p{
+  display:inline-block;
+  margin-top:4px;
+  margin-right:40px;
+  font-size:40px;
+  opacity:0.9;
+}
 footer .credit{
   color:#ccc;
-  margin-top:64px;
+  margin-top:20px;
   margin-bottom:40px;
   display:inline-block;
 }
@@ -715,6 +730,7 @@ footer .credit{
   list-style:disc;
 }
 #philosophy li{
+  margin-top:20px;
   margin-bottom:25px;
 }
 #philosophy ul ul{

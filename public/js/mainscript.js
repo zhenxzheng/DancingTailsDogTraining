@@ -37,7 +37,7 @@ $(document).ready(function(){
       $('nav').css({height:"77px","overflow-y":"hidden"});
     }
   })
-  $('.navItem').click(function(){
+  $('#brand, .navItem').click(function(){
     showMenu=false;
     $('.navItem').removeClass('showMenu');
     $('nav').css({height:"77px","overflow-y":"hidden"});
