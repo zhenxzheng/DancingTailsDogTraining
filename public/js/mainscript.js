@@ -58,7 +58,7 @@ function layoutResize(){
   checkMobile();
 	$('.splash').css('height',windowHeight);
   $('#footerSpace').css('height',$('footer').height()+40);
-  $('#services2 .panelContainer:first-child').css('height',windowHeight-77);
+  $('#services .panelContainer:first-child').css('height',windowHeight-77);
 
   if (windowWidth <= 400) $('.pageEnd').css('height',windowHeight*0.8);
   else $('.pageEnd').css('height',windowHeight*0.54);

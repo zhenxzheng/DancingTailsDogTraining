@@ -858,7 +858,7 @@ footer .credit{
 #video .viewButton:hover, #contact .contactInfo .grid-half:last-child .panel span:hover{
   color:#1BA39C;
 }
-#video .panelContainer h2, #video .panelContainer p, #services2 .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
+#video .panelContainer h2, #video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   color:white;
   position:absolute;
   bottom:20%;
@@ -874,21 +874,21 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#video .panelContainer p, #services2 .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
+#video .panelContainer p, #services .grid-third .panel:first-child p, #contact .contactInfo .grid-half:last-child .panel p{
   bottom:5%;
   width:70%;
 }
 /*
  *  Services Page
  */
-#services2 .panelContainer:first-child{
+#services .panelContainer:first-child{
   max-height:660px;
   text-align:left;
   background-size:cover;
-  background-position:bottom left;
+  background-position:bottom right;
   position:relative;
 }
-#services2 .panelContainer .serviceIntro{
+#services .panelContainer .serviceIntro{
   color:#333;
   padding:20px;
   width:50%;
@@ -901,22 +901,22 @@ footer .credit{
   -ms-transform: translate(0%, -50%);
   -o-transform: translate(0%, -50%);
 }
-#services2 .panelContainer .serviceIntro h1{
+#services .panelContainer .serviceIntro h1{
   margin-bottom:20px;
 }
-#services2 .panelContainer .serviceIntro ul li{
+#services .panelContainer .serviceIntro ul li{
   margin-top: 10px;
   list-style: disc;
   margin-left:20px;
 }
-#services2 .panelContainer .serviceIntro p:last-child{
+#services .panelContainer .serviceIntro p:last-child{
   color:#1BA39C;
   font-weight: 700;
   background:white;
   padding:5px;
   border:solid;
 }
-#services2 .panelContainer .serviceIntro:after{
+#services .panelContainer .serviceIntro:after{
   position:absolute;
   background: #ddd;
   content:"";
@@ -931,21 +931,21 @@ footer .credit{
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);*/
 }
-#services2 .serviceInner{
+#services .serviceInner{
   height:0;
   overflow:hidden;
 }
-#services2 .panelContainer .panel .panel{
+#services .panelContainer .panel .panel{
   padding:0;
 }
-#services2 .panel, #services2 .package .panel h2{
+#services .panel, #services .package .panel h2{
   display:inline-block;
 }
-#services2 .panel{
+#services .panel{
   position:relative;
   width:100%;
 }
-#services2 .price{
+#services .price{
   color:#1BA39C;
   font-size:18px;
   text-align:center;
@@ -956,18 +956,18 @@ footer .credit{
   cursor:pointer;
   position:relative;
 }
-#services2 .price:hover{
+#services .price:hover{
   background:#1BA39C;
   color:white;
   border:solid 2px #1BA39C;
 }
-#services2 .price.active{
+#services .price.active{
   background:#1BA39C;
   color:white;
   border:solid 2px #1BA39C;
 }
 
-#services2 .package .panel div > ul{
+#services .package .panel div > ul{
   -webkit-columns: 2; 
   -moz-columns: 2;
   columns: 2;
@@ -975,7 +975,7 @@ footer .credit{
   -moz-column-gap: 40px;
   column-gap: 40px;
 }
-#services2 .package .panel ul li{
+#services .package .panel ul li{
   list-style:none;
   vertical-align: top;
   width:95%;
@@ -985,13 +985,13 @@ footer .credit{
   margin-bottom:11px;
   border:solid 1px #eee;
 }
-#services2 .package .panel ul li ul li{
+#services .package .panel ul li ul li{
   display:block;
   width:90%;
   padding:5px;
   margin:5px 5%;
 }
-#services2 .grid-third h1{
+#services .grid-third h1{
   color:white;
   position:absolute;
   top:50%;
@@ -1010,7 +1010,7 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#services2 .grid-third .panel:first-child{
+#services .grid-third .panel:first-child{
   padding:0;
   margin:0;
   position:relative;
@@ -1023,7 +1023,7 @@ footer .credit{
   background-position:center center;
 }
 
-#services2 .grid-third .panel:first-child:before, #contact .contactInfo .grid-half:last-child .panel:before{
+#services .grid-third .panel:first-child:before, #contact .contactInfo .grid-half:last-child .panel:before{
   position:absolute;
   width:100%;
   height:100%;
@@ -1039,14 +1039,14 @@ footer .credit{
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#services2 .grid-third .panel:first-child:hover:before, #contact .contactInfo .grid-half:last-child .panel:hover:before{
+#services .grid-third .panel:first-child:hover:before, #contact .contactInfo .grid-half:last-child .panel:hover:before{
   opacity:0.7;
 }
-#services2 #categoryOutter{
+#services #categoryOutter{
   height:200px;
   width:100%;
 }
-#services2 #categoryInner{
+#services #categoryInner{
   width:840px;
   border-top:solid 5px #f5f5f5;
   position:relative;
@@ -1057,12 +1057,15 @@ footer .credit{
   -ms-transform: translate(-50%, 0%);
   -o-transform: translate(-50%, 0%);
 }
-#services2 #categoryInner.fixed{
+#services #categoryInner.fixed{
   position:fixed;
   background:#f5f5f5;
 }
-#services2 #categoryInner .grid-third .mini{
+#services #categoryInner .grid-third .mini{
   height:60px;
+}
+#services #policy{
+  margin-bottom:100px;
 }
 /*
  *  Contact Page
@@ -1258,33 +1261,33 @@ textarea{
   #customer .panel:last-child{
     padding-left:20px;
   }
-  #services2 #categoryInner{
+  #services #categoryInner{
     width:100%;
   }
-  #services2 #categoryInner.fixed{
+  #services #categoryInner.fixed{
     width:95%;
   }
-  #services2 .serviceInner .package div .panel:last-child div{
+  #services .serviceInner .package div .panel:last-child div{
     width:100% !important;
   }
-  #services2 .serviceInner .package div .panel:last-child figure{
+  #services .serviceInner .package div .panel:last-child figure{
     display:block !important;
     margin:auto;
   }
-  #services2 .serviceInner .package > div > .panel{
+  #services .serviceInner .package > div > .panel{
     text-align:center;
   }
-  #services2 .package > div > .panel > h2 {
+  #services .package > div > .panel > h2 {
     float:none !important;
     display: block;
   }
-  #services2 .package > div > .panel div{
+  #services .package > div > .panel div{
     float:none !important;
   }
-  #services2  .price{
+  #services  .price{
     margin:20px 5px 0 0;
   }
-  #services2 .price:last-child{
+  #services .price:last-child{
     margin-right:0;
   }
   #bio .portraitLeft{
@@ -1336,7 +1339,7 @@ textarea{
   #footerSpace{
     display:none;
   }
-  #services2 .panelContainer .serviceIntro{
+  #services .panelContainer .serviceIntro{
     width:70%;
     left:50%;
     top:50%;
@@ -1345,12 +1348,12 @@ textarea{
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
   }
-  #services2 .package .panel div > ul {
+  #services .package .panel div > ul {
     -webkit-columns: 1;
     -moz-columns: 1;
     columns: 1;
   }
-  #services2 .package .panel ul li{
+  #services .package .panel ul li{
     width:100%;
     margin-right:0;
   }
@@ -1392,20 +1395,20 @@ textarea{
   #menu li{
     display:none;
   }
-  #services2 .panelContainer .serviceIntro{
+  #services .panelContainer .serviceIntro{
     width:90%;
   }
-  #services2 h1{
+  #services h1{
     font-size:1.7em;
   }
-  #services2 #categoryInner h1{
+  #services #categoryInner h1{
     font-size:1.2em;
   }
-  #services2 .price{
+  #services .price{
     width:115px;
     margin-right:1%;
   }
-  #services2 .panelContainer{
+  #services .panelContainer{
     padding:0;
   }
   #philosophy .portraitLeft{
@@ -1448,7 +1451,7 @@ textarea{
   #customer .customerInfo{
     padding-left:10%;
   }
-  #services2 .package div .panel:first-child{
+  #services .package div .panel:first-child{
     padding: 30px 0;
   }
 }
@@ -1459,7 +1462,7 @@ textarea{
   .panelContainer{
     padding:0;
   }
-  #services2 .price{
+  #services .price{
     font-size:15px;
     width:90px;
     padding:4px 5px;

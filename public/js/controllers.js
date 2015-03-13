@@ -126,7 +126,7 @@ function ServicesCtrl($scope,$http,$timeout){
   window.scrollTo(0,0);
   $('html body').css("opacity",1);
   layoutResize();
-  $("#services2 .grid-third .panel:first-child").hover(
+  $("#services .grid-third .panel:first-child").hover(
     function(){
       $(this).find("h1").css("top","47%");
     },
