@@ -139,11 +139,6 @@ function headerScroll(){
       if($(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top>=70 || $(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top<=150)
         $('#categoryInner .grid-third').find('.panel').css("height",$(window).scrollTop()+windowHeight-$('#categoryOutter').offset().top);
     }
-    if(!($("#categoryInner").hasClass('fixed'))){
-      $("#services2 .grid-third .panel:first-child").find("p").css("display","block");
-      hoverEffect("#services2 .grid-third .panel:first-child", "p");
-    }
-    else $("#services2 .grid-third .panel:first-child").find("p").css("display","none");
   }
 }
 function fixedCategory(){

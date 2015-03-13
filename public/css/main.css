@@ -162,9 +162,6 @@ input:focus, textarea:focus{
 .panelContainer:last-child{
   margin-bottom:100px;
 }
-.grid-half:last-child{
-  margin-bottom:100px;
-}
 .panel{
   background:white;
   padding:30px;
@@ -355,7 +352,7 @@ footer .grid-third:last-child{
 .loadingLayer h1 {
   position:absolute;
   left:50%;
-  top:20%;
+  top:100px;
   color:#1BA39C;
   -webkit-transform: translate(-50%, 0%);
   -moz-transform: translate(-50%, 0%);
@@ -553,6 +550,15 @@ footer .credit{
   margin-top:20px;
   margin-bottom:40px;
   display:inline-block;
+}
+#facebookIcon:hover{
+  color:darkslateblue;
+}
+#instagramIcon:hover{
+  color:saddlebrown;
+}
+#youtubeIcon:hover{
+  color:red;
 }
 /*
  *  Home Page
