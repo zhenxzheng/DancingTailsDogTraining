@@ -103,7 +103,7 @@ app.post('/api/login', function (req, res) {
     var userName = req.body.userName;
     var password = req.body.password;
 
-    if (userName === "admin" && password === "bassethound") {
+    if (userName === process.env.admin_username && password === process.env.admin_code) {
         var expires = new Date();
         expires.setDate((new Date()).getDate() + 5);
         var token = jwt.encode({
