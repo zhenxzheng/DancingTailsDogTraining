@@ -4,7 +4,7 @@
 
 angular.module('myApp', [
   'myApp.filters',
-  'myApp.services',
+  'myApp.factory',
   'myApp.directives'
 ])
 .config(function ($routeProvider, $locationProvider) {
@@ -61,7 +61,7 @@ angular.module('myApp', [
           var delay = $q.defer();
           $http.get('api/videos')
             .success(function(data, status, headers, config){
-                delay.resolve(data)
+                delay.resolve(data);
               });
           return delay.promise;
         }
@@ -84,11 +84,37 @@ angular.module('myApp', [
     })
     .when('/messages',{
       templateUrl: 'partials/messages',
-      controller: 'MessagesCtrl'
+      controller: 'MessagesCtrl',
+      resolve:{
+        auth: function($q, authenticationService){
+          var userInfo = authenticationService.getUserInfo();
+          if (userInfo) {
+            return $q.when(userInfo);
+          }
+          else{
+            return $q.reject({authenticated:false});
+          }
+        }
+      }
+    })
+    .when("/admin",{
+      templateUrl: 'partials/login',
+      controller:'LoginCtrl'
     })
     .otherwise({
       redirectTo: '/'
     });
 
   $locationProvider.html5Mode(true);
-});
+})
+.run(["$rootScope", "$location", function ($rootScope, $location) {
+  $rootScope.$on("$routeChangeSuccess", function(userInfo) {
+    // console.log(userInfo);
+  });
+ 
+  $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) {
+    if (eventObj.authenticated === false) {
+      $location.path("/login");
+    }
+  });
+}]);

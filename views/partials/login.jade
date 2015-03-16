@@ -1,0 +1,11 @@
+section.container(style="width:340px")
+    form.panelContainer(style="border:dashed #777;margin-top:20px")
+        div.panel
+            h2 User Name
+            input(type="text", name="userName", ng-model="userName")
+        div.panel
+            h2 Password
+            input(type="password", name="password", ng-model="password")
+        div.panel
+            button(ng-click="login()" role="submit",style="margin-right:20px") Login
+            button(ng-click="cancel()") Cancel

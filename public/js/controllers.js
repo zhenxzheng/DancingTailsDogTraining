@@ -100,15 +100,14 @@ function ContactCtrl($scope, $http){
       }
 
     }
-    $scope.form.owner = $scope.form.owner.capitalizedFirst();
-    $scope.form.phone = $scope.form.phone.replace(/[^0-9]/g,"").formatPhone();
-    $scope.form.email = $scope.form.email.toLowerCase();
-    $scope.form.dog = $scope.form.dog.capitalizedFirst();
-    $scope.form.breed = $scope.form.breed.capitalizedFirst();
-    $scope.form.age = $scope.form.age.capitalizedFirst();
-    $scope.form.message = $scope.form.message.match(/^.+/mg);
-
     if(validitymsg == "validated"){
+      $scope.form.owner = $scope.form.owner.capitalizedFirst();
+      $scope.form.phone = $scope.form.phone.replace(/[^0-9]/g,"").formatPhone();
+      $scope.form.email = $scope.form.email.toLowerCase();
+      $scope.form.dog = $scope.form.dog.capitalizedFirst();
+      $scope.form.breed = $scope.form.breed.capitalizedFirst();
+      $scope.form.age = $scope.form.age.capitalizedFirst();
+      $scope.form.message = $scope.form.message.match(/^.+/mg);
       if(confirm("Ready to send?")==true){
         $http.post('/api/messages/new', $scope.form)
         .success(function(data){
@@ -242,11 +241,12 @@ function VideosCtrl($scope,$http,$timeout,data){
   trackVideos();
 }
 
-function MessagesCtrl($scope, $http, $route){
+function MessagesCtrl($scope, $http, $location, $window, authenticationService, auth){
   $('html body').css("opacity",1);
+  $scope.userInfo = auth;
   $scope.all=true;
   $http.get('api/messages')
-    .success(function(data, status, headers, config){
+    .success(function(data,status,headers,config){
       $scope.messages = data;
     });
   $scope.starMessage = function(id, starred){
@@ -280,5 +280,33 @@ function MessagesCtrl($scope, $http, $route){
         $scope.messages = data;
       });
   }
+  $scope.logout = function() {
+    authenticationService.logout()
+      .then(function (result) {
+        $scope.userInfo = null;
+        $location.path("/login");
+      }, function (error) {
+        console.log(error);
+      });
+  }
   trackPage('messages');
+}
+
+
+function LoginCtrl($scope,$location,$window,authenticationService){
+  $scope.userInfo = null;
+  $scope.login = function () {
+    authenticationService.login($scope.userName, $scope.password)
+      .then(function (result) {
+        $scope.userInfo = result;
+        $location.path("/messages");
+      }, function (error) {
+        $window.alert("Invalid Credentials");
+        console.log(error);
+      });
+  };
+  $scope.cancel = function(){
+    $scope.userName = "";
+    $scope.password = "";
+  };
 }
